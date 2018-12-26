@@ -1,0 +1,16 @@
+platform :ios, '10.0'
+target “LYouSpeedTestApp” do
+
+pod 'SwiftyJSON'
+pod 'Kingfisher'
+pod 'SwiftyUserDefaults'
+pod 'SnapKit'
+pod 'SwiftFCXRefresh'
+pod 'HandyJSON'
+pod 'Moya'
+pod 'IQKeyboardManagerSwift'
+pod 'SDWebImage', '~> 5.0.0-beta3'
+pod 'MJRefresh', '~> 3.1.15.7'
+
+# use_framework !
+end

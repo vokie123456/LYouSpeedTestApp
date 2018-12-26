@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1700B89EA859D1834628AC67 /* libPods-LYouSpeedTestApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B53FAC59A1B802E1185810D /* libPods-LYouSpeedTestApp.a */; };
 		218CEF7121D39B8600007B41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218CEF7021D39B8600007B41 /* AppDelegate.swift */; };
 		218CEF7321D39B8600007B41 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218CEF7221D39B8600007B41 /* ViewController.swift */; };
 		218CEF7621D39B8600007B41 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 218CEF7421D39B8600007B41 /* Main.storyboard */; };
@@ -22,6 +23,9 @@
 		218CEF7721D39B8800007B41 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		218CEF7A21D39B8800007B41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		218CEF7C21D39B8800007B41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4D63708E398CEDE856A7FA13 /* Pods-LYouSpeedTestApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LYouSpeedTestApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LYouSpeedTestApp/Pods-LYouSpeedTestApp.debug.xcconfig"; sourceTree = "<group>"; };
+		6B53FAC59A1B802E1185810D /* libPods-LYouSpeedTestApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LYouSpeedTestApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5E27FF72D1A07C6134E1B6D /* Pods-LYouSpeedTestApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LYouSpeedTestApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-LYouSpeedTestApp/Pods-LYouSpeedTestApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1700B89EA859D1834628AC67 /* libPods-LYouSpeedTestApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +45,8 @@
 			children = (
 				218CEF6F21D39B8600007B41 /* LYouSpeedTestApp */,
 				218CEF6E21D39B8600007B41 /* Products */,
+				A6D6C8CC39E3F28174E0A8E5 /* Pods */,
+				CFEFC7D955FDA3D0D4D2D713 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +71,23 @@
 			path = LYouSpeedTestApp;
 			sourceTree = "<group>";
 		};
+		A6D6C8CC39E3F28174E0A8E5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4D63708E398CEDE856A7FA13 /* Pods-LYouSpeedTestApp.debug.xcconfig */,
+				D5E27FF72D1A07C6134E1B6D /* Pods-LYouSpeedTestApp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CFEFC7D955FDA3D0D4D2D713 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6B53FAC59A1B802E1185810D /* libPods-LYouSpeedTestApp.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 218CEF7F21D39B8800007B41 /* Build configuration list for PBXNativeTarget "LYouSpeedTestApp" */;
 			buildPhases = (
+				2ED69E3B632F55FA5CE43D5C /* [CP] Check Pods Manifest.lock */,
 				218CEF6921D39B8600007B41 /* Sources */,
 				218CEF6A21D39B8600007B41 /* Frameworks */,
 				218CEF6B21D39B8600007B41 /* Resources */,
+				2298B59F0E4D6C11FD4EC239 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -129,6 +155,49 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2298B59F0E4D6C11FD4EC239 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-LYouSpeedTestApp/Pods-LYouSpeedTestApp-resources.sh",
+				"${PODS_ROOT}/IQKeyboardManagerSwift/IQKeyboardManagerSwift/Resources/IQKeyboardManager.bundle",
+				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+				"${PODS_ROOT}/SwiftFCXRefresh/SwiftFCXRefresh/arrow@2x.png",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/IQKeyboardManager.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/arrow@2x.png",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LYouSpeedTestApp/Pods-LYouSpeedTestApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2ED69E3B632F55FA5CE43D5C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LYouSpeedTestApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		218CEF6921D39B8600007B41 /* Sources */ = {
@@ -280,6 +349,7 @@
 		};
 		218CEF8021D39B8800007B41 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4D63708E398CEDE856A7FA13 /* Pods-LYouSpeedTestApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -298,6 +368,7 @@
 		};
 		218CEF8121D39B8800007B41 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D5E27FF72D1A07C6134E1B6D /* Pods-LYouSpeedTestApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
