@@ -17,8 +17,8 @@
 		216A351921D4A3CE007D73B5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 216A351B21D4A3CE007D73B5 /* InfoPlist.strings */; };
 		216A351E21D4ACCB007D73B5 /* LYHomeHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216A351D21D4ACCB007D73B5 /* LYHomeHeadView.swift */; };
 		216A352121D4B915007D73B5 /* APPMacro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216A352021D4B915007D73B5 /* APPMacro.swift */; };
+		216A352621D4DD65007D73B5 /* LYCycleProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 216A352521D4DD65007D73B5 /* LYCycleProgressView.m */; };
 		218CEF7121D39B8600007B41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218CEF7021D39B8600007B41 /* AppDelegate.swift */; };
-		218CEF7321D39B8600007B41 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218CEF7221D39B8600007B41 /* ViewController.swift */; };
 		218CEF7621D39B8600007B41 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 218CEF7421D39B8600007B41 /* Main.storyboard */; };
 		218CEF7821D39B8800007B41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 218CEF7721D39B8800007B41 /* Assets.xcassets */; };
 		218CEF7B21D39B8800007B41 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 218CEF7921D39B8800007B41 /* LaunchScreen.storyboard */; };
@@ -37,9 +37,11 @@
 		216A351C21D4A3D1007D73B5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		216A351D21D4ACCB007D73B5 /* LYHomeHeadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYHomeHeadView.swift; sourceTree = "<group>"; };
 		216A352021D4B915007D73B5 /* APPMacro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APPMacro.swift; sourceTree = "<group>"; };
+		216A352421D4DD65007D73B5 /* LYCycleProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYCycleProgressView.h; sourceTree = "<group>"; };
+		216A352521D4DD65007D73B5 /* LYCycleProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYCycleProgressView.m; sourceTree = "<group>"; };
+		216A352D21D4DE2B007D73B5 /* LYouSpeedTestApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LYouSpeedTestApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		218CEF6D21D39B8600007B41 /* LYouSpeedTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LYouSpeedTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		218CEF7021D39B8600007B41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		218CEF7221D39B8600007B41 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		218CEF7521D39B8600007B41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		218CEF7721D39B8800007B41 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		218CEF7A21D39B8800007B41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -123,6 +125,23 @@
 			path = HomeViews;
 			sourceTree = "<group>";
 		};
+		216A352221D4DD0F007D73B5 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				216A352321D4DD65007D73B5 /* LYCycleProgressView */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		216A352321D4DD65007D73B5 /* LYCycleProgressView */ = {
+			isa = PBXGroup;
+			children = (
+				216A352421D4DD65007D73B5 /* LYCycleProgressView.h */,
+				216A352521D4DD65007D73B5 /* LYCycleProgressView.m */,
+			);
+			path = LYCycleProgressView;
+			sourceTree = "<group>";
+		};
 		218CEF6421D39B8600007B41 = {
 			isa = PBXGroup;
 			children = (
@@ -144,14 +163,15 @@
 		218CEF6F21D39B8600007B41 /* LYouSpeedTestApp */ = {
 			isa = PBXGroup;
 			children = (
+				216A352221D4DD0F007D73B5 /* Tools */,
 				216A350C21D487B2007D73B5 /* Macro */,
 				216A34FB21D483FA007D73B5 /* LYViewControllers */,
 				218CEF7021D39B8600007B41 /* AppDelegate.swift */,
-				218CEF7221D39B8600007B41 /* ViewController.swift */,
 				218CEF7421D39B8600007B41 /* Main.storyboard */,
 				218CEF7721D39B8800007B41 /* Assets.xcassets */,
 				218CEF7921D39B8800007B41 /* LaunchScreen.storyboard */,
 				218CEF7C21D39B8800007B41 /* Info.plist */,
+				216A352D21D4DE2B007D73B5 /* LYouSpeedTestApp-Bridging-Header.h */,
 				216A351B21D4A3CE007D73B5 /* InfoPlist.strings */,
 			);
 			path = LYouSpeedTestApp;
@@ -295,8 +315,8 @@
 				216A352121D4B915007D73B5 /* APPMacro.swift in Sources */,
 				216A351E21D4ACCB007D73B5 /* LYHomeHeadView.swift in Sources */,
 				216A350221D4850C007D73B5 /* LYTabBarController.swift in Sources */,
-				218CEF7321D39B8600007B41 /* ViewController.swift in Sources */,
 				216A34FE21D4843C007D73B5 /* LYBaseController.swift in Sources */,
+				216A352621D4DD65007D73B5 /* LYCycleProgressView.m in Sources */,
 				216A350B21D486A2007D73B5 /* LYSettingController.swift in Sources */,
 				216A350721D4868A007D73B5 /* LYHomeController.swift in Sources */,
 				216A350921D48697007D73B5 /* LYResultController.swift in Sources */,
@@ -396,6 +416,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -451,6 +472,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -472,6 +494,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.LYouSpeedTestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/LYouSpeedTestApp/LYouSpeedTestApp-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -493,6 +516,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.LYouSpeedTestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/LYouSpeedTestApp/LYouSpeedTestApp-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
