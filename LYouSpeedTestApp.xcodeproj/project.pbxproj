@@ -8,6 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		1700B89EA859D1834628AC67 /* libPods-LYouSpeedTestApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B53FAC59A1B802E1185810D /* libPods-LYouSpeedTestApp.a */; };
+		216A34FE21D4843C007D73B5 /* LYBaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216A34FD21D4843C007D73B5 /* LYBaseController.swift */; };
+		216A350021D4848B007D73B5 /* LYBaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216A34FF21D4848B007D73B5 /* LYBaseNavigationController.swift */; };
+		216A350221D4850C007D73B5 /* LYTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216A350121D4850C007D73B5 /* LYTabBarController.swift */; };
+		216A350721D4868A007D73B5 /* LYHomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216A350621D4868A007D73B5 /* LYHomeController.swift */; };
+		216A350921D48697007D73B5 /* LYResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216A350821D48697007D73B5 /* LYResultController.swift */; };
+		216A350B21D486A2007D73B5 /* LYSettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216A350A21D486A2007D73B5 /* LYSettingController.swift */; };
+		216A351921D4A3CE007D73B5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 216A351B21D4A3CE007D73B5 /* InfoPlist.strings */; };
+		216A351E21D4ACCB007D73B5 /* LYHomeHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216A351D21D4ACCB007D73B5 /* LYHomeHeadView.swift */; };
+		216A352121D4B915007D73B5 /* APPMacro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216A352021D4B915007D73B5 /* APPMacro.swift */; };
 		218CEF7121D39B8600007B41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218CEF7021D39B8600007B41 /* AppDelegate.swift */; };
 		218CEF7321D39B8600007B41 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218CEF7221D39B8600007B41 /* ViewController.swift */; };
 		218CEF7621D39B8600007B41 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 218CEF7421D39B8600007B41 /* Main.storyboard */; };
@@ -16,6 +25,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		216A34FD21D4843C007D73B5 /* LYBaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYBaseController.swift; sourceTree = "<group>"; };
+		216A34FF21D4848B007D73B5 /* LYBaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYBaseNavigationController.swift; sourceTree = "<group>"; };
+		216A350121D4850C007D73B5 /* LYTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYTabBarController.swift; sourceTree = "<group>"; };
+		216A350621D4868A007D73B5 /* LYHomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYHomeController.swift; sourceTree = "<group>"; };
+		216A350821D48697007D73B5 /* LYResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYResultController.swift; sourceTree = "<group>"; };
+		216A350A21D486A2007D73B5 /* LYSettingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYSettingController.swift; sourceTree = "<group>"; };
+		216A351121D4A1D6007D73B5 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		216A351221D4A1D6007D73B5 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		216A351A21D4A3CE007D73B5 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		216A351C21D4A3D1007D73B5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		216A351D21D4ACCB007D73B5 /* LYHomeHeadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYHomeHeadView.swift; sourceTree = "<group>"; };
+		216A352021D4B915007D73B5 /* APPMacro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APPMacro.swift; sourceTree = "<group>"; };
 		218CEF6D21D39B8600007B41 /* LYouSpeedTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LYouSpeedTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		218CEF7021D39B8600007B41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		218CEF7221D39B8600007B41 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -40,6 +61,68 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		216A34FB21D483FA007D73B5 /* LYViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				216A34FC21D48415007D73B5 /* LYBaseController */,
+				216A350521D48661007D73B5 /* LYHomeController */,
+				216A350321D48661007D73B5 /* LYResultController */,
+				216A350421D48661007D73B5 /* LYSettingController */,
+			);
+			path = LYViewControllers;
+			sourceTree = "<group>";
+		};
+		216A34FC21D48415007D73B5 /* LYBaseController */ = {
+			isa = PBXGroup;
+			children = (
+				216A34FD21D4843C007D73B5 /* LYBaseController.swift */,
+				216A34FF21D4848B007D73B5 /* LYBaseNavigationController.swift */,
+				216A350121D4850C007D73B5 /* LYTabBarController.swift */,
+			);
+			path = LYBaseController;
+			sourceTree = "<group>";
+		};
+		216A350321D48661007D73B5 /* LYResultController */ = {
+			isa = PBXGroup;
+			children = (
+				216A350821D48697007D73B5 /* LYResultController.swift */,
+			);
+			path = LYResultController;
+			sourceTree = "<group>";
+		};
+		216A350421D48661007D73B5 /* LYSettingController */ = {
+			isa = PBXGroup;
+			children = (
+				216A350A21D486A2007D73B5 /* LYSettingController.swift */,
+			);
+			path = LYSettingController;
+			sourceTree = "<group>";
+		};
+		216A350521D48661007D73B5 /* LYHomeController */ = {
+			isa = PBXGroup;
+			children = (
+				216A351F21D4ACEB007D73B5 /* HomeViews */,
+				216A350621D4868A007D73B5 /* LYHomeController.swift */,
+			);
+			path = LYHomeController;
+			sourceTree = "<group>";
+		};
+		216A350C21D487B2007D73B5 /* Macro */ = {
+			isa = PBXGroup;
+			children = (
+				216A352021D4B915007D73B5 /* APPMacro.swift */,
+			);
+			path = Macro;
+			sourceTree = "<group>";
+		};
+		216A351F21D4ACEB007D73B5 /* HomeViews */ = {
+			isa = PBXGroup;
+			children = (
+				216A351D21D4ACCB007D73B5 /* LYHomeHeadView.swift */,
+			);
+			path = HomeViews;
+			sourceTree = "<group>";
+		};
 		218CEF6421D39B8600007B41 = {
 			isa = PBXGroup;
 			children = (
@@ -61,12 +144,15 @@
 		218CEF6F21D39B8600007B41 /* LYouSpeedTestApp */ = {
 			isa = PBXGroup;
 			children = (
+				216A350C21D487B2007D73B5 /* Macro */,
+				216A34FB21D483FA007D73B5 /* LYViewControllers */,
 				218CEF7021D39B8600007B41 /* AppDelegate.swift */,
 				218CEF7221D39B8600007B41 /* ViewController.swift */,
 				218CEF7421D39B8600007B41 /* Main.storyboard */,
 				218CEF7721D39B8800007B41 /* Assets.xcassets */,
 				218CEF7921D39B8800007B41 /* LaunchScreen.storyboard */,
 				218CEF7C21D39B8800007B41 /* Info.plist */,
+				216A351B21D4A3CE007D73B5 /* InfoPlist.strings */,
 			);
 			path = LYouSpeedTestApp;
 			sourceTree = "<group>";
@@ -132,6 +218,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 218CEF6421D39B8600007B41;
 			productRefGroup = 218CEF6E21D39B8600007B41 /* Products */;
@@ -149,6 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				218CEF7B21D39B8800007B41 /* LaunchScreen.storyboard in Resources */,
+				216A351921D4A3CE007D73B5 /* InfoPlist.strings in Resources */,
 				218CEF7821D39B8800007B41 /* Assets.xcassets in Resources */,
 				218CEF7621D39B8600007B41 /* Main.storyboard in Resources */,
 			);
@@ -204,7 +292,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				216A352121D4B915007D73B5 /* APPMacro.swift in Sources */,
+				216A351E21D4ACCB007D73B5 /* LYHomeHeadView.swift in Sources */,
+				216A350221D4850C007D73B5 /* LYTabBarController.swift in Sources */,
 				218CEF7321D39B8600007B41 /* ViewController.swift in Sources */,
+				216A34FE21D4843C007D73B5 /* LYBaseController.swift in Sources */,
+				216A350B21D486A2007D73B5 /* LYSettingController.swift in Sources */,
+				216A350721D4868A007D73B5 /* LYHomeController.swift in Sources */,
+				216A350921D48697007D73B5 /* LYResultController.swift in Sources */,
+				216A350021D4848B007D73B5 /* LYBaseNavigationController.swift in Sources */,
 				218CEF7121D39B8600007B41 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -212,10 +308,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		216A351B21D4A3CE007D73B5 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				216A351A21D4A3CE007D73B5 /* zh-Hans */,
+				216A351C21D4A3D1007D73B5 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		218CEF7421D39B8600007B41 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				218CEF7521D39B8600007B41 /* Base */,
+				216A351121D4A1D6007D73B5 /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -224,6 +330,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				218CEF7A21D39B8800007B41 /* Base */,
+				216A351221D4A1D6007D73B5 /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -235,6 +342,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -296,6 +404,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -354,7 +463,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 35HG47YK45;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = LYouSpeedTestApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -362,7 +473,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.LYouSpeedTestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -373,7 +484,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 35HG47YK45;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = LYouSpeedTestApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -381,7 +494,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.LYouSpeedTestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

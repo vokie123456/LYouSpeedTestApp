@@ -7,15 +7,24 @@
 //
 
 import UIKit
+import IQKeyboardManagerSwift
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder,UIApplicationDelegate,UITabBarControllerDelegate {
 
     var window: UIWindow?
-
-
+    let rootVC = LYTabBarController()
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        self.window = UIWindow(frame:UIScreen.main.bounds)
+        rootVC.delegate = self
+        self.window?.rootViewController = rootVC
+        self.window!.makeKeyAndVisible()
+        IQKeyboardManager.shared.enable = true
+        return true
+    }
+    
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
         return true
     }
 
