@@ -24,7 +24,7 @@ class LYHomeHeadView: UIView {
         titleLable.text = "测速大师"
         titleLable.textColor = YCColorWhite
         titleLable.alpha = 0.4
-        titleLable.font = YC_FONT_PFSC_Medium(22)
+        titleLable.font = YC_FONT_PFSC_Medium(20)
         titleLable.snp.makeConstraints { (make) in
             make.top.equalTo(20)
             make.left.equalTo(20)
@@ -88,7 +88,7 @@ class LYHomeHeadView: UIView {
             let titleLable = UILabel()
             self.addSubview(titleLable)
             titleLable.text = titleArray[i]
-            titleLable.font = YC_FONT_PFSC_Medium(16)
+            titleLable.font = YC_FONT_PFSC_Medium(14)
             titleLable.textAlignment = NSTextAlignment.center
             titleLable.textColor = YCColorWhite
             titleLable.alpha = 0.4

@@ -18,6 +18,10 @@
 		216A351E21D4ACCB007D73B5 /* LYHomeHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216A351D21D4ACCB007D73B5 /* LYHomeHeadView.swift */; };
 		216A352121D4B915007D73B5 /* APPMacro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216A352021D4B915007D73B5 /* APPMacro.swift */; };
 		216A352621D4DD65007D73B5 /* LYCycleProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 216A352521D4DD65007D73B5 /* LYCycleProgressView.m */; };
+		216A353721D5CE00007D73B5 /* LYTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 216A353621D5CE00007D73B5 /* LYTimer.m */; };
+		216A354021D5EB3B007D73B5 /* LYSettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216A353F21D5EB3B007D73B5 /* LYSettingCell.swift */; };
+		216A354421D60AE4007D73B5 /* LYAboutUsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216A354321D60AE4007D73B5 /* LYAboutUsController.swift */; };
+		216A354621D61ACA007D73B5 /* LYBuyMemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216A354521D61ACA007D73B5 /* LYBuyMemController.swift */; };
 		218CEF7121D39B8600007B41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218CEF7021D39B8600007B41 /* AppDelegate.swift */; };
 		218CEF7621D39B8600007B41 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 218CEF7421D39B8600007B41 /* Main.storyboard */; };
 		218CEF7821D39B8800007B41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 218CEF7721D39B8800007B41 /* Assets.xcassets */; };
@@ -40,6 +44,11 @@
 		216A352421D4DD65007D73B5 /* LYCycleProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYCycleProgressView.h; sourceTree = "<group>"; };
 		216A352521D4DD65007D73B5 /* LYCycleProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYCycleProgressView.m; sourceTree = "<group>"; };
 		216A352D21D4DE2B007D73B5 /* LYouSpeedTestApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LYouSpeedTestApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		216A353521D5CE00007D73B5 /* LYTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYTimer.h; sourceTree = "<group>"; };
+		216A353621D5CE00007D73B5 /* LYTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYTimer.m; sourceTree = "<group>"; };
+		216A353F21D5EB3B007D73B5 /* LYSettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYSettingCell.swift; sourceTree = "<group>"; };
+		216A354321D60AE4007D73B5 /* LYAboutUsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYAboutUsController.swift; sourceTree = "<group>"; };
+		216A354521D61ACA007D73B5 /* LYBuyMemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYBuyMemController.swift; sourceTree = "<group>"; };
 		218CEF6D21D39B8600007B41 /* LYouSpeedTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LYouSpeedTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		218CEF7021D39B8600007B41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		218CEF7521D39B8600007B41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -95,7 +104,10 @@
 		216A350421D48661007D73B5 /* LYSettingController */ = {
 			isa = PBXGroup;
 			children = (
+				216A353B21D5E645007D73B5 /* Cells */,
 				216A350A21D486A2007D73B5 /* LYSettingController.swift */,
+				216A354321D60AE4007D73B5 /* LYAboutUsController.swift */,
+				216A354521D61ACA007D73B5 /* LYBuyMemController.swift */,
 			);
 			path = LYSettingController;
 			sourceTree = "<group>";
@@ -128,6 +140,7 @@
 		216A352221D4DD0F007D73B5 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				216A353421D5CE00007D73B5 /* LYTimer */,
 				216A352321D4DD65007D73B5 /* LYCycleProgressView */,
 			);
 			path = Tools;
@@ -140,6 +153,30 @@
 				216A352521D4DD65007D73B5 /* LYCycleProgressView.m */,
 			);
 			path = LYCycleProgressView;
+			sourceTree = "<group>";
+		};
+		216A353421D5CE00007D73B5 /* LYTimer */ = {
+			isa = PBXGroup;
+			children = (
+				216A353521D5CE00007D73B5 /* LYTimer.h */,
+				216A353621D5CE00007D73B5 /* LYTimer.m */,
+			);
+			path = LYTimer;
+			sourceTree = "<group>";
+		};
+		216A353821D5D6FF007D73B5 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		216A353B21D5E645007D73B5 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				216A353F21D5EB3B007D73B5 /* LYSettingCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		218CEF6421D39B8600007B41 = {
@@ -163,6 +200,7 @@
 		218CEF6F21D39B8600007B41 /* LYouSpeedTestApp */ = {
 			isa = PBXGroup;
 			children = (
+				216A353821D5D6FF007D73B5 /* Category */,
 				216A352221D4DD0F007D73B5 /* Tools */,
 				216A350C21D487B2007D73B5 /* Macro */,
 				216A34FB21D483FA007D73B5 /* LYViewControllers */,
@@ -312,10 +350,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				216A353721D5CE00007D73B5 /* LYTimer.m in Sources */,
 				216A352121D4B915007D73B5 /* APPMacro.swift in Sources */,
+				216A354421D60AE4007D73B5 /* LYAboutUsController.swift in Sources */,
 				216A351E21D4ACCB007D73B5 /* LYHomeHeadView.swift in Sources */,
 				216A350221D4850C007D73B5 /* LYTabBarController.swift in Sources */,
 				216A34FE21D4843C007D73B5 /* LYBaseController.swift in Sources */,
+				216A354021D5EB3B007D73B5 /* LYSettingCell.swift in Sources */,
+				216A354621D61ACA007D73B5 /* LYBuyMemController.swift in Sources */,
 				216A352621D4DD65007D73B5 /* LYCycleProgressView.m in Sources */,
 				216A350B21D486A2007D73B5 /* LYSettingController.swift in Sources */,
 				216A350721D4868A007D73B5 /* LYHomeController.swift in Sources */,

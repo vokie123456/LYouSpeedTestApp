@@ -9,5 +9,12 @@
 import UIKit
 
 class LYResultController: LYBaseController {
-
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.backButton.setImage(UIImage(named:""), for: .normal)
+        self.backButton.setTitle("结果", for: .normal)
+        self.backButton.frame.size.width = 42
+    }
+    
 }

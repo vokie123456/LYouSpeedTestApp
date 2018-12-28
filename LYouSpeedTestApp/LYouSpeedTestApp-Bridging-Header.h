@@ -10,5 +10,6 @@
 #define LYouSpeedTestApp_Bridging_Header_h
 
 #import "LYCycleProgressView.h"
+#import "LYTimer.h"
 
 #endif /* LYouSpeedTestApp_Bridging_Header_h */
