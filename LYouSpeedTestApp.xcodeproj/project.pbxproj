@@ -22,6 +22,8 @@
 		216A354021D5EB3B007D73B5 /* LYSettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216A353F21D5EB3B007D73B5 /* LYSettingCell.swift */; };
 		216A354421D60AE4007D73B5 /* LYAboutUsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216A354321D60AE4007D73B5 /* LYAboutUsController.swift */; };
 		216A354621D61ACA007D73B5 /* LYBuyMemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216A354521D61ACA007D73B5 /* LYBuyMemController.swift */; };
+		216A354821D62B99007D73B5 /* LYBaseH5Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216A354721D62B99007D73B5 /* LYBaseH5Controller.swift */; };
+		216A354A21D62BFD007D73B5 /* LYServerWebController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216A354921D62BFD007D73B5 /* LYServerWebController.swift */; };
 		218CEF7121D39B8600007B41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218CEF7021D39B8600007B41 /* AppDelegate.swift */; };
 		218CEF7621D39B8600007B41 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 218CEF7421D39B8600007B41 /* Main.storyboard */; };
 		218CEF7821D39B8800007B41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 218CEF7721D39B8800007B41 /* Assets.xcassets */; };
@@ -49,6 +51,8 @@
 		216A353F21D5EB3B007D73B5 /* LYSettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYSettingCell.swift; sourceTree = "<group>"; };
 		216A354321D60AE4007D73B5 /* LYAboutUsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYAboutUsController.swift; sourceTree = "<group>"; };
 		216A354521D61ACA007D73B5 /* LYBuyMemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYBuyMemController.swift; sourceTree = "<group>"; };
+		216A354721D62B99007D73B5 /* LYBaseH5Controller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LYBaseH5Controller.swift; sourceTree = "<group>"; };
+		216A354921D62BFD007D73B5 /* LYServerWebController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYServerWebController.swift; sourceTree = "<group>"; };
 		218CEF6D21D39B8600007B41 /* LYouSpeedTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LYouSpeedTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		218CEF7021D39B8600007B41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		218CEF7521D39B8600007B41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -89,6 +93,7 @@
 				216A34FD21D4843C007D73B5 /* LYBaseController.swift */,
 				216A34FF21D4848B007D73B5 /* LYBaseNavigationController.swift */,
 				216A350121D4850C007D73B5 /* LYTabBarController.swift */,
+				216A354721D62B99007D73B5 /* LYBaseH5Controller.swift */,
 			);
 			path = LYBaseController;
 			sourceTree = "<group>";
@@ -108,6 +113,7 @@
 				216A350A21D486A2007D73B5 /* LYSettingController.swift */,
 				216A354321D60AE4007D73B5 /* LYAboutUsController.swift */,
 				216A354521D61ACA007D73B5 /* LYBuyMemController.swift */,
+				216A354921D62BFD007D73B5 /* LYServerWebController.swift */,
 			);
 			path = LYSettingController;
 			sourceTree = "<group>";
@@ -352,7 +358,9 @@
 			files = (
 				216A353721D5CE00007D73B5 /* LYTimer.m in Sources */,
 				216A352121D4B915007D73B5 /* APPMacro.swift in Sources */,
+				216A354821D62B99007D73B5 /* LYBaseH5Controller.swift in Sources */,
 				216A354421D60AE4007D73B5 /* LYAboutUsController.swift in Sources */,
+				216A354A21D62BFD007D73B5 /* LYServerWebController.swift in Sources */,
 				216A351E21D4ACCB007D73B5 /* LYHomeHeadView.swift in Sources */,
 				216A350221D4850C007D73B5 /* LYTabBarController.swift in Sources */,
 				216A34FE21D4843C007D73B5 /* LYBaseController.swift in Sources */,

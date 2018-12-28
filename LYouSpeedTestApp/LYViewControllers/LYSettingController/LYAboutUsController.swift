@@ -87,6 +87,16 @@ class LYAboutUsController: LYBaseController {
         }
     }
     @objc func selButtonClick(_ button:UIButton){
-        
+        if button.tag==11 {
+            /** 隐私协议 */
+            let serverVC = LYServerWebController()
+            serverVC.titleStr = "1"
+            self.navigationController?.pushViewController(serverVC, animated: true)
+        }else if button.tag==12{
+            /** 服务条款 */
+            let serverVC = LYServerWebController()
+            serverVC.titleStr = "2"
+            self.navigationController?.pushViewController(serverVC, animated: true)
+        }
     }
 }
