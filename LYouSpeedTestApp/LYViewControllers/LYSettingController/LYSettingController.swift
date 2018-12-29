@@ -9,6 +9,9 @@
 import UIKit
 
 class LYSettingController: LYBaseController,UITableViewDelegate,UITableViewDataSource {
+    let scoreView = LYScoreVeiw()
+    let submitView = LYSubmitView()
+    
     lazy var settingTableView = UITableView(frame: self.view.frame, style: .grouped)
     let cionArr = ["im_unit","icon_share_green","im_rating","icon_crown","icon_email","im_about"]
     let titleArr = ["速度单位","分享","评分","升级到高级版","意见反馈","关于"]
@@ -25,6 +28,36 @@ class LYSettingController: LYBaseController,UITableViewDelegate,UITableViewDataS
         //注册cell重用
         self.settingTableView .register(LYSettingCell.self, forCellReuseIdentifier:"setCellIdentifier")
         self.view.addSubview(settingTableView)
+        /** 评分 */
+        scoreView.frame = CGRect(x: 40, y: 170, width: Main_Screen_Width-80, height: 170)
+        scoreView.layer.cornerRadius = 10
+        scoreView.alpha = 0
+        self.view.addSubview(scoreView)
+        scoreView.closeBlock = {() in
+            let opts: UIView.AnimationOptions = [.curveEaseOut]
+            UIView.animate(withDuration: 0.4, delay: 0, options: opts, animations: {
+                self.scoreView.alpha = 0
+            }, completion: { _ in
+            })
+        }
+        scoreView.selStarBlock = {() in
+            let opts: UIView.AnimationOptions = [.curveEaseOut]
+            UIView.animate(withDuration: 0.4, delay: 0, options: opts, animations: {
+                self.scoreView.alpha = 0
+                let opts: UIView.AnimationOptions = [.curveEaseIn]
+                UIView.animate(withDuration: 0.4, delay: 0, options: opts, animations: {
+                    self.submitView.alpha = 1
+                }, completion: { _ in
+                })
+            }, completion: { _ in
+            })
+        }
+        /** 提交反馈 */
+        submitView.frame = CGRect(x: 40, y: 140, width: Main_Screen_Width-80, height: 240)
+        submitView.layer.cornerRadius = 10
+        submitView.alpha = 0
+        self.view.addSubview(submitView)
+
     }
     //MARK:===========UITableViewDelegate
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -57,6 +90,13 @@ class LYSettingController: LYBaseController,UITableViewDelegate,UITableViewDataS
         if indexPath.row==1 {
             /** iOS系统分享 */
             iOSsystemShare()
+        }else if indexPath.row==2{
+            /** 评分 */
+            let opts: UIView.AnimationOptions = [.curveEaseIn]
+            UIView.animate(withDuration: 0.4, delay: 0, options: opts, animations: {
+                self.scoreView.alpha = 1
+            }, completion: { _ in
+            })
         }else if indexPath.row==3{
             /** 升级到高级版 */
             let buyMemVC = LYBuyMemController()
@@ -92,5 +132,4 @@ class LYSettingController: LYBaseController,UITableViewDelegate,UITableViewDataS
             }
         }
     }
-    
 }

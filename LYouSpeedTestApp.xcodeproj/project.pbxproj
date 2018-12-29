@@ -24,6 +24,8 @@
 		216A354621D61ACA007D73B5 /* LYBuyMemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216A354521D61ACA007D73B5 /* LYBuyMemController.swift */; };
 		216A354821D62B99007D73B5 /* LYBaseH5Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216A354721D62B99007D73B5 /* LYBaseH5Controller.swift */; };
 		216A354A21D62BFD007D73B5 /* LYServerWebController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216A354921D62BFD007D73B5 /* LYServerWebController.swift */; };
+		216A355321D747F1007D73B5 /* LYScoreVeiw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216A355221D747F1007D73B5 /* LYScoreVeiw.swift */; };
+		216A355521D757BE007D73B5 /* LYSubmitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216A355421D757BE007D73B5 /* LYSubmitView.swift */; };
 		218CEF7121D39B8600007B41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218CEF7021D39B8600007B41 /* AppDelegate.swift */; };
 		218CEF7621D39B8600007B41 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 218CEF7421D39B8600007B41 /* Main.storyboard */; };
 		218CEF7821D39B8800007B41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 218CEF7721D39B8800007B41 /* Assets.xcassets */; };
@@ -53,6 +55,8 @@
 		216A354521D61ACA007D73B5 /* LYBuyMemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYBuyMemController.swift; sourceTree = "<group>"; };
 		216A354721D62B99007D73B5 /* LYBaseH5Controller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LYBaseH5Controller.swift; sourceTree = "<group>"; };
 		216A354921D62BFD007D73B5 /* LYServerWebController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYServerWebController.swift; sourceTree = "<group>"; };
+		216A355221D747F1007D73B5 /* LYScoreVeiw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYScoreVeiw.swift; sourceTree = "<group>"; };
+		216A355421D757BE007D73B5 /* LYSubmitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYSubmitView.swift; sourceTree = "<group>"; };
 		218CEF6D21D39B8600007B41 /* LYouSpeedTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LYouSpeedTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		218CEF7021D39B8600007B41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		218CEF7521D39B8600007B41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -109,6 +113,7 @@
 		216A350421D48661007D73B5 /* LYSettingController */ = {
 			isa = PBXGroup;
 			children = (
+				216A354E21D747BD007D73B5 /* Views */,
 				216A353B21D5E645007D73B5 /* Cells */,
 				216A350A21D486A2007D73B5 /* LYSettingController.swift */,
 				216A354321D60AE4007D73B5 /* LYAboutUsController.swift */,
@@ -183,6 +188,15 @@
 				216A353F21D5EB3B007D73B5 /* LYSettingCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		216A354E21D747BD007D73B5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				216A355221D747F1007D73B5 /* LYScoreVeiw.swift */,
+				216A355421D757BE007D73B5 /* LYSubmitView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		218CEF6421D39B8600007B41 = {
@@ -365,6 +379,7 @@
 				216A350221D4850C007D73B5 /* LYTabBarController.swift in Sources */,
 				216A34FE21D4843C007D73B5 /* LYBaseController.swift in Sources */,
 				216A354021D5EB3B007D73B5 /* LYSettingCell.swift in Sources */,
+				216A355521D757BE007D73B5 /* LYSubmitView.swift in Sources */,
 				216A354621D61ACA007D73B5 /* LYBuyMemController.swift in Sources */,
 				216A352621D4DD65007D73B5 /* LYCycleProgressView.m in Sources */,
 				216A350B21D486A2007D73B5 /* LYSettingController.swift in Sources */,
@@ -372,6 +387,7 @@
 				216A350921D48697007D73B5 /* LYResultController.swift in Sources */,
 				216A350021D4848B007D73B5 /* LYBaseNavigationController.swift in Sources */,
 				218CEF7121D39B8600007B41 /* AppDelegate.swift in Sources */,
+				216A355321D747F1007D73B5 /* LYScoreVeiw.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

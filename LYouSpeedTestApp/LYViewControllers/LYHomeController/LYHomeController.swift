@@ -75,7 +75,6 @@ class LYHomeController: LYBaseController {
         currenProgressView.progress = 0.6
     }
     
-    
     //MARK:=====添加背景图
     private lazy var bgImageView:UIImageView = {
         let  bgImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: Main_Screen_Width, height: Main_Screen_Height))
