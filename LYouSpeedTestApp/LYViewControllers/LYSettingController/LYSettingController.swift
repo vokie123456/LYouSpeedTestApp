@@ -9,6 +9,7 @@
 import UIKit
 
 class LYSettingController: LYBaseController,UITableViewDelegate,UITableViewDataSource {
+    var selTitle = NSString()
     let scoreView = LYScoreVeiw()
     let submitView = LYSubmitView()
     
@@ -57,7 +58,29 @@ class LYSettingController: LYBaseController,UITableViewDelegate,UITableViewDataS
         submitView.layer.cornerRadius = 10
         submitView.alpha = 0
         self.view.addSubview(submitView)
-
+        submitView.selSubmitBlock = {(title:NSString) in
+            self.selTitle = title
+        }
+        submitView.submitBlock = {(tag:NSInteger) in
+            if tag==100 {
+                if (self.selTitle.length==0){
+                    return ;
+                }
+                /** 提交 */
+                let opts: UIView.AnimationOptions = [.curveEaseOut]
+                UIView.animate(withDuration: 0.4, delay: 0, options: opts, animations: {
+                    self.submitView.alpha = 0
+                }, completion: { _ in
+                })
+                EasyShowTextView.showText("反馈成功", in: self.view)
+            }else{
+                let opts: UIView.AnimationOptions = [.curveEaseOut]
+                UIView.animate(withDuration: 0.4, delay: 0, options: opts, animations: {
+                    self.submitView.alpha = 0
+                }, completion: { _ in
+                })
+            }
+        }
     }
     //MARK:===========UITableViewDelegate
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -119,7 +142,7 @@ class LYSettingController: LYBaseController,UITableViewDelegate,UITableViewDataS
     func iOSsystemShare() {
         let textToShare = "我正在使用全网测"
         let imageToShare = UIImage(named: "shareImage")
-        let urlToShare = URL(string: "http://www.baidu.com")
+        let urlToShare = URL(string: "http://www.baidu.com")        
         let activityItems = [textToShare, imageToShare as Any, urlToShare as Any] as [Any]
         let activityVC = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
         activityVC.excludedActivityTypes = [.print, .copyToPasteboard, .assignToContact, .saveToCameraRoll]

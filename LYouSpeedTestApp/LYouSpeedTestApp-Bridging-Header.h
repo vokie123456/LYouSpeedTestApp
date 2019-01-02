@@ -11,5 +11,6 @@
 
 #import "LYCycleProgressView.h"
 #import "LYTimer.h"
+#import "EasyShowTextView.h"
 
 #endif /* LYouSpeedTestApp_Bridging_Header_h */

@@ -67,6 +67,7 @@ var gof_ColorWithHex: (NSInteger) -> UIColor = {hex in
 // MARK: ---- 三大色调
 let YCColorMain = gof_ColorWithHex(0x1C2029);     // 主色调，棕色
 let YCColorGreen = gof_ColorWithHex(0x00FF7F);     // 主色调，绿色
+let YCColorYellow = gof_ColorWithHex(0xF5C637);     // 主色调，黄色
 let YCColorWhite = gof_ColorWithHex(0xFFFFFF);     // 主色调，白色
 let YCColorBlack = gof_ColorWithHex(0x2D2D2D);   // 主色调，纯黑色
 let YCColorLightBlack = gof_ColorWithHex(0x7A7A7A);   //  浅黑色
