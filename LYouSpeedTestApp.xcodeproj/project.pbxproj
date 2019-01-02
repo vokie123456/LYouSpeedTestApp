@@ -38,6 +38,7 @@
 		2174F6F121DC8DB300BB804A /* LYResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2174F6F021DC8DB300BB804A /* LYResultCell.swift */; };
 		2174F76521DCB3DC00BB804A /* LYUpgradeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2174F76421DCB3DC00BB804A /* LYUpgradeView.swift */; };
 		2174F76721DCBB4E00BB804A /* LYResultDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2174F76621DCBB4E00BB804A /* LYResultDetailController.swift */; };
+		2174F76921DCC52100BB804A /* LYResultHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2174F76821DCC52100BB804A /* LYResultHeadView.swift */; };
 		218CEF7121D39B8600007B41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218CEF7021D39B8600007B41 /* AppDelegate.swift */; };
 		218CEF7621D39B8600007B41 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 218CEF7421D39B8600007B41 /* Main.storyboard */; };
 		218CEF7821D39B8800007B41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 218CEF7721D39B8800007B41 /* Assets.xcassets */; };
@@ -91,6 +92,7 @@
 		2174F6F021DC8DB300BB804A /* LYResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYResultCell.swift; sourceTree = "<group>"; };
 		2174F76421DCB3DC00BB804A /* LYUpgradeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYUpgradeView.swift; sourceTree = "<group>"; };
 		2174F76621DCBB4E00BB804A /* LYResultDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYResultDetailController.swift; sourceTree = "<group>"; };
+		2174F76821DCC52100BB804A /* LYResultHeadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYResultHeadView.swift; sourceTree = "<group>"; };
 		218CEF6D21D39B8600007B41 /* LYouSpeedTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LYouSpeedTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		218CEF7021D39B8600007B41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		218CEF7521D39B8600007B41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -275,6 +277,7 @@
 			isa = PBXGroup;
 			children = (
 				2174F76421DCB3DC00BB804A /* LYUpgradeView.swift */,
+				2174F76821DCC52100BB804A /* LYResultHeadView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -455,6 +458,7 @@
 				2174F6F121DC8DB300BB804A /* LYResultCell.swift in Sources */,
 				216A353721D5CE00007D73B5 /* LYTimer.m in Sources */,
 				2174F6EA21DC639800BB804A /* UIView+EasyShowExt.m in Sources */,
+				2174F76921DCC52100BB804A /* LYResultHeadView.swift in Sources */,
 				2174F6EB21DC639800BB804A /* EasyShowLodingView.m in Sources */,
 				216A352121D4B915007D73B5 /* APPMacro.swift in Sources */,
 				216A354821D62B99007D73B5 /* LYBaseH5Controller.swift in Sources */,

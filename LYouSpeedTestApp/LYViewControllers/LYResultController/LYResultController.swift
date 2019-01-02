@@ -9,7 +9,7 @@
 import UIKit
 
 class LYResultController: LYBaseController,UITableViewDelegate,UITableViewDataSource {
-    lazy var resultTableView = UITableView(frame: CGRect(x: 0, y: 10, width: Main_Screen_Width, height: Main_Screen_Height-NaviBarHeight-SafeBottomMargin-10-50), style: .grouped)
+    lazy var resultTableView = UITableView(frame: CGRect(x: 0, y: 10, width: Main_Screen_Width, height: Main_Screen_Height-NaviBarHeight-SafeBottomMargin-10-50-40), style: .grouped)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,9 +44,17 @@ class LYResultController: LYBaseController,UITableViewDelegate,UITableViewDataSo
         return 120
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 1
+        return 40
     }
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headView = LYResultHeadView()
+        return headView
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 1
+    }
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         return nil
     }
     
