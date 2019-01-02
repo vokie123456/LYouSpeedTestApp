@@ -41,7 +41,7 @@ class LYResultController: LYBaseController,UITableViewDelegate,UITableViewDataSo
         return 3
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120
+        return 100
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 40
