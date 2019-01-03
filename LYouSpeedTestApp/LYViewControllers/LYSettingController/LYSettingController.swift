@@ -72,7 +72,8 @@ class LYSettingController: LYBaseController,UITableViewDelegate,UITableViewDataS
                     self.submitView.alpha = 0
                 }, completion: { _ in
                 })
-                EasyShowTextView.showText("反馈成功", in: self.view)
+//                EasyShowTextView.showText("反馈成功", in: self.view)
+                EasyShowTextView.showText("反馈成功")
             }else{
                 let opts: UIView.AnimationOptions = [.curveEaseOut]
                 UIView.animate(withDuration: 0.4, delay: 0, options: opts, animations: {
@@ -145,7 +146,7 @@ class LYSettingController: LYBaseController,UITableViewDelegate,UITableViewDataS
         let urlToShare = URL(string: "http://www.baidu.com")        
         let activityItems = [textToShare, imageToShare as Any, urlToShare as Any] as [Any]
         let activityVC = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
-        activityVC.excludedActivityTypes = [.print, .copyToPasteboard, .assignToContact, .saveToCameraRoll]
+//        activityVC.excludedActivityTypes = [.print, .copyToPasteboard, .assignToContact, .saveToCameraRoll, .message]
         present(activityVC, animated: true)
         activityVC.completionWithItemsHandler = { activityType, completed, returnedItems, activityError in
             if completed {

@@ -12,5 +12,9 @@
 #import "LYCycleProgressView.h"
 #import "LYTimer.h"
 #import "EasyShowTextView.h"
+#import "NSString+WPAttributedMarkup.h"
+#import "WPAttributedStyleAction.h"
+#import "WPHotspotLabel.h"
+#import "UILabel+lineSpacing.h"
 
 #endif /* LYouSpeedTestApp_Bridging_Header_h */

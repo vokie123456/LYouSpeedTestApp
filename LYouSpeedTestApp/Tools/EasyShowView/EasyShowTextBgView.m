@@ -39,7 +39,7 @@
 - (instancetype)initWithFrame:(CGRect)frame status:(ShowTextStatus)status text:(NSString *)text imageName:(NSString *)imageName
 {
     if ([super initWithFrame:frame]) {
-//        self.showTextWindow.backgroundColor = ColorWithHexRGB(0x6A00D8);        
+//        self.showTextWindow.backgroundColor = ColorWithHexRGB(0x6A00D8);
         self.backgroundColor = self.options.textBackGroundColor ; //[UIColor redColor]; //
         
         _showTextStatus = status ;
@@ -72,7 +72,7 @@
                                                         maxWidth:TextShowMaxWidth];
             
             self.textLabel.text = text ;
-            self.textLabel.font = [UIFont systemFontOfSize:16];
+            self.textLabel.font = [UIFont systemFontOfSize:15];
             if (self.isShowedStatusBar||self.isShowedNavigation) {
                 
 //                CGFloat addX = self.isShowedStatusBar ? 7 : 10 ;

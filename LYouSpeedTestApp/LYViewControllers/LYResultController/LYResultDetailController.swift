@@ -51,7 +51,7 @@ class LYResultDetailController: LYBaseController {
         let urlToShare = URL(string: "http://www.baidu.com")
         let activityItems = [textToShare, imageToShare as Any, urlToShare as Any] as [Any]
         let activityVC = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
-        activityVC.excludedActivityTypes = [.print, .copyToPasteboard, .assignToContact, .saveToCameraRoll]
+//        activityVC.excludedActivityTypes = [.print, .copyToPasteboard, .assignToContact, .saveToCameraRoll]
         present(activityVC, animated: true)
         activityVC.completionWithItemsHandler = { activityType, completed, returnedItems, activityError in
             if completed {

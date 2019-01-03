@@ -26,20 +26,27 @@
 		216A354A21D62BFD007D73B5 /* LYServerWebController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216A354921D62BFD007D73B5 /* LYServerWebController.swift */; };
 		216A355321D747F1007D73B5 /* LYScoreVeiw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216A355221D747F1007D73B5 /* LYScoreVeiw.swift */; };
 		216A355521D757BE007D73B5 /* LYSubmitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216A355421D757BE007D73B5 /* LYSubmitView.swift */; };
-		2174F6E621DC639800BB804A /* EasyShowTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2174F6D321DC639800BB804A /* EasyShowTextView.m */; };
-		2174F6E721DC639800BB804A /* EasyShowUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 2174F6D821DC639800BB804A /* EasyShowUtils.m */; };
-		2174F6E821DC639800BB804A /* EasyShowLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2174F6D921DC639800BB804A /* EasyShowLabel.m */; };
-		2174F6E921DC639800BB804A /* EasyShowTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = 2174F6DB21DC639800BB804A /* EasyShowTypes.m */; };
-		2174F6EA21DC639800BB804A /* UIView+EasyShowExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 2174F6DC21DC639800BB804A /* UIView+EasyShowExt.m */; };
-		2174F6EB21DC639800BB804A /* EasyShowLodingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2174F6DE21DC639800BB804A /* EasyShowLodingView.m */; };
-		2174F6EC21DC639800BB804A /* EasyShowTextBgView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2174F6DF21DC639800BB804A /* EasyShowTextBgView.m */; };
-		2174F6ED21DC639800BB804A /* EasyShowOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2174F6E021DC639800BB804A /* EasyShowOptions.m */; };
-		2174F6EE21DC639800BB804A /* EasyShowAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2174F6E521DC639800BB804A /* EasyShowAlertView.m */; };
 		2174F6F121DC8DB300BB804A /* LYResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2174F6F021DC8DB300BB804A /* LYResultCell.swift */; };
 		2174F76521DCB3DC00BB804A /* LYUpgradeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2174F76421DCB3DC00BB804A /* LYUpgradeView.swift */; };
 		2174F76721DCBB4E00BB804A /* LYResultDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2174F76621DCBB4E00BB804A /* LYResultDetailController.swift */; };
 		2174F76921DCC52100BB804A /* LYResultHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2174F76821DCC52100BB804A /* LYResultHeadView.swift */; };
 		2174F76B21DCC90A00BB804A /* LYBuyInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2174F76A21DCC90A00BB804A /* LYBuyInfoView.swift */; };
+		2174F77521DDB76300BB804A /* LYBuyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2174F77421DDB76300BB804A /* LYBuyButton.swift */; };
+		2174F78321DDE8E800BB804A /* NSString+WPAttributedMarkup.m in Sources */ = {isa = PBXBuildFile; fileRef = 2174F77B21DDE8E800BB804A /* NSString+WPAttributedMarkup.m */; };
+		2174F78421DDE8E800BB804A /* WPHotspotLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2174F77D21DDE8E800BB804A /* WPHotspotLabel.m */; };
+		2174F78521DDE8E800BB804A /* WPTappableLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2174F77E21DDE8E800BB804A /* WPTappableLabel.m */; };
+		2174F78621DDE8E800BB804A /* UILabel+lineSpacing.m in Sources */ = {isa = PBXBuildFile; fileRef = 2174F78021DDE8E800BB804A /* UILabel+lineSpacing.m */; };
+		2174F78721DDE8E800BB804A /* NSMutableString+TagReplace.m in Sources */ = {isa = PBXBuildFile; fileRef = 2174F78121DDE8E800BB804A /* NSMutableString+TagReplace.m */; };
+		2174F78821DDE8E800BB804A /* WPAttributedStyleAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 2174F78221DDE8E800BB804A /* WPAttributedStyleAction.m */; };
+		2174F79D21DE03F400BB804A /* EasyShowTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2174F78A21DE03F300BB804A /* EasyShowTextView.m */; };
+		2174F79E21DE03F400BB804A /* EasyShowUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 2174F78F21DE03F300BB804A /* EasyShowUtils.m */; };
+		2174F79F21DE03F400BB804A /* EasyShowLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2174F79021DE03F300BB804A /* EasyShowLabel.m */; };
+		2174F7A021DE03F400BB804A /* EasyShowTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = 2174F79221DE03F300BB804A /* EasyShowTypes.m */; };
+		2174F7A121DE03F400BB804A /* UIView+EasyShowExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 2174F79321DE03F300BB804A /* UIView+EasyShowExt.m */; };
+		2174F7A221DE03F400BB804A /* EasyShowLodingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2174F79521DE03F300BB804A /* EasyShowLodingView.m */; };
+		2174F7A321DE03F400BB804A /* EasyShowTextBgView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2174F79621DE03F300BB804A /* EasyShowTextBgView.m */; };
+		2174F7A421DE03F400BB804A /* EasyShowOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2174F79721DE03F300BB804A /* EasyShowOptions.m */; };
+		2174F7A521DE03F400BB804A /* EasyShowAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2174F79C21DE03F300BB804A /* EasyShowAlertView.m */; };
 		218CEF7121D39B8600007B41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218CEF7021D39B8600007B41 /* AppDelegate.swift */; };
 		218CEF7621D39B8600007B41 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 218CEF7421D39B8600007B41 /* Main.storyboard */; };
 		218CEF7821D39B8800007B41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 218CEF7721D39B8800007B41 /* Assets.xcassets */; };
@@ -71,30 +78,43 @@
 		216A354921D62BFD007D73B5 /* LYServerWebController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYServerWebController.swift; sourceTree = "<group>"; };
 		216A355221D747F1007D73B5 /* LYScoreVeiw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYScoreVeiw.swift; sourceTree = "<group>"; };
 		216A355421D757BE007D73B5 /* LYSubmitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYSubmitView.swift; sourceTree = "<group>"; };
-		2174F6D321DC639800BB804A /* EasyShowTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EasyShowTextView.m; sourceTree = "<group>"; };
-		2174F6D421DC639800BB804A /* UIView+EasyShowExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+EasyShowExt.h"; sourceTree = "<group>"; };
-		2174F6D521DC639800BB804A /* EasyShowOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EasyShowOptions.h; sourceTree = "<group>"; };
-		2174F6D621DC639800BB804A /* EasyShowTextBgView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EasyShowTextBgView.h; sourceTree = "<group>"; };
-		2174F6D721DC639800BB804A /* EasyShowLodingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EasyShowLodingView.h; sourceTree = "<group>"; };
-		2174F6D821DC639800BB804A /* EasyShowUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EasyShowUtils.m; sourceTree = "<group>"; };
-		2174F6D921DC639800BB804A /* EasyShowLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EasyShowLabel.m; sourceTree = "<group>"; };
-		2174F6DA21DC639800BB804A /* EasyShowAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EasyShowAlertView.h; sourceTree = "<group>"; };
-		2174F6DB21DC639800BB804A /* EasyShowTypes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EasyShowTypes.m; sourceTree = "<group>"; };
-		2174F6DC21DC639800BB804A /* UIView+EasyShowExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+EasyShowExt.m"; sourceTree = "<group>"; };
-		2174F6DD21DC639800BB804A /* EasyShowTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EasyShowTextView.h; sourceTree = "<group>"; };
-		2174F6DE21DC639800BB804A /* EasyShowLodingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EasyShowLodingView.m; sourceTree = "<group>"; };
-		2174F6DF21DC639800BB804A /* EasyShowTextBgView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EasyShowTextBgView.m; sourceTree = "<group>"; };
-		2174F6E021DC639800BB804A /* EasyShowOptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EasyShowOptions.m; sourceTree = "<group>"; };
-		2174F6E121DC639800BB804A /* EasyShowLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EasyShowLabel.h; sourceTree = "<group>"; };
-		2174F6E221DC639800BB804A /* EasyShowUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EasyShowUtils.h; sourceTree = "<group>"; };
-		2174F6E321DC639800BB804A /* EasyShowTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EasyShowTypes.h; sourceTree = "<group>"; };
-		2174F6E421DC639800BB804A /* EasyShowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EasyShowView.h; sourceTree = "<group>"; };
-		2174F6E521DC639800BB804A /* EasyShowAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EasyShowAlertView.m; sourceTree = "<group>"; };
 		2174F6F021DC8DB300BB804A /* LYResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYResultCell.swift; sourceTree = "<group>"; };
 		2174F76421DCB3DC00BB804A /* LYUpgradeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYUpgradeView.swift; sourceTree = "<group>"; };
 		2174F76621DCBB4E00BB804A /* LYResultDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYResultDetailController.swift; sourceTree = "<group>"; };
 		2174F76821DCC52100BB804A /* LYResultHeadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYResultHeadView.swift; sourceTree = "<group>"; };
 		2174F76A21DCC90A00BB804A /* LYBuyInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYBuyInfoView.swift; sourceTree = "<group>"; };
+		2174F77421DDB76300BB804A /* LYBuyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYBuyButton.swift; sourceTree = "<group>"; };
+		2174F77721DDE8E800BB804A /* WPTappableLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPTappableLabel.h; sourceTree = "<group>"; };
+		2174F77821DDE8E800BB804A /* WPHotspotLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPHotspotLabel.h; sourceTree = "<group>"; };
+		2174F77921DDE8E800BB804A /* UILabel+lineSpacing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+lineSpacing.h"; sourceTree = "<group>"; };
+		2174F77A21DDE8E800BB804A /* NSMutableString+TagReplace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableString+TagReplace.h"; sourceTree = "<group>"; };
+		2174F77B21DDE8E800BB804A /* NSString+WPAttributedMarkup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+WPAttributedMarkup.m"; sourceTree = "<group>"; };
+		2174F77C21DDE8E800BB804A /* WPAttributedStyleAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPAttributedStyleAction.h; sourceTree = "<group>"; };
+		2174F77D21DDE8E800BB804A /* WPHotspotLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPHotspotLabel.m; sourceTree = "<group>"; };
+		2174F77E21DDE8E800BB804A /* WPTappableLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPTappableLabel.m; sourceTree = "<group>"; };
+		2174F77F21DDE8E800BB804A /* NSString+WPAttributedMarkup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+WPAttributedMarkup.h"; sourceTree = "<group>"; };
+		2174F78021DDE8E800BB804A /* UILabel+lineSpacing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+lineSpacing.m"; sourceTree = "<group>"; };
+		2174F78121DDE8E800BB804A /* NSMutableString+TagReplace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableString+TagReplace.m"; sourceTree = "<group>"; };
+		2174F78221DDE8E800BB804A /* WPAttributedStyleAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPAttributedStyleAction.m; sourceTree = "<group>"; };
+		2174F78A21DE03F300BB804A /* EasyShowTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EasyShowTextView.m; sourceTree = "<group>"; };
+		2174F78B21DE03F300BB804A /* UIView+EasyShowExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+EasyShowExt.h"; sourceTree = "<group>"; };
+		2174F78C21DE03F300BB804A /* EasyShowOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EasyShowOptions.h; sourceTree = "<group>"; };
+		2174F78D21DE03F300BB804A /* EasyShowTextBgView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EasyShowTextBgView.h; sourceTree = "<group>"; };
+		2174F78E21DE03F300BB804A /* EasyShowLodingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EasyShowLodingView.h; sourceTree = "<group>"; };
+		2174F78F21DE03F300BB804A /* EasyShowUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EasyShowUtils.m; sourceTree = "<group>"; };
+		2174F79021DE03F300BB804A /* EasyShowLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EasyShowLabel.m; sourceTree = "<group>"; };
+		2174F79121DE03F300BB804A /* EasyShowAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EasyShowAlertView.h; sourceTree = "<group>"; };
+		2174F79221DE03F300BB804A /* EasyShowTypes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EasyShowTypes.m; sourceTree = "<group>"; };
+		2174F79321DE03F300BB804A /* UIView+EasyShowExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+EasyShowExt.m"; sourceTree = "<group>"; };
+		2174F79421DE03F300BB804A /* EasyShowTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EasyShowTextView.h; sourceTree = "<group>"; };
+		2174F79521DE03F300BB804A /* EasyShowLodingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EasyShowLodingView.m; sourceTree = "<group>"; };
+		2174F79621DE03F300BB804A /* EasyShowTextBgView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EasyShowTextBgView.m; sourceTree = "<group>"; };
+		2174F79721DE03F300BB804A /* EasyShowOptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EasyShowOptions.m; sourceTree = "<group>"; };
+		2174F79821DE03F300BB804A /* EasyShowLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EasyShowLabel.h; sourceTree = "<group>"; };
+		2174F79921DE03F300BB804A /* EasyShowUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EasyShowUtils.h; sourceTree = "<group>"; };
+		2174F79A21DE03F300BB804A /* EasyShowTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EasyShowTypes.h; sourceTree = "<group>"; };
+		2174F79B21DE03F300BB804A /* EasyShowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EasyShowView.h; sourceTree = "<group>"; };
+		2174F79C21DE03F300BB804A /* EasyShowAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EasyShowAlertView.m; sourceTree = "<group>"; };
 		218CEF6D21D39B8600007B41 /* LYouSpeedTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LYouSpeedTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		218CEF7021D39B8600007B41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		218CEF7521D39B8600007B41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -192,7 +212,8 @@
 		216A352221D4DD0F007D73B5 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				2174F6D221DC639800BB804A /* EasyShowView */,
+				2174F78921DE03F300BB804A /* EasyShowView */,
+				2174F77621DDE8E800BB804A /* WPAttributedStyleAction */,
 				216A353421D5CE00007D73B5 /* LYTimer */,
 				216A352321D4DD65007D73B5 /* LYCycleProgressView */,
 			);
@@ -238,34 +259,9 @@
 				216A355221D747F1007D73B5 /* LYScoreVeiw.swift */,
 				216A355421D757BE007D73B5 /* LYSubmitView.swift */,
 				2174F76A21DCC90A00BB804A /* LYBuyInfoView.swift */,
+				2174F77421DDB76300BB804A /* LYBuyButton.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		2174F6D221DC639800BB804A /* EasyShowView */ = {
-			isa = PBXGroup;
-			children = (
-				2174F6D321DC639800BB804A /* EasyShowTextView.m */,
-				2174F6D421DC639800BB804A /* UIView+EasyShowExt.h */,
-				2174F6D521DC639800BB804A /* EasyShowOptions.h */,
-				2174F6D621DC639800BB804A /* EasyShowTextBgView.h */,
-				2174F6D721DC639800BB804A /* EasyShowLodingView.h */,
-				2174F6D821DC639800BB804A /* EasyShowUtils.m */,
-				2174F6D921DC639800BB804A /* EasyShowLabel.m */,
-				2174F6DA21DC639800BB804A /* EasyShowAlertView.h */,
-				2174F6DB21DC639800BB804A /* EasyShowTypes.m */,
-				2174F6DC21DC639800BB804A /* UIView+EasyShowExt.m */,
-				2174F6DD21DC639800BB804A /* EasyShowTextView.h */,
-				2174F6DE21DC639800BB804A /* EasyShowLodingView.m */,
-				2174F6DF21DC639800BB804A /* EasyShowTextBgView.m */,
-				2174F6E021DC639800BB804A /* EasyShowOptions.m */,
-				2174F6E121DC639800BB804A /* EasyShowLabel.h */,
-				2174F6E221DC639800BB804A /* EasyShowUtils.h */,
-				2174F6E321DC639800BB804A /* EasyShowTypes.h */,
-				2174F6E421DC639800BB804A /* EasyShowView.h */,
-				2174F6E521DC639800BB804A /* EasyShowAlertView.m */,
-			);
-			path = EasyShowView;
 			sourceTree = "<group>";
 		};
 		2174F6EF21DC8D9900BB804A /* Cells */ = {
@@ -283,6 +279,51 @@
 				2174F76821DCC52100BB804A /* LYResultHeadView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		2174F77621DDE8E800BB804A /* WPAttributedStyleAction */ = {
+			isa = PBXGroup;
+			children = (
+				2174F77721DDE8E800BB804A /* WPTappableLabel.h */,
+				2174F77821DDE8E800BB804A /* WPHotspotLabel.h */,
+				2174F77921DDE8E800BB804A /* UILabel+lineSpacing.h */,
+				2174F77A21DDE8E800BB804A /* NSMutableString+TagReplace.h */,
+				2174F77B21DDE8E800BB804A /* NSString+WPAttributedMarkup.m */,
+				2174F77C21DDE8E800BB804A /* WPAttributedStyleAction.h */,
+				2174F77D21DDE8E800BB804A /* WPHotspotLabel.m */,
+				2174F77E21DDE8E800BB804A /* WPTappableLabel.m */,
+				2174F77F21DDE8E800BB804A /* NSString+WPAttributedMarkup.h */,
+				2174F78021DDE8E800BB804A /* UILabel+lineSpacing.m */,
+				2174F78121DDE8E800BB804A /* NSMutableString+TagReplace.m */,
+				2174F78221DDE8E800BB804A /* WPAttributedStyleAction.m */,
+			);
+			path = WPAttributedStyleAction;
+			sourceTree = "<group>";
+		};
+		2174F78921DE03F300BB804A /* EasyShowView */ = {
+			isa = PBXGroup;
+			children = (
+				2174F78A21DE03F300BB804A /* EasyShowTextView.m */,
+				2174F78B21DE03F300BB804A /* UIView+EasyShowExt.h */,
+				2174F78C21DE03F300BB804A /* EasyShowOptions.h */,
+				2174F78D21DE03F300BB804A /* EasyShowTextBgView.h */,
+				2174F78E21DE03F300BB804A /* EasyShowLodingView.h */,
+				2174F78F21DE03F300BB804A /* EasyShowUtils.m */,
+				2174F79021DE03F300BB804A /* EasyShowLabel.m */,
+				2174F79121DE03F300BB804A /* EasyShowAlertView.h */,
+				2174F79221DE03F300BB804A /* EasyShowTypes.m */,
+				2174F79321DE03F300BB804A /* UIView+EasyShowExt.m */,
+				2174F79421DE03F300BB804A /* EasyShowTextView.h */,
+				2174F79521DE03F300BB804A /* EasyShowLodingView.m */,
+				2174F79621DE03F300BB804A /* EasyShowTextBgView.m */,
+				2174F79721DE03F300BB804A /* EasyShowOptions.m */,
+				2174F79821DE03F300BB804A /* EasyShowLabel.h */,
+				2174F79921DE03F300BB804A /* EasyShowUtils.h */,
+				2174F79A21DE03F300BB804A /* EasyShowTypes.h */,
+				2174F79B21DE03F300BB804A /* EasyShowView.h */,
+				2174F79C21DE03F300BB804A /* EasyShowAlertView.m */,
+			);
+			path = EasyShowView;
 			sourceTree = "<group>";
 		};
 		218CEF6421D39B8600007B41 = {
@@ -456,34 +497,41 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2174F78321DDE8E800BB804A /* NSString+WPAttributedMarkup.m in Sources */,
+				2174F7A121DE03F400BB804A /* UIView+EasyShowExt.m in Sources */,
+				2174F79D21DE03F400BB804A /* EasyShowTextView.m in Sources */,
 				2174F76721DCBB4E00BB804A /* LYResultDetailController.swift in Sources */,
-				2174F6EE21DC639800BB804A /* EasyShowAlertView.m in Sources */,
 				2174F6F121DC8DB300BB804A /* LYResultCell.swift in Sources */,
+				2174F7A021DE03F400BB804A /* EasyShowTypes.m in Sources */,
 				216A353721D5CE00007D73B5 /* LYTimer.m in Sources */,
-				2174F6EA21DC639800BB804A /* UIView+EasyShowExt.m in Sources */,
+				2174F78621DDE8E800BB804A /* UILabel+lineSpacing.m in Sources */,
+				2174F78721DDE8E800BB804A /* NSMutableString+TagReplace.m in Sources */,
+				2174F78821DDE8E800BB804A /* WPAttributedStyleAction.m in Sources */,
 				2174F76921DCC52100BB804A /* LYResultHeadView.swift in Sources */,
-				2174F6EB21DC639800BB804A /* EasyShowLodingView.m in Sources */,
+				2174F7A421DE03F400BB804A /* EasyShowOptions.m in Sources */,
 				216A352121D4B915007D73B5 /* APPMacro.swift in Sources */,
+				2174F77521DDB76300BB804A /* LYBuyButton.swift in Sources */,
 				216A354821D62B99007D73B5 /* LYBaseH5Controller.swift in Sources */,
+				2174F7A521DE03F400BB804A /* EasyShowAlertView.m in Sources */,
+				2174F7A221DE03F400BB804A /* EasyShowLodingView.m in Sources */,
 				216A354421D60AE4007D73B5 /* LYAboutUsController.swift in Sources */,
 				2174F76B21DCC90A00BB804A /* LYBuyInfoView.swift in Sources */,
+				2174F79E21DE03F400BB804A /* EasyShowUtils.m in Sources */,
 				216A354A21D62BFD007D73B5 /* LYServerWebController.swift in Sources */,
 				216A351E21D4ACCB007D73B5 /* LYHomeHeadView.swift in Sources */,
+				2174F79F21DE03F400BB804A /* EasyShowLabel.m in Sources */,
 				216A350221D4850C007D73B5 /* LYTabBarController.swift in Sources */,
-				2174F6ED21DC639800BB804A /* EasyShowOptions.m in Sources */,
+				2174F78421DDE8E800BB804A /* WPHotspotLabel.m in Sources */,
 				216A34FE21D4843C007D73B5 /* LYBaseController.swift in Sources */,
-				2174F6E921DC639800BB804A /* EasyShowTypes.m in Sources */,
 				216A354021D5EB3B007D73B5 /* LYSettingCell.swift in Sources */,
 				216A355521D757BE007D73B5 /* LYSubmitView.swift in Sources */,
-				2174F6E721DC639800BB804A /* EasyShowUtils.m in Sources */,
 				216A354621D61ACA007D73B5 /* LYBuyMemController.swift in Sources */,
 				216A352621D4DD65007D73B5 /* LYCycleProgressView.m in Sources */,
-				2174F6E621DC639800BB804A /* EasyShowTextView.m in Sources */,
-				2174F6EC21DC639800BB804A /* EasyShowTextBgView.m in Sources */,
-				2174F6E821DC639800BB804A /* EasyShowLabel.m in Sources */,
+				2174F78521DDE8E800BB804A /* WPTappableLabel.m in Sources */,
 				216A350B21D486A2007D73B5 /* LYSettingController.swift in Sources */,
 				216A350721D4868A007D73B5 /* LYHomeController.swift in Sources */,
 				216A350921D48697007D73B5 /* LYResultController.swift in Sources */,
+				2174F7A321DE03F400BB804A /* EasyShowTextBgView.m in Sources */,
 				2174F76521DCB3DC00BB804A /* LYUpgradeView.swift in Sources */,
 				216A350021D4848B007D73B5 /* LYBaseNavigationController.swift in Sources */,
 				218CEF7121D39B8600007B41 /* AppDelegate.swift in Sources */,
