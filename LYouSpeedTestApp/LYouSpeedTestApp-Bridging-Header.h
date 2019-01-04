@@ -17,5 +17,6 @@
 #import "WPHotspotLabel.h"
 #import "UILabel+lineSpacing.h"
 #import "GetSystemInfoHelper.h"
+#import "BHBNetworkSpeed.h"
 
 #endif /* LYouSpeedTestApp_Bridging_Header_h */

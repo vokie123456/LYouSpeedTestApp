@@ -61,7 +61,7 @@ class LYHomeHeadView: UIView {
         }
         showSpeedBgView.addSubview(upLable)
         upLable.text = "0Mbps"
-        upLable.font = YC_FONT_PFSC_Medium(16)
+        upLable.font = YC_FONT_PFSC_Medium(14)
         upLable.textColor = YCColorWhite
         upLable.alpha = 0.5
         upLable.snp.makeConstraints { (make) in
@@ -72,7 +72,7 @@ class LYHomeHeadView: UIView {
         }
         showSpeedBgView.addSubview(downLable)
         downLable.text = "0Mbps"
-        downLable.font = YC_FONT_PFSC_Medium(16)
+        downLable.font = YC_FONT_PFSC_Medium(14)
         downLable.textColor = YCColorWhite
         downLable.alpha = 0.5
         downLable.snp.makeConstraints { (make) in

@@ -59,6 +59,8 @@ class LYHomeController: LYBaseController {
         rightArrow.frame = CGRect(x: Main_Screen_Width-65, y: Main_Screen_Height-SafeBottomMargin-140, width: 40, height: 30)
         /** 监听网络变化 */
         currentNetReachability(view:progressView)
+        /** 监听上传下载速度变化 */
+        listenNetworkSpeed()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -113,7 +115,14 @@ class LYHomeController: LYBaseController {
         }
         manager?.startListening()
     }
-    
-
-
+    //MARK:=====监听上传下载速度变化
+    func listenNetworkSpeed() {
+        BHBNetworkSpeed.share().startMonitoringNetworkSpeed()
+        NotificationCenter.default.addObserver(self, selector: #selector(self.output), name: NSNotification.Name.networkReceivedSpeed, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.output), name: NSNotification.Name.networkSendSpeed, object: nil)
+    }
+    @objc func output() {
+        headView.upLable.text = BHBNetworkSpeed.share().sendNetworkSpeed
+        headView.downLable.text = BHBNetworkSpeed.share().receivedNetworkSpeed
+    }
 }

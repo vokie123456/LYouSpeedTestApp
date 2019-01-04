@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1700B89EA859D1834628AC67 /* libPods-LYouSpeedTestApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B53FAC59A1B802E1185810D /* libPods-LYouSpeedTestApp.a */; };
+		212E279E21DF6D6500E1BDD4 /* BHBNetworkSpeed.m in Sources */ = {isa = PBXBuildFile; fileRef = 212E279D21DF6D6400E1BDD4 /* BHBNetworkSpeed.m */; };
 		216A34FE21D4843C007D73B5 /* LYBaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216A34FD21D4843C007D73B5 /* LYBaseController.swift */; };
 		216A350021D4848B007D73B5 /* LYBaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216A34FF21D4848B007D73B5 /* LYBaseNavigationController.swift */; };
 		216A350221D4850C007D73B5 /* LYTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216A350121D4850C007D73B5 /* LYTabBarController.swift */; };
@@ -58,6 +59,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		212E279C21DF6D6400E1BDD4 /* BHBNetworkSpeed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHBNetworkSpeed.h; sourceTree = "<group>"; };
+		212E279D21DF6D6400E1BDD4 /* BHBNetworkSpeed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHBNetworkSpeed.m; sourceTree = "<group>"; };
 		216A34FD21D4843C007D73B5 /* LYBaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYBaseController.swift; sourceTree = "<group>"; };
 		216A34FF21D4848B007D73B5 /* LYBaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYBaseNavigationController.swift; sourceTree = "<group>"; };
 		216A350121D4850C007D73B5 /* LYTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYTabBarController.swift; sourceTree = "<group>"; };
@@ -345,6 +348,8 @@
 			children = (
 				2174F7B321DF618300BB804A /* GetSystemInfoHelper.h */,
 				2174F7B221DF618300BB804A /* GetSystemInfoHelper.m */,
+				212E279C21DF6D6400E1BDD4 /* BHBNetworkSpeed.h */,
+				212E279D21DF6D6400E1BDD4 /* BHBNetworkSpeed.m */,
 			);
 			path = GetSystemInfoHelper;
 			sourceTree = "<group>";
@@ -556,6 +561,7 @@
 				2174F7A721DE0F8300BB804A /* LYDetailHeadView.swift in Sources */,
 				2174F79F21DE03F400BB804A /* EasyShowLabel.m in Sources */,
 				216A350221D4850C007D73B5 /* LYTabBarController.swift in Sources */,
+				212E279E21DF6D6500E1BDD4 /* BHBNetworkSpeed.m in Sources */,
 				2174F78421DDE8E800BB804A /* WPHotspotLabel.m in Sources */,
 				216A34FE21D4843C007D73B5 /* LYBaseController.swift in Sources */,
 				216A354021D5EB3B007D73B5 /* LYSettingCell.swift in Sources */,
