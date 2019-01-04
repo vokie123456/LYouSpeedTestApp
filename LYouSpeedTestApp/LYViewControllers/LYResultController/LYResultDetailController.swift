@@ -39,6 +39,27 @@ class LYResultDetailController: LYBaseController {
                                       action: nil)
         spacer.width = 0;
         self.navigationItem.rightBarButtonItems = [spacer,shareBarBtn]
+        /** 主页面 */
+        let mainScrollView = UIScrollView()
+        mainScrollView.bounces = true
+        mainScrollView.showsHorizontalScrollIndicator = false //不显示水平拖地的条
+        mainScrollView.backgroundColor = UIColor.white.withAlphaComponent(0.0)
+        self.view.addSubview(mainScrollView)
+        mainScrollView.contentSize = CGSize(width: Main_Screen_Width, height: Main_Screen_Height+350)
+        mainScrollView.snp.makeConstraints { (make) in
+            make.left.right.equalTo(self.view);
+            make.top.equalTo(self.view).offset(0);
+            make.height.equalTo(Main_Screen_Height);
+        }
+        /** 头部 */
+        let headView = LYDetailHeadView()
+        mainScrollView.addSubview(headView)
+        headView.snp.makeConstraints { (make) in
+            make.left.right.equalTo(self.view);
+            make.top.equalTo(self.view).offset(0);
+            make.height.equalTo(150);
+        }
+        
     }
     //分享按钮点击响应
     @objc func shareButtonClick(){
