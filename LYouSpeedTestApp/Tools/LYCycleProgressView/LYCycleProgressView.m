@@ -79,6 +79,8 @@
     _countJump.translatesAutoresizingMaskIntoConstraints = NO;
     [_countJump.centerXAnchor constraintEqualToAnchor:self.centerXAnchor].active = YES;
     [_countJump.centerYAnchor constraintEqualToAnchor:self.centerYAnchor].active = YES;
+    
+    [self addSubview:self.wifiLable];
 }
 
 - (void)setProgress:(CGFloat)progress {
@@ -175,4 +177,18 @@
     }
     return _countJump;
 }
+
+- (UILabel *)wifiLable {
+    if (!_wifiLable) {
+        _wifiLable = [[UILabel alloc]init];
+        _wifiLable.frame = CGRectMake(0, self.frame.size.height-60, self.frame.size.width, 50);
+        _wifiLable.numberOfLines = 0;
+        _wifiLable.text = @"Wi-Fi:\nLYGames-5G";
+        _wifiLable.textColor = [UIColor whiteColor];
+        _wifiLable.font = [UIFont systemFontOfSize:14];
+        _wifiLable.textAlignment = NSTextAlignmentCenter;
+    }
+    return _wifiLable;
+}
+
 @end
