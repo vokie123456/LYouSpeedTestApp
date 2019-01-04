@@ -7,6 +7,7 @@
 //
 
 #import "LYCycleProgressView.h"
+
 /*! 颜色 */
 #define ColorWithRGBA(r,g,b,a) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
 #define ColorWithRGB(r,g,b) ColorWithRGBA(r,g,b,1)
@@ -183,7 +184,6 @@
         _wifiLable = [[UILabel alloc]init];
         _wifiLable.frame = CGRectMake(0, self.frame.size.height-60, self.frame.size.width, 50);
         _wifiLable.numberOfLines = 0;
-        _wifiLable.text = @"Wi-Fi:\nLYGames-5G";
         _wifiLable.textColor = [UIColor whiteColor];
         _wifiLable.font = [UIFont systemFontOfSize:14];
         _wifiLable.textAlignment = NSTextAlignmentCenter;

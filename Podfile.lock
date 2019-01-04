@@ -19,6 +19,7 @@ PODS:
   - SwiftyUserDefaults (3.0.1)
 
 DEPENDENCIES:
+  - Alamofire
   - HandyJSON
   - IQKeyboardManagerSwift
   - Kingfisher
@@ -59,6 +60,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
   SwiftyUserDefaults: 3d273b1739b68ada3145dc754a70ec775bc5c8be
 
-PODFILE CHECKSUM: f54b491c4a9f4b59f4e83d32a591b01d51c646d6
+PODFILE CHECKSUM: c8570d7c42c8d0160557ff1536b80c35e6fea9f6
 
 COCOAPODS: 1.5.3

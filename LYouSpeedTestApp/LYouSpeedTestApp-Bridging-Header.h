@@ -16,5 +16,6 @@
 #import "WPAttributedStyleAction.h"
 #import "WPHotspotLabel.h"
 #import "UILabel+lineSpacing.h"
+#import "GetSystemInfoHelper.h"
 
 #endif /* LYouSpeedTestApp_Bridging_Header_h */

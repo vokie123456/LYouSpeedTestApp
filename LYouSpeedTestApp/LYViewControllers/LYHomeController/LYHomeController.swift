@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class LYHomeController: LYBaseController {
     let headView = LYHomeHeadView()
@@ -30,6 +31,7 @@ class LYHomeController: LYBaseController {
         progressView.progress = 0.3
         self.view.addSubview(progressView)
         currenProgressView = progressView
+
         /** 开始按钮 */
         let startButton = UIButton()
         self.view.addSubview(startButton)
@@ -55,6 +57,8 @@ class LYHomeController: LYBaseController {
         self.view.addSubview(rightArrow)
         rightArrow.image = UIImage(named: "rightArrow")
         rightArrow.frame = CGRect(x: Main_Screen_Width-65, y: Main_Screen_Height-SafeBottomMargin-140, width: 40, height: 30)
+        /** 监听网络变化 */
+        currentNetReachability(view:progressView)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -81,5 +85,35 @@ class LYHomeController: LYBaseController {
         bgImageView.image = UIImage(named:"im_bg_home")
         return bgImageView
     }()
+    
+    //MARK:=====监听网络变化
+    func currentNetReachability(view:LYCycleProgressView) {
+        let manager = NetworkReachabilityManager()
+        manager?.listener = { status in
+            var statusStr: String?
+            switch status {
+            case .unknown:
+                statusStr = "未识别的网络"
+                view.wifiLable.text = "未识别"
+                break
+            case .notReachable:
+                statusStr = "不可用的网络(未连接)"
+                view.wifiLable.text = "无网络"
+            case .reachable:
+                if (manager?.isReachableOnWWAN)! {
+                    statusStr = "2G,3G,4G...的网络"
+                    view.wifiLable.text = "\(GetSystemInfoHelper.getPhoneNetName()!)"
+                } else if (manager?.isReachableOnEthernetOrWiFi)! {
+                    statusStr = "wifi的网络";
+                    view.wifiLable.text = "Wifi:\n\(GetSystemInfoHelper.getWifiName()!)"
+                }
+                print("===\(String(describing: statusStr))")
+                break
+            }
+        }
+        manager?.startListening()
+    }
+    
+
 
 }

@@ -50,6 +50,7 @@
 		2174F7A721DE0F8300BB804A /* LYDetailHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2174F7A621DE0F8300BB804A /* LYDetailHeadView.swift */; };
 		2174F7AB21DF352E00BB804A /* LYDetailContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2174F7AA21DF352E00BB804A /* LYDetailContentView.swift */; };
 		2174F7AD21DF40FD00BB804A /* LYDetailMoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2174F7AC21DF40FD00BB804A /* LYDetailMoreView.swift */; };
+		2174F7B421DF618300BB804A /* GetSystemInfoHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2174F7B221DF618300BB804A /* GetSystemInfoHelper.m */; };
 		218CEF7121D39B8600007B41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218CEF7021D39B8600007B41 /* AppDelegate.swift */; };
 		218CEF7621D39B8600007B41 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 218CEF7421D39B8600007B41 /* Main.storyboard */; };
 		218CEF7821D39B8800007B41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 218CEF7721D39B8800007B41 /* Assets.xcassets */; };
@@ -121,6 +122,9 @@
 		2174F7A621DE0F8300BB804A /* LYDetailHeadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYDetailHeadView.swift; sourceTree = "<group>"; };
 		2174F7AA21DF352E00BB804A /* LYDetailContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYDetailContentView.swift; sourceTree = "<group>"; };
 		2174F7AC21DF40FD00BB804A /* LYDetailMoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYDetailMoreView.swift; sourceTree = "<group>"; };
+		2174F7B221DF618300BB804A /* GetSystemInfoHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetSystemInfoHelper.m; sourceTree = "<group>"; };
+		2174F7B321DF618300BB804A /* GetSystemInfoHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetSystemInfoHelper.h; sourceTree = "<group>"; };
+		2174F7B721DF649C00BB804A /* LYouSpeedTestApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LYouSpeedTestApp.entitlements; sourceTree = "<group>"; };
 		218CEF6D21D39B8600007B41 /* LYouSpeedTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LYouSpeedTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		218CEF7021D39B8600007B41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		218CEF7521D39B8600007B41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -218,6 +222,7 @@
 		216A352221D4DD0F007D73B5 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				2174F7B121DF618300BB804A /* GetSystemInfoHelper */,
 				2174F78921DE03F300BB804A /* EasyShowView */,
 				2174F77621DDE8E800BB804A /* WPAttributedStyleAction */,
 				216A353421D5CE00007D73B5 /* LYTimer */,
@@ -335,6 +340,15 @@
 			path = EasyShowView;
 			sourceTree = "<group>";
 		};
+		2174F7B121DF618300BB804A /* GetSystemInfoHelper */ = {
+			isa = PBXGroup;
+			children = (
+				2174F7B321DF618300BB804A /* GetSystemInfoHelper.h */,
+				2174F7B221DF618300BB804A /* GetSystemInfoHelper.m */,
+			);
+			path = GetSystemInfoHelper;
+			sourceTree = "<group>";
+		};
 		218CEF6421D39B8600007B41 = {
 			isa = PBXGroup;
 			children = (
@@ -356,6 +370,7 @@
 		218CEF6F21D39B8600007B41 /* LYouSpeedTestApp */ = {
 			isa = PBXGroup;
 			children = (
+				2174F7B721DF649C00BB804A /* LYouSpeedTestApp.entitlements */,
 				216A353821D5D6FF007D73B5 /* Category */,
 				216A352221D4DD0F007D73B5 /* Tools */,
 				216A350C21D487B2007D73B5 /* Macro */,
@@ -422,6 +437,14 @@
 				TargetAttributes = {
 					218CEF6C21D39B8600007B41 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.AccessWiFi = {
+								enabled = 1;
+							};
+							com.apple.WAC = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -526,6 +549,7 @@
 				216A354421D60AE4007D73B5 /* LYAboutUsController.swift in Sources */,
 				2174F76B21DCC90A00BB804A /* LYBuyInfoView.swift in Sources */,
 				2174F79E21DE03F400BB804A /* EasyShowUtils.m in Sources */,
+				2174F7B421DF618300BB804A /* GetSystemInfoHelper.m in Sources */,
 				216A354A21D62BFD007D73B5 /* LYServerWebController.swift in Sources */,
 				2174F7AD21DF40FD00BB804A /* LYDetailMoreView.swift in Sources */,
 				216A351E21D4ACCB007D73B5 /* LYHomeHeadView.swift in Sources */,
@@ -636,7 +660,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -693,7 +717,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -709,16 +733,17 @@
 			baseConfigurationReference = 4D63708E398CEDE856A7FA13 /* Pods-LYouSpeedTestApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = LYouSpeedTestApp/LYouSpeedTestApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 35HG47YK45;
+				DEVELOPMENT_TEAM = Z6V8555LML;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = LYouSpeedTestApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.LYouSpeedTestApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vpic.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/LYouSpeedTestApp/LYouSpeedTestApp-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
@@ -731,16 +756,17 @@
 			baseConfigurationReference = D5E27FF72D1A07C6134E1B6D /* Pods-LYouSpeedTestApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = LYouSpeedTestApp/LYouSpeedTestApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 35HG47YK45;
+				DEVELOPMENT_TEAM = Z6V8555LML;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = LYouSpeedTestApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.LYouSpeedTestApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vpic.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/LYouSpeedTestApp/LYouSpeedTestApp-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
