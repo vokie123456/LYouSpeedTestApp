@@ -111,11 +111,13 @@ static BHBNetworkSpeed * instance = nil;
     else if(bytes >= 1024 * 1024 && bytes < 1024 * 1024 * 1024)   // MB
     {
         return [NSString stringWithFormat:@"%.0fMbps", (double)bytes / (1024 * 1024)];
-    }
-    else    // GB
+    }else if (bytes <= 0){
+        return [NSString stringWithFormat:@"0Kbps"];
+    }else    // GB
     {
         return [NSString stringWithFormat:@"%.0fGbps", (double)bytes / (1024 * 1024 * 1024)];
     }
+    
 }
 
 
