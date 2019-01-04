@@ -76,7 +76,7 @@ let YCColorBlack = gof_ColorWithHex(0x2D2D2D);   // 主色调，纯黑色
 let YCColorLightBlack = gof_ColorWithHex(0x7A7A7A);   //  浅黑色
 let YCColorTitleBlack = gof_ColorWithHex(0x666666);   // 主色调，标题黑色
 let YCColorGray = gof_ColorWithHex(0x9898A3);   // 主色调，灰色
-let YCColorLightGray = gof_ColorWithHex(0xB4B4B4);   // 主色调，浅灰色
+let YCColorLightGray = gof_ColorWithHex(0xE7E7E7);   // 主色调，浅灰色
 let YCColorMainGray = gof_ColorWithHex(0x54565E);   // 主色调，浅灰色
 
 let YCColorLight = gof_ColorWithHex(0xF2F4F6);   //全局灰色

@@ -41,11 +41,12 @@ class LYResultDetailController: LYBaseController {
         self.navigationItem.rightBarButtonItems = [spacer,shareBarBtn]
         /** 主页面 */
         let mainScrollView = UIScrollView()
-        mainScrollView.bounces = true
+        mainScrollView.bounces = false
         mainScrollView.showsHorizontalScrollIndicator = false //不显示水平拖地的条
-        mainScrollView.backgroundColor = UIColor.white.withAlphaComponent(0.0)
+        mainScrollView.showsVerticalScrollIndicator = false //不显示垂直拖动的条
+        mainScrollView.backgroundColor = YCColorLightGray
         self.view.addSubview(mainScrollView)
-        mainScrollView.contentSize = CGSize(width: Main_Screen_Width, height: Main_Screen_Height+350)
+        mainScrollView.contentSize = CGSize(width: Main_Screen_Width, height: Main_Screen_Height+460)
         mainScrollView.snp.makeConstraints { (make) in
             make.left.right.equalTo(self.view);
             make.top.equalTo(self.view).offset(0);
@@ -55,11 +56,29 @@ class LYResultDetailController: LYBaseController {
         let headView = LYDetailHeadView()
         mainScrollView.addSubview(headView)
         headView.snp.makeConstraints { (make) in
-            make.left.right.equalTo(self.view);
-            make.top.equalTo(self.view).offset(0);
-            make.height.equalTo(150);
+            make.left.equalTo(0);
+            make.width.equalTo(Main_Screen_Width)
+            make.top.equalTo(mainScrollView).offset(0);
+            make.height.equalTo(250);
         }
-        
+        /** 网速排名 */
+        let contentView = LYDetailContentView()
+        mainScrollView.addSubview(contentView)
+        contentView.snp.makeConstraints { (make) in
+            make.left.equalTo(0);
+            make.width.equalTo(Main_Screen_Width)
+            make.top.equalTo(headView.snp.bottom).offset(15);
+            make.height.equalTo(455);
+        }
+        /** 更多详情 */
+        let moreView = LYDetailMoreView()
+        mainScrollView.addSubview(moreView)
+        moreView.snp.makeConstraints { (make) in
+            make.left.equalTo(0);
+            make.width.equalTo(Main_Screen_Width)
+            make.top.equalTo(contentView.snp.bottom).offset(15);
+            make.height.equalTo(270);
+        }
     }
     //分享按钮点击响应
     @objc func shareButtonClick(){

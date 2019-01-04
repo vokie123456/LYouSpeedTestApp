@@ -48,6 +48,8 @@
 		2174F7A421DE03F400BB804A /* EasyShowOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2174F79721DE03F300BB804A /* EasyShowOptions.m */; };
 		2174F7A521DE03F400BB804A /* EasyShowAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2174F79C21DE03F300BB804A /* EasyShowAlertView.m */; };
 		2174F7A721DE0F8300BB804A /* LYDetailHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2174F7A621DE0F8300BB804A /* LYDetailHeadView.swift */; };
+		2174F7AB21DF352E00BB804A /* LYDetailContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2174F7AA21DF352E00BB804A /* LYDetailContentView.swift */; };
+		2174F7AD21DF40FD00BB804A /* LYDetailMoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2174F7AC21DF40FD00BB804A /* LYDetailMoreView.swift */; };
 		218CEF7121D39B8600007B41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218CEF7021D39B8600007B41 /* AppDelegate.swift */; };
 		218CEF7621D39B8600007B41 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 218CEF7421D39B8600007B41 /* Main.storyboard */; };
 		218CEF7821D39B8800007B41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 218CEF7721D39B8800007B41 /* Assets.xcassets */; };
@@ -117,6 +119,8 @@
 		2174F79B21DE03F300BB804A /* EasyShowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EasyShowView.h; sourceTree = "<group>"; };
 		2174F79C21DE03F300BB804A /* EasyShowAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EasyShowAlertView.m; sourceTree = "<group>"; };
 		2174F7A621DE0F8300BB804A /* LYDetailHeadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYDetailHeadView.swift; sourceTree = "<group>"; };
+		2174F7AA21DF352E00BB804A /* LYDetailContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYDetailContentView.swift; sourceTree = "<group>"; };
+		2174F7AC21DF40FD00BB804A /* LYDetailMoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYDetailMoreView.swift; sourceTree = "<group>"; };
 		218CEF6D21D39B8600007B41 /* LYouSpeedTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LYouSpeedTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		218CEF7021D39B8600007B41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		218CEF7521D39B8600007B41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -280,6 +284,8 @@
 				2174F76421DCB3DC00BB804A /* LYUpgradeView.swift */,
 				2174F76821DCC52100BB804A /* LYResultHeadView.swift */,
 				2174F7A621DE0F8300BB804A /* LYDetailHeadView.swift */,
+				2174F7AA21DF352E00BB804A /* LYDetailContentView.swift */,
+				2174F7AC21DF40FD00BB804A /* LYDetailMoreView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -521,6 +527,7 @@
 				2174F76B21DCC90A00BB804A /* LYBuyInfoView.swift in Sources */,
 				2174F79E21DE03F400BB804A /* EasyShowUtils.m in Sources */,
 				216A354A21D62BFD007D73B5 /* LYServerWebController.swift in Sources */,
+				2174F7AD21DF40FD00BB804A /* LYDetailMoreView.swift in Sources */,
 				216A351E21D4ACCB007D73B5 /* LYHomeHeadView.swift in Sources */,
 				2174F7A721DE0F8300BB804A /* LYDetailHeadView.swift in Sources */,
 				2174F79F21DE03F400BB804A /* EasyShowLabel.m in Sources */,
@@ -532,6 +539,7 @@
 				216A354621D61ACA007D73B5 /* LYBuyMemController.swift in Sources */,
 				216A352621D4DD65007D73B5 /* LYCycleProgressView.m in Sources */,
 				2174F78521DDE8E800BB804A /* WPTappableLabel.m in Sources */,
+				2174F7AB21DF352E00BB804A /* LYDetailContentView.swift in Sources */,
 				216A350B21D486A2007D73B5 /* LYSettingController.swift in Sources */,
 				216A350721D4868A007D73B5 /* LYHomeController.swift in Sources */,
 				216A350921D48697007D73B5 /* LYResultController.swift in Sources */,

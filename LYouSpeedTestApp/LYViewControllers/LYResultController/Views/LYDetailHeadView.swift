@@ -17,6 +17,7 @@ class LYDetailHeadView: UIView {
     func creatUI(){
         let bgImage = UIImageView()
         bgImage.isUserInteractionEnabled = true
+        bgImage.backgroundColor = YCColorMain
         bgImage.image = UIImage(named: "")
         self.addSubview(bgImage)
         bgImage.snp.makeConstraints { (make) in
@@ -74,6 +75,15 @@ class LYDetailHeadView: UIView {
             make.top.equalTo(showKdImage.snp.bottom).offset(0)
             make.height.equalTo(10)
         }
+        let pointLine = UIImageView()
+        pointLine.image = UIImage(named: "icon_pointLine_green")
+        bgImage.addSubview(pointLine)
+        pointLine.snp.makeConstraints { (make) in
+            make.right.equalTo(-43)
+            make.top.equalTo(showKdImage.snp.bottom).offset(2)
+            make.width.equalTo(7)
+            make.height.equalTo(23)
+        }
         /** 缓慢 */
         let slowLable = UILabel()
         slowLable.text = "缓慢"
@@ -93,6 +103,47 @@ class LYDetailHeadView: UIView {
         quikLable.snp.makeConstraints { (make) in
             make.right.equalTo(-20)
             make.top.equalTo(progresImage.snp.bottom).offset(5)
+        }
+        /** 北京平均带宽 */
+        let bjKdLable = UILabel()
+        bjKdLable.text = "北京平均带宽:71.5M"
+        bjKdLable.font = YC_FONT_PFSC_Medium(15)
+        bjKdLable.textAlignment = NSTextAlignment.right
+        bjKdLable.textColor = YCColorGreen
+        bgImage.addSubview(bjKdLable)
+        bjKdLable.snp.makeConstraints { (make) in
+            make.right.equalTo(-20)
+            make.top.equalTo(quikLable.snp.bottom).offset(3)
+        }
+        let dateArray = ["61 ms","24.5Mbps","20Mbps"]
+        let titleArray = ["网络延迟","下载速度","上传速度"]
+        let indexW = (Int)(Main_Screen_Width)/3
+        for i in 0..<titleArray.count {
+            /** 测试数据 */
+            let dateLable = UILabel()
+            self.addSubview(dateLable)
+            dateLable.text = dateArray[i]
+            dateLable.font = YC_FONT_PFSC_Medium(16)
+            dateLable.textAlignment = NSTextAlignment.center
+            dateLable.textColor = YCColorWhite
+            dateLable.snp.makeConstraints { (make) in
+                make.top.equalTo(bjKdLable).offset(50)
+                make.left.equalTo(i*indexW)
+                make.width.equalTo(indexW)
+            }
+            /** 标题 */
+            let titleLable = UILabel()
+            self.addSubview(titleLable)
+            titleLable.text = titleArray[i]
+            titleLable.font = YC_FONT_PFSC_Medium(14)
+            titleLable.textAlignment = NSTextAlignment.center
+            titleLable.textColor = YCColorWhite
+            titleLable.alpha = 0.5
+            titleLable.snp.makeConstraints { (make) in
+                make.top.equalTo(bjKdLable).offset(80)
+                make.left.equalTo(i*indexW)
+                make.width.equalTo(indexW)
+            }
         }
     }
     required init?(coder aDecoder: NSCoder) {
