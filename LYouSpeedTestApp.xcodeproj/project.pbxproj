@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		1700B89EA859D1834628AC67 /* libPods-LYouSpeedTestApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B53FAC59A1B802E1185810D /* libPods-LYouSpeedTestApp.a */; };
 		212E279E21DF6D6500E1BDD4 /* BHBNetworkSpeed.m in Sources */ = {isa = PBXBuildFile; fileRef = 212E279D21DF6D6400E1BDD4 /* BHBNetworkSpeed.m */; };
+		212E27A621E3200600E1BDD4 /* QBTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 212E27A321E3200600E1BDD4 /* QBTools.m */; };
+		212E27A721E3200600E1BDD4 /* MeasurNetTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 212E27A421E3200600E1BDD4 /* MeasurNetTools.m */; };
+		212E27AD21E32E2500E1BDD4 /* STSimplePing.m in Sources */ = {isa = PBXBuildFile; fileRef = 212E27A921E32E2500E1BDD4 /* STSimplePing.m */; };
+		212E27AE21E32E2500E1BDD4 /* STDPingServices.m in Sources */ = {isa = PBXBuildFile; fileRef = 212E27AB21E32E2500E1BDD4 /* STDPingServices.m */; };
+		212E27B521E35C9C00E1BDD4 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212E27B421E35C9C00E1BDD4 /* NetworkRequest.swift */; };
+		212E27B721E360AB00E1BDD4 /* APPInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212E27B621E360AB00E1BDD4 /* APPInfo.swift */; };
 		216A34FE21D4843C007D73B5 /* LYBaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216A34FD21D4843C007D73B5 /* LYBaseController.swift */; };
 		216A350021D4848B007D73B5 /* LYBaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216A34FF21D4848B007D73B5 /* LYBaseNavigationController.swift */; };
 		216A350221D4850C007D73B5 /* LYTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216A350121D4850C007D73B5 /* LYTabBarController.swift */; };
@@ -61,6 +67,16 @@
 /* Begin PBXFileReference section */
 		212E279C21DF6D6400E1BDD4 /* BHBNetworkSpeed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHBNetworkSpeed.h; sourceTree = "<group>"; };
 		212E279D21DF6D6400E1BDD4 /* BHBNetworkSpeed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHBNetworkSpeed.m; sourceTree = "<group>"; };
+		212E27A221E3200600E1BDD4 /* MeasurNetTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeasurNetTools.h; sourceTree = "<group>"; };
+		212E27A321E3200600E1BDD4 /* QBTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBTools.m; sourceTree = "<group>"; };
+		212E27A421E3200600E1BDD4 /* MeasurNetTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeasurNetTools.m; sourceTree = "<group>"; };
+		212E27A521E3200600E1BDD4 /* QBTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBTools.h; sourceTree = "<group>"; };
+		212E27A921E32E2500E1BDD4 /* STSimplePing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STSimplePing.m; sourceTree = "<group>"; };
+		212E27AA21E32E2500E1BDD4 /* STDPingServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STDPingServices.h; sourceTree = "<group>"; };
+		212E27AB21E32E2500E1BDD4 /* STDPingServices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STDPingServices.m; sourceTree = "<group>"; };
+		212E27AC21E32E2500E1BDD4 /* STSimplePing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STSimplePing.h; sourceTree = "<group>"; };
+		212E27B421E35C9C00E1BDD4 /* NetworkRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
+		212E27B621E360AB00E1BDD4 /* APPInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APPInfo.swift; sourceTree = "<group>"; };
 		216A34FD21D4843C007D73B5 /* LYBaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYBaseController.swift; sourceTree = "<group>"; };
 		216A34FF21D4848B007D73B5 /* LYBaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYBaseNavigationController.swift; sourceTree = "<group>"; };
 		216A350121D4850C007D73B5 /* LYTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYTabBarController.swift; sourceTree = "<group>"; };
@@ -151,6 +167,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		212E27A121E3200600E1BDD4 /* MeasurNetTools */ = {
+			isa = PBXGroup;
+			children = (
+				212E27A221E3200600E1BDD4 /* MeasurNetTools.h */,
+				212E27A421E3200600E1BDD4 /* MeasurNetTools.m */,
+				212E27A521E3200600E1BDD4 /* QBTools.h */,
+				212E27A321E3200600E1BDD4 /* QBTools.m */,
+			);
+			path = MeasurNetTools;
+			sourceTree = "<group>";
+		};
+		212E27A821E32E2500E1BDD4 /* PingManager */ = {
+			isa = PBXGroup;
+			children = (
+				212E27A921E32E2500E1BDD4 /* STSimplePing.m */,
+				212E27AA21E32E2500E1BDD4 /* STDPingServices.h */,
+				212E27AB21E32E2500E1BDD4 /* STDPingServices.m */,
+				212E27AC21E32E2500E1BDD4 /* STSimplePing.h */,
+			);
+			path = PingManager;
+			sourceTree = "<group>";
+		};
+		212E27AF21E35AF200E1BDD4 /* NetworkTools */ = {
+			isa = PBXGroup;
+			children = (
+				212E27B421E35C9C00E1BDD4 /* NetworkRequest.swift */,
+			);
+			path = NetworkTools;
+			sourceTree = "<group>";
+		};
 		216A34FB21D483FA007D73B5 /* LYViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -210,6 +256,7 @@
 			isa = PBXGroup;
 			children = (
 				216A352021D4B915007D73B5 /* APPMacro.swift */,
+				212E27B621E360AB00E1BDD4 /* APPInfo.swift */,
 			);
 			path = Macro;
 			sourceTree = "<group>";
@@ -346,6 +393,8 @@
 		2174F7B121DF618300BB804A /* GetSystemInfoHelper */ = {
 			isa = PBXGroup;
 			children = (
+				212E27A821E32E2500E1BDD4 /* PingManager */,
+				212E27A121E3200600E1BDD4 /* MeasurNetTools */,
 				2174F7B321DF618300BB804A /* GetSystemInfoHelper.h */,
 				2174F7B221DF618300BB804A /* GetSystemInfoHelper.m */,
 				212E279C21DF6D6400E1BDD4 /* BHBNetworkSpeed.h */,
@@ -378,6 +427,7 @@
 				2174F7B721DF649C00BB804A /* LYouSpeedTestApp.entitlements */,
 				216A353821D5D6FF007D73B5 /* Category */,
 				216A352221D4DD0F007D73B5 /* Tools */,
+				212E27AF21E35AF200E1BDD4 /* NetworkTools */,
 				216A350C21D487B2007D73B5 /* Macro */,
 				216A34FB21D483FA007D73B5 /* LYViewControllers */,
 				218CEF7021D39B8600007B41 /* AppDelegate.swift */,
@@ -541,6 +591,7 @@
 				2174F6F121DC8DB300BB804A /* LYResultCell.swift in Sources */,
 				2174F7A021DE03F400BB804A /* EasyShowTypes.m in Sources */,
 				216A353721D5CE00007D73B5 /* LYTimer.m in Sources */,
+				212E27B721E360AB00E1BDD4 /* APPInfo.swift in Sources */,
 				2174F78621DDE8E800BB804A /* UILabel+lineSpacing.m in Sources */,
 				2174F78721DDE8E800BB804A /* NSMutableString+TagReplace.m in Sources */,
 				2174F78821DDE8E800BB804A /* WPAttributedStyleAction.m in Sources */,
@@ -555,7 +606,9 @@
 				2174F76B21DCC90A00BB804A /* LYBuyInfoView.swift in Sources */,
 				2174F79E21DE03F400BB804A /* EasyShowUtils.m in Sources */,
 				2174F7B421DF618300BB804A /* GetSystemInfoHelper.m in Sources */,
+				212E27B521E35C9C00E1BDD4 /* NetworkRequest.swift in Sources */,
 				216A354A21D62BFD007D73B5 /* LYServerWebController.swift in Sources */,
+				212E27AD21E32E2500E1BDD4 /* STSimplePing.m in Sources */,
 				2174F7AD21DF40FD00BB804A /* LYDetailMoreView.swift in Sources */,
 				216A351E21D4ACCB007D73B5 /* LYHomeHeadView.swift in Sources */,
 				2174F7A721DE0F8300BB804A /* LYDetailHeadView.swift in Sources */,
@@ -569,9 +622,12 @@
 				216A354621D61ACA007D73B5 /* LYBuyMemController.swift in Sources */,
 				216A352621D4DD65007D73B5 /* LYCycleProgressView.m in Sources */,
 				2174F78521DDE8E800BB804A /* WPTappableLabel.m in Sources */,
+				212E27A621E3200600E1BDD4 /* QBTools.m in Sources */,
+				212E27A721E3200600E1BDD4 /* MeasurNetTools.m in Sources */,
 				2174F7AB21DF352E00BB804A /* LYDetailContentView.swift in Sources */,
 				216A350B21D486A2007D73B5 /* LYSettingController.swift in Sources */,
 				216A350721D4868A007D73B5 /* LYHomeController.swift in Sources */,
+				212E27AE21E32E2500E1BDD4 /* STDPingServices.m in Sources */,
 				216A350921D48697007D73B5 /* LYResultController.swift in Sources */,
 				2174F7A321DE03F400BB804A /* EasyShowTextBgView.m in Sources */,
 				2174F76521DCB3DC00BB804A /* LYUpgradeView.swift in Sources */,

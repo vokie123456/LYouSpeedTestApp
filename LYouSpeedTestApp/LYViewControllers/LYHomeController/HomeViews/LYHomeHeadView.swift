@@ -83,6 +83,10 @@ class LYHomeHeadView: UIView {
         }
         let titleArray = ["延时","下载","上传"]
         let imageArray = ["im_ping_wait","im_download_wait","im_upload_wait"]
+        let dateArray = ["1","29.4","11"]
+        let danweiArray = ["ms","Mbps","Mbps"]
+        let indexW = (Int)(Main_Screen_Width)/3
+
         for i in 0..<titleArray.count {
             /** 标题 */
             let titleLable = UILabel()
@@ -110,11 +114,61 @@ class LYHomeHeadView: UIView {
             let imageView = UIImageView()
             imageView.image = UIImage(named:imageArray[i])
             self.addSubview(imageView)
+            imageView.tag = i+100
             imageView.snp.makeConstraints { (make) in
                 make.top.equalTo(showSpeedBgView).offset(125)
                 make.left.equalTo(width+10)
                 make.width.equalTo(20)
                 make.height.equalTo(20)
+            }
+            /** 测试数据 */
+            let dateLable = UILabel()
+            self.addSubview(dateLable)
+            dateLable.text = dateArray[i]
+            dateLable.font = YC_FONT_PFSC_Medium(17)
+            dateLable.textAlignment = NSTextAlignment.center
+            dateLable.textColor = YCColorWhite
+            dateLable.tag = i+1000
+            dateLable.isHidden = true
+            dateLable.snp.makeConstraints { (make) in
+                make.top.equalTo(showSpeedBgView).offset(122)
+                make.left.equalTo(i*indexW)
+                make.width.equalTo(indexW)
+            }
+            if(i==0){
+                dateLable.snp.updateConstraints { (make) in
+                    make.left.equalTo(5+i*indexW)
+                }
+            }
+            if(i==2){
+                dateLable.snp.updateConstraints { (make) in
+                    make.left.equalTo(i*indexW-6)
+                }
+            }
+            /** 单位 */
+            let danweiLable = UILabel()
+            self.addSubview(danweiLable)
+            danweiLable.text = danweiArray[i]
+            danweiLable.font = YC_FONT_PFSC_Medium(14)
+            danweiLable.textAlignment = NSTextAlignment.center
+            danweiLable.textColor = YCColorWhite
+            danweiLable.alpha = 0.5
+            danweiLable.tag = i+10000
+            danweiLable.isHidden = true
+            danweiLable.snp.makeConstraints { (make) in
+                make.top.equalTo(showSpeedBgView).offset(153)
+                make.left.equalTo(i*indexW)
+                make.width.equalTo(indexW)
+            }
+            if(i==0){
+                danweiLable.snp.updateConstraints { (make) in
+                    make.left.equalTo(6+i*indexW)
+                }
+            }
+            if(i==2){
+                danweiLable.snp.updateConstraints { (make) in
+                    make.left.equalTo(i*indexW-6)
+                }
             }
         }
         

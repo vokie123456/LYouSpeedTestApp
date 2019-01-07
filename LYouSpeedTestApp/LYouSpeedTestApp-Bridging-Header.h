@@ -18,5 +18,8 @@
 #import "UILabel+lineSpacing.h"
 #import "GetSystemInfoHelper.h"
 #import "BHBNetworkSpeed.h"
+#import "STDPingServices.h"
+#import "MeasurNetTools.h"
+#import "QBTools.h"
 
 #endif /* LYouSpeedTestApp_Bridging_Header_h */

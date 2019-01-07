@@ -8,6 +8,8 @@
 
 import UIKit
 import IQKeyboardManagerSwift
+import Alamofire
+import SwiftyJSON
 
 @UIApplicationMain
 class AppDelegate: UIResponder,UIApplicationDelegate,UITabBarControllerDelegate {
@@ -21,7 +23,37 @@ class AppDelegate: UIResponder,UIApplicationDelegate,UITabBarControllerDelegate 
         self.window?.rootViewController = rootVC
         self.window!.makeKeyAndVisible()
         IQKeyboardManager.shared.enable = true
+        self.gaintIpList()
         return true
+    }
+    
+    //MARK=========获取服务器ip地址
+    func gaintIpList() {
+        NetworkRequest.sharedInstance.getRequest(urlString: LYIPListURL, params: [:], success: { (json) in
+            
+            let jsonDic = JSON(json)
+            let ipStr = "\(jsonDic["ip"])"
+            UserDefaults.standard.set(ipStr, forKey:"ipAdress")
+            print("ip地址=========\(IPADRESS())")
+            self.gaintTestPoint()
+        }) { (error) in
+            EasyShowTextView .showText("服务器异常!")
+        }
+    }
+    //MARK=========获取服务器下载上传地址
+    func gaintTestPoint() {
+        NetworkRequest.sharedInstance.getRequest(urlString: LYTestPointURL, params: [:], success: { (json) in
+            let jsonDic = JSON(json)
+            let downstreamStr = "\(jsonDic["downstream"])"
+            let upstreamStr = "\(jsonDic["upstream"])"
+            UserDefaults.standard.set(downstreamStr, forKey:"downLoadUrl")
+            UserDefaults.standard.set(upstreamStr, forKey:"upLoadUrl")
+            print("下载测试=========\(DownLoadUrl())")
+            print("上传测试=========\(UpLoadUrl())")
+
+        }) { (error) in
+            EasyShowTextView .showText("服务器异常!")
+        }
     }
     
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {

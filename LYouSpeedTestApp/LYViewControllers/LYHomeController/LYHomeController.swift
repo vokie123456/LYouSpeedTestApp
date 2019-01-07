@@ -14,9 +14,18 @@ class LYHomeController: LYBaseController {
     var currenProgressView = LYCycleProgressView()
     let leftArrow = UIImageView()
     let rightArrow = UIImageView()
+    var pingServices = STDPingServices()
+    var YansImage = UIImageView()
+    var YansLable = UILabel()
+    var YansDanwLable = UILabel()
     
+    var downImage = UIImageView()
+    var downLable = UILabel()
+    var downDanwLable = UILabel()
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.view.addSubview(bgImageView)
         self.view.addSubview(headView)
         headView.snp.makeConstraints { (make) in
@@ -28,7 +37,7 @@ class LYHomeController: LYBaseController {
         let progressView = LYCycleProgressView(frame: CGRect(x: 0, y: 0, width: Main_Screen_Width/3*2, height: Main_Screen_Width/3*2))
         progressView.center.x = self.view.center.x
         progressView.center.y = self.view.center.y+20
-        progressView.progress = 0.3
+        progressView.progress = 0.0
         self.view.addSubview(progressView)
         currenProgressView = progressView
 
@@ -78,7 +87,92 @@ class LYHomeController: LYBaseController {
     }
     
     @objc private func startButtonClick()  {
-        currenProgressView.progress = 0.6
+    /** 测试延时 */
+    self.currenProgressView.progress = 0.0
+    self.YansImage = self.headView.viewWithTag(100) as! UIImageView
+    self.YansLable = self.headView.viewWithTag(1000) as! UILabel
+    self.YansDanwLable = self.headView.viewWithTag(10000) as! UILabel
+    self.YansImage.isHidden = false
+    self.YansLable.isHidden = true
+    self.YansDanwLable.isHidden = true
+        
+    self.downImage = self.headView.viewWithTag(101) as! UIImageView
+    self.downLable = self.headView.viewWithTag(1001) as! UILabel
+    self.downDanwLable = self.headView.viewWithTag(10001) as! UILabel
+    self.downImage.isHidden = false
+    self.downImage.image = UIImage(named: "im_download_wait")
+    self.downLable.isHidden = true
+    self.downDanwLable.isHidden = true
+    
+    let opts: UIView.AnimationOptions = [.autoreverse , .repeat]
+    UIView.animate(withDuration: 0.5, delay: 0, options: opts, animations: {
+        self.YansImage.alpha = 0
+    }, completion: { _ in
+        self.YansImage.alpha = 1
+    })
+    DispatchQueue.main.asyncAfter(deadline: .now()+2, execute:
+    {
+        self.pingServices = STDPingServices.startPingAddress(IPADRESS(), callbackHandler: {pingItem, pingItems in
+            if pingItem?.status != STDPingStatus.finished {
+                if pingItem?.timeMilliseconds != 0{
+                    self.YansImage.isHidden = true
+                    self.YansLable.isHidden = false
+                    self.YansDanwLable.isHidden = false
+                    self.YansLable.text = String.init(format:"%.1f",pingItem!.timeMilliseconds)
+                    self.YansImage.layer.removeAllAnimations()
+                    /** 测试下载宽带 */
+                    self.testDownloadSpeed()
+                }
+            }
+        })
+    })
+}
+    //MARK:=======测试下载宽带
+    func testDownloadSpeed(){
+        self.downImage = self.headView.viewWithTag(101) as! UIImageView
+        self.downLable = self.headView.viewWithTag(1001) as! UILabel
+        self.downDanwLable = self.headView.viewWithTag(10001) as! UILabel
+        self.downImage.isHidden = false
+        self.downImage.image = UIImage(named: "im_download_ing")
+        let opts: UIView.AnimationOptions = [.autoreverse , .repeat]
+        UIView.animate(withDuration: 0.5, delay: 0, options: opts, animations: {
+            self.downImage.alpha = 0
+        }, completion: { _ in
+            self.downImage.alpha = 1
+        })
+        let meaurNet = MeasurNetTools(block: { speed in
+            let kdSpeedStr = "\(QBTools.formatBandWidth(UInt64(speed))!)"
+//            print("即使速度\(kdSpeedStr)")
+            //返回的是个可选值，不一定有值，也可能是nill
+            let double = Double(kdSpeedStr)
+            //返回的double是个可选值，所以需要给个默认值或者用!强制解包
+            let proData = CGFloat(double ?? 0)/100
+            self.currenProgressView.progress = proData
+            print("即使速度\(CGFloat(proData))")
+        }, finishMeasure: { speed in
+            self.downImage.isHidden = true
+            self.downImage.image = UIImage(named: "im_download_wait")
+            self.downLable.isHidden = false
+            self.downDanwLable.isHidden = false
+            self.downLable.text = "\(QBTools.formatBandWidth(UInt64(speed))!)"
+            //返回的是个可选值，不一定有值，也可能是nill
+            let double = Double("\(QBTools.formatBandWidth(UInt64(speed))!)")
+            //返回的double是个可选值，所以需要给个默认值或者用!强制解包
+            let proData = CGFloat(double ?? 0)/100
+            self.currenProgressView.progress = proData
+            self.downImage.layer.removeAllAnimations()
+            /** 测试上传 */
+            self.testUpLoadSpeed()
+        }, failedBlock: { error in
+        })
+        meaurNet?.downLoadUrl = DownLoadUrl()
+        meaurNet?.startMeasur()
+    }
+    
+    
+    //MARK:=======测试上传宽带
+    func testUpLoadSpeed(){
+        
     }
     
     //MARK:=====添加背景图
@@ -107,7 +201,7 @@ class LYHomeController: LYBaseController {
                     view.wifiLable.text = "\(GetSystemInfoHelper.getPhoneNetName()!)"
                 } else if (manager?.isReachableOnEthernetOrWiFi)! {
                     statusStr = "wifi的网络";
-                    view.wifiLable.text = "Wifi:\n\(GetSystemInfoHelper.getWifiName()!)"
+//                    view.wifiLable.text = "Wifi:\n\(GetSystemInfoHelper.getWifiName()!)"
                 }
                 print("===\(String(describing: statusStr))")
                 break
