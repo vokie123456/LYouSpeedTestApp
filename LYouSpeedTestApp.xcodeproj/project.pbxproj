@@ -22,6 +22,7 @@
 		212E27CA21E4998000E1BDD4 /* LYSpeedInfo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212E27C821E4998000E1BDD4 /* LYSpeedInfo+CoreDataClass.swift */; };
 		212E27CB21E4998000E1BDD4 /* LYSpeedInfo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212E27C921E4998000E1BDD4 /* LYSpeedInfo+CoreDataProperties.swift */; };
 		212E27CD21E49A6200E1BDD4 /* LYSpeedInfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212E27CC21E49A6200E1BDD4 /* LYSpeedInfoManager.swift */; };
+		212E27D021E4B1B600E1BDD4 /* LYTimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212E27CF21E4B1B600E1BDD4 /* LYTimeManager.swift */; };
 		216A34FE21D4843C007D73B5 /* LYBaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216A34FD21D4843C007D73B5 /* LYBaseController.swift */; };
 		216A350021D4848B007D73B5 /* LYBaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216A34FF21D4848B007D73B5 /* LYBaseNavigationController.swift */; };
 		216A350221D4850C007D73B5 /* LYTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216A350121D4850C007D73B5 /* LYTabBarController.swift */; };
@@ -92,6 +93,7 @@
 		212E27C821E4998000E1BDD4 /* LYSpeedInfo+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LYSpeedInfo+CoreDataClass.swift"; sourceTree = "<group>"; };
 		212E27C921E4998000E1BDD4 /* LYSpeedInfo+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LYSpeedInfo+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		212E27CC21E49A6200E1BDD4 /* LYSpeedInfoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYSpeedInfoManager.swift; sourceTree = "<group>"; };
+		212E27CF21E4B1B600E1BDD4 /* LYTimeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYTimeManager.swift; sourceTree = "<group>"; };
 		216A34FD21D4843C007D73B5 /* LYBaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYBaseController.swift; sourceTree = "<group>"; };
 		216A34FF21D4848B007D73B5 /* LYBaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYBaseNavigationController.swift; sourceTree = "<group>"; };
 		216A350121D4850C007D73B5 /* LYTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYTabBarController.swift; sourceTree = "<group>"; };
@@ -233,6 +235,14 @@
 			path = LYCoreData;
 			sourceTree = "<group>";
 		};
+		212E27CE21E4B1A800E1BDD4 /* LYTimeManager */ = {
+			isa = PBXGroup;
+			children = (
+				212E27CF21E4B1B600E1BDD4 /* LYTimeManager.swift */,
+			);
+			path = LYTimeManager;
+			sourceTree = "<group>";
+		};
 		216A34FB21D483FA007D73B5 /* LYViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -309,6 +319,7 @@
 		216A352221D4DD0F007D73B5 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				212E27CE21E4B1A800E1BDD4 /* LYTimeManager */,
 				2174F7B121DF618300BB804A /* GetSystemInfoHelper */,
 				2174F78921DE03F300BB804A /* EasyShowView */,
 				2174F77621DDE8E800BB804A /* WPAttributedStyleAction */,
@@ -651,6 +662,7 @@
 				212E27CD21E49A6200E1BDD4 /* LYSpeedInfoManager.swift in Sources */,
 				212E27B521E35C9C00E1BDD4 /* NetworkRequest.swift in Sources */,
 				216A354A21D62BFD007D73B5 /* LYServerWebController.swift in Sources */,
+				212E27D021E4B1B600E1BDD4 /* LYTimeManager.swift in Sources */,
 				212E27BE21E4504C00E1BDD4 /* LYUpLoadFileNetTools.m in Sources */,
 				212E27AD21E32E2500E1BDD4 /* STSimplePing.m in Sources */,
 				2174F7AD21DF40FD00BB804A /* LYDetailMoreView.swift in Sources */,

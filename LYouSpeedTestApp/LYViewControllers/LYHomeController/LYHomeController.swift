@@ -235,6 +235,8 @@ class LYHomeController: LYBaseController {
             }
             self.speedModel.upSpeed = self.upLoadLable.text
             self.upLoadImage.layer.removeAllAnimations()
+            /** 保存测速数据 */
+            self.saveSpeedInfoToLocal(model: self.speedModel)
             /** 测速完成跳转到详情页 */
             let detailVC = LYResultDetailController()
             detailVC.model = self.speedModel
@@ -288,6 +290,13 @@ class LYHomeController: LYBaseController {
     @objc func output() {
         headView.upLable.text = BHBNetworkSpeed.share().sendNetworkSpeed
         headView.downLable.text = BHBNetworkSpeed.share().receivedNetworkSpeed
+    }
+    
+    //MARK:=======保存测速数据到本地数据库
+    func saveSpeedInfoToLocal(model:LYHomeModel){
+        model.currenTime = LYTimeManager.shared.gaintCurrenTime()
+        model.currenDate = LYTimeManager.shared.gaintCurrenDate()
+        LYSpeedInfoManager.shared.addSpeedInfo(toLocalData: model)
     }
 
 }
