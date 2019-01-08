@@ -20,6 +20,7 @@ class LYBaseController: UIViewController {
         setNavBarBgColor()
         self.navigationController!.navigationBar.barStyle = UIBarStyle(rawValue: 1)!
         self.view.backgroundColor = YCColorMain
+        self.navigationController?.navigationBar.barTintColor = YCColorMain
         //自定义返回按钮
         leftView = UIButton(type: .custom);
         leftView.frame = CGRect(x:0, y:0, width:100, height:40)

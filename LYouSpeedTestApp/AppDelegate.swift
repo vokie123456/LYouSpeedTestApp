@@ -23,6 +23,14 @@ class AppDelegate: UIResponder,UIApplicationDelegate,UITabBarControllerDelegate 
         self.window?.rootViewController = rootVC
         self.window!.makeKeyAndVisible()
         IQKeyboardManager.shared.enable = true
+        
+        //! 数据库
+        MagicalRecord.setupCoreDataStack(withStoreNamed: "LYouSpeedInfoData.sqlite")
+        let docs = NSSearchPathForDirectoriesInDomains(.libraryDirectory, .userDomainMask, true).last
+        //! 数据库地址
+        print("docs======\(docs ?? "")")
+
+        
         self.gaintIpList()
         return true
     }

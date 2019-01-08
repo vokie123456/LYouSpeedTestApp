@@ -7,6 +7,7 @@
 //
 
 import UIKit
+
 private let timeShareInstance = LYTimeManager()
 
 class LYTimeManager: NSObject {
@@ -15,11 +16,19 @@ class LYTimeManager: NSObject {
     }
     /** 获取当前时间 */
     func gaintCurrenTime() -> String {
-        return "12:16"
+        let calendar = NSCalendar.current
+        let com = calendar.dateComponents([.hour,.minute,.second], from: Date())
+        let hour = com.hour!
+        let minute = com.minute!
+        return "\(hour):\(minute)"
     }
     
     func gaintCurrenDate() -> String {
-        return "12月16日"
+        let calendar = NSCalendar.current
+        let com = calendar.dateComponents([.year,.month,.day], from: Date())
+        let month = com.month!
+        let day = com.day!
+        return "\(month)月\(day)日"
     }
     
 }

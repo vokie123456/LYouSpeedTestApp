@@ -11,6 +11,13 @@ import UIKit
 class LYResultController: LYBaseController,UITableViewDelegate,UITableViewDataSource {
     lazy var resultTableView = UITableView(frame: CGRect(x: 0, y: 10, width: Main_Screen_Width, height: Main_Screen_Height-NaviBarHeight-SafeBottomMargin-10-50-40), style: .grouped)
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        /** 获取本地数据 */
+        let allListArray = LYSpeedInfoManager.shared.searchAllLocalListData()
+        print("查询本地数据=======%@",allListArray as Any);
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.backButton.setImage(UIImage(named:""), for: .normal)

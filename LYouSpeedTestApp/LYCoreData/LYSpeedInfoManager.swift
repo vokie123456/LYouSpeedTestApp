@@ -28,6 +28,7 @@ class LYSpeedInfoManager: NSObject {
     /** 查询本地所有数据 */
     func searchAllLocalListData() -> [Any]? {
         let listData = LYSpeedInfo.mr_findAll()
+        
         return listData
     }
     /** 删除本地所有数据 */

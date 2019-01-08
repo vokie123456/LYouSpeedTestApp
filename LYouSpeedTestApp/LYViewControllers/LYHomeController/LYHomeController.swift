@@ -30,6 +30,7 @@ class LYHomeController: LYBaseController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.view.addSubview(bgImageView)
         self.view.addSubview(headView)
         headView.snp.makeConstraints { (make) in
@@ -90,6 +91,11 @@ class LYHomeController: LYBaseController {
         })
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.navigationBar.isHidden = false
+    }
+    
     @objc private func startButtonClick()  {
     /** 测试延时 */
     self.currenProgressView.progress = 0.0
@@ -99,7 +105,7 @@ class LYHomeController: LYBaseController {
     self.YansImage.isHidden = false
     self.YansLable.isHidden = true
     self.YansDanwLable.isHidden = true
-        
+
     self.downImage = self.headView.viewWithTag(101) as! UIImageView
     self.downLable = self.headView.viewWithTag(1001) as! UILabel
     self.downDanwLable = self.headView.viewWithTag(10001) as! UILabel
@@ -107,7 +113,7 @@ class LYHomeController: LYBaseController {
     self.downImage.image = UIImage(named: "im_download_wait")
     self.downLable.isHidden = true
     self.downDanwLable.isHidden = true
-        
+
     self.upLoadImage = self.headView.viewWithTag(102) as! UIImageView
     self.upLoadLable = self.headView.viewWithTag(1002) as! UILabel
     self.upLoadDanwLable = self.headView.viewWithTag(10002) as! UILabel
@@ -115,7 +121,7 @@ class LYHomeController: LYBaseController {
     self.upLoadImage.image = UIImage(named: "im_upload_wait")
     self.upLoadLable.isHidden = true
     self.upLoadDanwLable.isHidden = true
-    
+
     let opts: UIView.AnimationOptions = [.autoreverse , .repeat]
     UIView.animate(withDuration: 0.5, delay: 0, options: opts, animations: {
         self.YansImage.alpha = 0
@@ -240,6 +246,7 @@ class LYHomeController: LYBaseController {
             /** 测速完成跳转到详情页 */
             let detailVC = LYResultDetailController()
             detailVC.model = self.speedModel
+            detailVC.hidesBottomBarWhenPushed = true
             self.navigationController?.pushViewController(detailVC, animated: true)
         }, failedBlock: { error in
         })

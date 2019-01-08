@@ -12,6 +12,16 @@ class LYResultDetailController: LYBaseController {
     var model = LYHomeModel()
     var shareRightView:UIButton = UIButton()
     let shareButton =   UIButton(type: .custom)
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false;
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true;
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("延时======\(model.delay)")
