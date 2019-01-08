@@ -17,9 +17,7 @@
 @interface LYCycleProgressView ()
 @property (nonatomic, strong) CAShapeLayer *backLayer;
 @property (nonatomic, strong) CAShapeLayer *backBorderLayer;
-@property (nonatomic, strong) CAShapeLayer *progressLayer;
 @property (nonatomic, strong) UIBezierPath *progressPath;
-@property (nonatomic, strong) UILabel *countJump;
 @property (nonatomic, strong) dispatch_source_t timer;
 @end
 
@@ -86,7 +84,7 @@
 
 - (void)setProgress:(CGFloat)progress {
     _progress = progress;
-    [self countJumpAction];
+//    [self countJumpAction];
     CGPoint center = CGPointMake(CGRectGetWidth(self.bounds)/2, CGRectGetHeight(self.bounds)/2);
     CGFloat radius = 110;
     CGFloat startA =  M_PI_4 * 3;  //设置进度条起点位置
@@ -175,6 +173,7 @@
         _countJump.textColor = [UIColor whiteColor];
         _countJump.font = [UIFont systemFontOfSize:18];
         _countJump.textAlignment = NSTextAlignmentCenter;
+        _countJump.text = [NSString stringWithFormat:@"0Mbps"];
     }
     return _countJump;
 }

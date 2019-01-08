@@ -9,10 +9,15 @@
 import UIKit
 
 class LYResultDetailController: LYBaseController {
+    var model = LYHomeModel()
     var shareRightView:UIButton = UIButton()
     let shareButton =   UIButton(type: .custom)
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("延时======\(model.delay)")
+        print("下载======\(model.downSpeed)")
+        print("上传======\(model.upSpeed)")
+
         self.navigationItem.title = "Wi-Fi:LYGames-5G"
         let tlabel = UILabel(frame: CGRect(x: 0, y: 0, width: Main_Screen_Width, height: 30))
         tlabel.text = navigationItem.title

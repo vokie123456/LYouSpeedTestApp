@@ -19,7 +19,9 @@
 #import "GetSystemInfoHelper.h"
 #import "BHBNetworkSpeed.h"
 #import "STDPingServices.h"
-#import "MeasurNetTools.h"
+#import "LYDownFileNetTools.h"
+#import "LYUpLoadFileNetTools.h"
 #import "QBTools.h"
+#import <MagicalRecord/MagicalRecord.h>
 
 #endif /* LYouSpeedTestApp_Bridging_Header_h */

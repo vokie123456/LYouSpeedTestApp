@@ -21,6 +21,7 @@
 + (NSString *)formattedBandWidth:(unsigned long long)size;
 + (NSString *)formatBandWidth:(unsigned long long)size;
 + (int)formatBandWidthInt:(unsigned long long) size;
-
+//获取本地文件
++ (NSData *)readLocalData:(NSString *)fileNameStr withType:(NSString *)type;
  
 @end

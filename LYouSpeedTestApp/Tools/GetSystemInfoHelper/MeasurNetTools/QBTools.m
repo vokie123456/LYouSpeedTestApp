@@ -132,4 +132,17 @@
     return fileSize;
 }
 
++ (NSData *)readLocalData:(NSString *)fileNameStr withType:(NSString *)type{
+    NSString *path = [[NSBundle mainBundle]pathForResource:fileNameStr ofType:type];
+    NSData *emoticonData = [NSData dataWithContentsOfFile:path];
+    return emoticonData;
+}
+
+//func readLocalData(fileNameStr:String,type:String) -> Any? {
+//    //读取本地的文件
+//    let path = Bundle.main.path(forResource: fileNameStr, ofType: type);
+//    let emoticonData = NSData(contentsOfFile: path!) as Data?
+//    return emoticonData
+//}
+
 @end

@@ -16,5 +16,7 @@
 @property (nonatomic, assign) BOOL needAnimation;//是否有动画
 @property (nonatomic, assign) CGFloat line_width;//线宽
 @property (nonatomic, strong) UILabel *wifiLable;//当前网络
+@property (nonatomic, strong) UILabel *countJump;
+@property (nonatomic, strong) CAShapeLayer *progressLayer;
 
 @end
