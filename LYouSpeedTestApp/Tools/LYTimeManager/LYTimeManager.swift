@@ -20,7 +20,11 @@ class LYTimeManager: NSObject {
         let com = calendar.dateComponents([.hour,.minute,.second], from: Date())
         let hour = com.hour!
         let minute = com.minute!
-        return "\(hour):\(minute)"
+        if minute<10 {
+            return "\(hour):0\(minute)"
+        }else{
+            return "\(hour):\(minute)"
+        }
     }
     
     func gaintCurrenDate() -> String {

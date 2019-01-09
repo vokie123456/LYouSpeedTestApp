@@ -78,8 +78,8 @@ class LYResultCell: UITableViewCell {
             make.top.equalTo(12)
         }
         bgView.addSubview(yancContentLable)
-        yancContentLable.text = "49"
-        yancContentLable.font = YC_FONT_PFSC_Semibold(18)
+        yancContentLable.text = "0.0"
+        yancContentLable.font = YC_FONT_PFSC_Semibold(20)
         yancContentLable.textColor = YCColorWhite
         yancContentLable.snp.makeConstraints { (make) in
             make.left.equalTo(line).offset(20)
@@ -106,8 +106,8 @@ class LYResultCell: UITableViewCell {
             make.top.equalTo(12)
         }
         bgView.addSubview(downContentLable)
-        downContentLable.text = "149.8"
-        downContentLable.font = YC_FONT_PFSC_Semibold(18)
+        downContentLable.text = "0.0"
+        downContentLable.font = YC_FONT_PFSC_Semibold(20)
         downContentLable.textColor = YCColorWhite
         downContentLable.snp.makeConstraints { (make) in
             make.left.equalTo(Main_Screen_Width/2-40)
@@ -134,8 +134,8 @@ class LYResultCell: UITableViewCell {
             make.top.equalTo(12)
         }
         bgView.addSubview(upContentLable)
-        upContentLable.text = "49.8"
-        upContentLable.font = YC_FONT_PFSC_Semibold(18)
+        upContentLable.text = "0.0"
+        upContentLable.font = YC_FONT_PFSC_Semibold(20)
         upContentLable.textColor = YCColorWhite
         upContentLable.snp.makeConstraints { (make) in
             make.left.equalTo(Main_Screen_Width/2+40)
@@ -159,6 +159,18 @@ class LYResultCell: UITableViewCell {
             make.centerY.equalToSuperview()
             make.width.equalTo(12)
             make.height.equalTo(18)
+        }
+    }
+    
+    func gaintInfoModel(model:LYSpeedInfo) {
+        timeLable.text = model.currenTime
+        yancContentLable.text = model.delayeSpeed
+        downContentLable.text = model.downSpeed
+        upContentLable.text = model.upSpeed
+        if model.isWifi=="no" {
+            netImage.image = UIImage(named: "im_4g_fromLeft")
+        }else{
+            netImage.image = UIImage(named: "im_network_wifi")
         }
     }
     

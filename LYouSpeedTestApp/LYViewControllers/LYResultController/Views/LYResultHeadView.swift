@@ -9,7 +9,7 @@
 import UIKit
 
 class LYResultHeadView: UIView {
-    let dateTitlelable = UILabel()
+    var dateTitlelable = UILabel()
 
     override init(frame: CGRect) {
         super.init(frame: frame)

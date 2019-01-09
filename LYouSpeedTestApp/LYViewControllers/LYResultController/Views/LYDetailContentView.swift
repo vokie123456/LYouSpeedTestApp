@@ -9,7 +9,11 @@
 import UIKit
 
 class LYDetailContentView: UIView {
+    var speedButtonBlock:(()->Void)?
 
+    let rankingImage = UIImageView()
+    var titleArray = ["全国","我","全省"]
+    var dateArray = ["71.5Mbps","24.5Mbps","49.8Mbps"]
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = YCColorWhite
@@ -28,7 +32,6 @@ class LYDetailContentView: UIView {
             make.top.equalTo(15)
         }
         /** 排名图片 */
-        let rankingImage = UIImageView()
         rankingImage.isUserInteractionEnabled = true
         rankingImage.layer.masksToBounds = true
         rankingImage.layer.cornerRadius = 5
@@ -54,9 +57,8 @@ class LYDetailContentView: UIView {
             make.right.equalTo(-40)
             make.height.equalTo(50)
         }
+        speedButton.addTarget(self, action: #selector(speedButton(_:)), for: .touchUpInside)
         /** 全国/全省/我 */
-        let titleArray = ["全国","我","全省"]
-        let dateArray = ["49.8Mbps","24.5Mbps","71.5Mbps"]
         let indexW = 50
         for i in 0..<titleArray.count {
             /** 标题 */
@@ -69,7 +71,7 @@ class LYDetailContentView: UIView {
             titleLable.tag = i+10
             titleLable.alpha = 0.6
             titleLable.snp.makeConstraints { (make) in
-                make.bottom.equalTo(rankingImage).offset(-30)
+                make.bottom.equalTo(rankingImage).offset(-25)
                 make.centerX.equalTo(rankingImage).offset(-60)
                 make.width.equalTo(indexW)
             }
@@ -82,9 +84,7 @@ class LYDetailContentView: UIView {
                     make.centerX.equalTo(rankingImage).offset(60)
                 }
             }
-            if(titleLable.text=="我"){
-                titleLable.textColor = gof_ColorWithHex(0x1BB955)
-            }
+            
             /** 测试数据 */
             let dateLable = UILabel()
             rankingImage.addSubview(dateLable)
@@ -108,12 +108,46 @@ class LYDetailContentView: UIView {
                     make.centerX.equalTo(rankingImage).offset(60)
                 }
             }
-            if(titleLable.text=="我"){
-                dateLable.textColor = gof_ColorWithHex(0x1BB955)
-            }
         }
     }
+    
+    @objc func speedButton(_ button:UIButton) {
+        speedButtonBlock!()
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    func gaintInfoModel(infoModel:LYHomeModel) {
+        //返回的是个可选值，不一定有值，也可能是nill
+        let double = Double("\(infoModel.downSpeed!)")
+        //返回的double是个可选值，所以需要给个默认值或者用!强制解包
+        let downFloat = CGFloat(double ?? 0)
+        if downFloat>=71.5{
+            /** 第一名 */
+            rankingImage.image = UIImage(named: "cn_rank0")
+            titleArray = ["全国","我","全省"]
+            dateArray = ["71.5Mbps","\(downFloat)Mbps","49.8Mbps"]
+        }else if downFloat<71.5 && downFloat>=49.8{
+            /** 第二名 */
+            rankingImage.image = UIImage(named: "cn_rank1")
+            titleArray = ["我","全国","全省"]
+            dateArray = ["\(downFloat)Mbps","71.5Mbps","49.8Mbps"]
+        }else if downFloat<49.8{
+            /** 第三名 */
+            rankingImage.image = UIImage(named: "cn_rank2")
+            titleArray = ["全省","全国","我"]
+            dateArray = ["49.8Mbps","71.5Mbps","\(downFloat)Mbps"]
+        }
+        for i in 0..<dateArray.count {
+            let titleLable:UILabel = self.viewWithTag(i+10) as! UILabel
+            titleLable.text = titleArray[i]
+            let dataLable:UILabel = self.viewWithTag(i+100) as! UILabel
+            dataLable.text = dateArray[i]
+            if(titleLable.text=="我"){
+                titleLable.textColor = gof_ColorWithHex(0x1BB955)
+                dataLable.textColor = gof_ColorWithHex(0x1BB955)
+            }
+        }
     }
 }

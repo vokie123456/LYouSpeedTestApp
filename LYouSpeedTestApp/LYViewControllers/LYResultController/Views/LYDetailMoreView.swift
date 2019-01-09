@@ -54,7 +54,7 @@ class LYDetailMoreView: UIView {
             /** 进度条 */
             let progressLable = UILabel()
             self.addSubview(progressLable)
-            progressLable.text = "3/5"
+            progressLable.text = "1/5"
             progressLable.tag = i+100
             progressLable.font = YC_FONT_PFSC_Medium(12)
             progressLable.textColor = YCColorGray
@@ -87,7 +87,7 @@ class LYDetailMoreView: UIView {
         }
         let imageArray1 = ["im_data","im_ip"]
         let titleArray1 = ["流量消耗","IP地址"]
-        let contentArray = ["43M","124.168.1.23"]
+        let contentArray = ["20M",IPADRESS()]
         for i in 0..<titleArray1.count {
             /** 图标 */
             let iconImage = UIImageView()
@@ -119,6 +119,37 @@ class LYDetailMoreView: UIView {
                 make.top.equalTo(line.snp.bottom).offset(20+i*40)
                 make.right.equalTo(-20)
             }
+        }
+    }
+    
+    func gaintInfoModel(infoModel:LYHomeModel) {
+        var proLable = ""
+        var progressImage = ""
+        //返回的是个可选值，不一定有值，也可能是nill
+        let double = Double("\(infoModel.downSpeed!)")
+        //返回的double是个可选值，所以需要给个默认值或者用!强制解包
+        let downFloat = CGFloat(double ?? 0)
+        if downFloat<=15 {
+            proLable = "1/5"
+            progressImage = "stupid_level1"
+        }else if downFloat>15 && downFloat<=45{
+            proLable = "2/5"
+            progressImage = "stupid_level2"
+        }else if downFloat>45 && downFloat<=65{
+            proLable = "3/5"
+            progressImage = "stupid_level3"
+        }else if downFloat>65 && downFloat<=65 {
+            proLable = "4/5"
+            progressImage = "stupid_level4"
+        }else{
+            proLable = "5/5"
+            progressImage = "stupid_level5"
+        }
+        for i in 0..<3 {
+            let lable = self.viewWithTag(i+100) as! UILabel
+            lable.text = proLable
+            let imageView = self.viewWithTag(i+1000) as! UIImageView
+            imageView.image = UIImage(named: progressImage)
         }
         
     }

@@ -128,23 +128,24 @@ class LYHomeController: LYBaseController {
     }, completion: { _ in
         self.YansImage.alpha = 1
     })
-    DispatchQueue.main.asyncAfter(deadline: .now()+0.5, execute:
-    {
-        self.pingServices = STDPingServices.startPingAddress(IPADRESS(), callbackHandler: {pingItem, pingItems in
-            if pingItem?.status != STDPingStatus.finished {
-                if pingItem?.timeMilliseconds != 0{
-                    self.YansImage.isHidden = true
-                    self.YansLable.isHidden = false
-                    self.YansDanwLable.isHidden = false
-                    self.YansLable.text = String.init(format:"%.1f",pingItem!.timeMilliseconds)
-                    self.speedModel.delay = self.YansLable.text
-                    self.YansImage.layer.removeAllAnimations()
-                    /** 测试下载宽带 */
-                    self.testDownloadSpeed()
-                }
+    self.pingServices = STDPingServices.startPingAddress(IPADRESS(), callbackHandler: {pingItem, pingItems in
+        if pingItem?.status != STDPingStatus.finished {
+            if pingItem?.timeMilliseconds != 0{
+                self.YansImage.isHidden = true
+                self.YansLable.isHidden = false
+                self.YansDanwLable.isHidden = false
+                self.YansLable.text = String.init(format:"%.1f",pingItem!.timeMilliseconds)
+                self.speedModel.delay = self.YansLable.text
+                self.YansImage.layer.removeAllAnimations()
+                /** 测试下载宽带 */
+                self.testDownloadSpeed()
             }
-        })
+        }
     })
+//    DispatchQueue.main.asyncAfter(deadline: .now()+0.1, execute:
+//    {
+//        
+//    })
 }
     //MARK:=======测试下载宽带
     func testDownloadSpeed(){
@@ -277,10 +278,14 @@ class LYHomeController: LYBaseController {
             case .reachable:
                 if (manager?.isReachableOnWWAN)! {
                     statusStr = "2G,3G,4G...的网络"
+                    self.speedModel.isWifi = "no"
                     view.wifiLable.text = "\(GetSystemInfoHelper.getPhoneNetName()!)"
+                    self.speedModel.currenWifiName = view.wifiLable.text
                 } else if (manager?.isReachableOnEthernetOrWiFi)! {
                     statusStr = "wifi的网络";
+                    self.speedModel.isWifi = "yes"
                     view.wifiLable.text = "Wifi:\n\(GetSystemInfoHelper.getWifiName()!)"
+                    self.speedModel.currenWifiName = "Wifi:\(GetSystemInfoHelper.getWifiName()!)"
                 }
                 print("===\(String(describing: statusStr))")
                 break

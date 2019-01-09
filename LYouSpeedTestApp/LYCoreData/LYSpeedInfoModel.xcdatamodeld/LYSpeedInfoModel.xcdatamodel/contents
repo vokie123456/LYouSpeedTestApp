@@ -3,12 +3,13 @@
     <entity name="LYSpeedInfo" representedClassName="LYSpeedInfo" syncable="YES">
         <attribute name="currenDate" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="currenTime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="currenWifiName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="delayeSpeed" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="downSpeed" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="isWifi" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="upSpeed" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="LYSpeedInfo" positionX="-63" positionY="-18" width="128" height="135"/>
+        <element name="LYSpeedInfo" positionX="-63" positionY="-18" width="128" height="150"/>
     </elements>
 </model>

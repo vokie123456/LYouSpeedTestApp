@@ -24,15 +24,12 @@ class LYResultDetailController: LYBaseController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("延时======\(model.delay)")
-        print("下载======\(model.downSpeed)")
-        print("上传======\(model.upSpeed)")
-
-        self.navigationItem.title = "Wi-Fi:LYGames-5G"
+        self.navigationItem.title = model.currenWifiName
         let tlabel = UILabel(frame: CGRect(x: 0, y: 0, width: Main_Screen_Width, height: 30))
+        tlabel.textAlignment = NSTextAlignment.center
         tlabel.text = navigationItem.title
         tlabel.textColor = UIColor.white
-        if let font = UIFont(name: "Helvetica-Bold", size: 30.0) {
+        if let font = UIFont(name: "Helvetica-Bold", size: 17.0) {
             tlabel.font = font
         }
         tlabel.backgroundColor = UIColor.clear
@@ -76,6 +73,7 @@ class LYResultDetailController: LYBaseController {
             make.top.equalTo(mainScrollView).offset(0);
             make.height.equalTo(250);
         }
+        headView.gaintInfoModel(infoModel: self.model)
         /** 网速排名 */
         let contentView = LYDetailContentView()
         mainScrollView.addSubview(contentView)
@@ -84,6 +82,10 @@ class LYResultDetailController: LYBaseController {
             make.width.equalTo(Main_Screen_Width)
             make.top.equalTo(headView.snp.bottom).offset(15);
             make.height.equalTo(455);
+        }
+        contentView.gaintInfoModel(infoModel: self.model)
+        contentView.speedButtonBlock = {()in
+            self.iOSsystemShare()
         }
         /** 更多详情 */
         let moreView = LYDetailMoreView()
@@ -94,6 +96,8 @@ class LYResultDetailController: LYBaseController {
             make.top.equalTo(contentView.snp.bottom).offset(15);
             make.height.equalTo(270);
         }
+        moreView.gaintInfoModel(infoModel: self.model)
+
     }
     //分享按钮点击响应
     @objc func shareButtonClick(){

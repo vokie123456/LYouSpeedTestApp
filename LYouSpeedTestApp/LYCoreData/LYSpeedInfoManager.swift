@@ -23,12 +23,12 @@ class LYSpeedInfoManager: NSObject {
         info?.isWifi = model?.isWifi
         info?.currenTime = model?.currenTime
         info?.currenDate = model?.currenDate
+        info?.currenWifiName = model?.currenWifiName
         NSManagedObjectContext.mr_default().mr_saveToPersistentStoreAndWait()
     }
     /** 查询本地所有数据 */
     func searchAllLocalListData() -> [Any]? {
         let listData = LYSpeedInfo.mr_findAll()
-        
         return listData
     }
     /** 删除本地所有数据 */

@@ -23,5 +23,6 @@
 #import "LYUpLoadFileNetTools.h"
 #import "QBTools.h"
 #import <MagicalRecord/MagicalRecord.h>
+#import "LYArrayGroupManager.h"
 
 #endif /* LYouSpeedTestApp_Bridging_Header_h */

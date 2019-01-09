@@ -15,5 +15,6 @@ class LYHomeModel: NSObject {
     var isWifi:String?;             //是否wifi
     var currenTime:String?;         //测速时间
     var currenDate:String?;         //测速日期
+    var currenWifiName:String?;         //宽带名称
 
 }

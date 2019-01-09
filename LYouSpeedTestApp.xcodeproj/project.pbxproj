@@ -19,10 +19,11 @@
 		212E27BE21E4504C00E1BDD4 /* LYUpLoadFileNetTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 212E27BD21E4504C00E1BDD4 /* LYUpLoadFileNetTools.m */; };
 		212E27C321E4957100E1BDD4 /* LYHomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212E27C221E4957100E1BDD4 /* LYHomeModel.swift */; };
 		212E27C721E4988D00E1BDD4 /* LYSpeedInfoModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 212E27C521E4988C00E1BDD4 /* LYSpeedInfoModel.xcdatamodeld */; };
-		212E27CA21E4998000E1BDD4 /* LYSpeedInfo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212E27C821E4998000E1BDD4 /* LYSpeedInfo+CoreDataClass.swift */; };
-		212E27CB21E4998000E1BDD4 /* LYSpeedInfo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212E27C921E4998000E1BDD4 /* LYSpeedInfo+CoreDataProperties.swift */; };
 		212E27CD21E49A6200E1BDD4 /* LYSpeedInfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212E27CC21E49A6200E1BDD4 /* LYSpeedInfoManager.swift */; };
 		212E27D021E4B1B600E1BDD4 /* LYTimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212E27CF21E4B1B600E1BDD4 /* LYTimeManager.swift */; };
+		212E27D321E5B50200E1BDD4 /* LYArrayGroupManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 212E27D221E5B50200E1BDD4 /* LYArrayGroupManager.m */; };
+		212E27D621E5D06300E1BDD4 /* LYSpeedInfo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212E27D421E5D06300E1BDD4 /* LYSpeedInfo+CoreDataClass.swift */; };
+		212E27D721E5D06300E1BDD4 /* LYSpeedInfo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212E27D521E5D06300E1BDD4 /* LYSpeedInfo+CoreDataProperties.swift */; };
 		216A34FE21D4843C007D73B5 /* LYBaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216A34FD21D4843C007D73B5 /* LYBaseController.swift */; };
 		216A350021D4848B007D73B5 /* LYBaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216A34FF21D4848B007D73B5 /* LYBaseNavigationController.swift */; };
 		216A350221D4850C007D73B5 /* LYTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216A350121D4850C007D73B5 /* LYTabBarController.swift */; };
@@ -90,10 +91,12 @@
 		212E27BD21E4504C00E1BDD4 /* LYUpLoadFileNetTools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYUpLoadFileNetTools.m; sourceTree = "<group>"; };
 		212E27C221E4957100E1BDD4 /* LYHomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYHomeModel.swift; sourceTree = "<group>"; };
 		212E27C621E4988D00E1BDD4 /* LYSpeedInfoModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LYSpeedInfoModel.xcdatamodel; sourceTree = "<group>"; };
-		212E27C821E4998000E1BDD4 /* LYSpeedInfo+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LYSpeedInfo+CoreDataClass.swift"; sourceTree = "<group>"; };
-		212E27C921E4998000E1BDD4 /* LYSpeedInfo+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LYSpeedInfo+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		212E27CC21E49A6200E1BDD4 /* LYSpeedInfoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYSpeedInfoManager.swift; sourceTree = "<group>"; };
 		212E27CF21E4B1B600E1BDD4 /* LYTimeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYTimeManager.swift; sourceTree = "<group>"; };
+		212E27D121E5B50200E1BDD4 /* LYArrayGroupManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYArrayGroupManager.h; sourceTree = "<group>"; };
+		212E27D221E5B50200E1BDD4 /* LYArrayGroupManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYArrayGroupManager.m; sourceTree = "<group>"; };
+		212E27D421E5D06300E1BDD4 /* LYSpeedInfo+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LYSpeedInfo+CoreDataClass.swift"; sourceTree = "<group>"; };
+		212E27D521E5D06300E1BDD4 /* LYSpeedInfo+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LYSpeedInfo+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		216A34FD21D4843C007D73B5 /* LYBaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYBaseController.swift; sourceTree = "<group>"; };
 		216A34FF21D4848B007D73B5 /* LYBaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYBaseNavigationController.swift; sourceTree = "<group>"; };
 		216A350121D4850C007D73B5 /* LYTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYTabBarController.swift; sourceTree = "<group>"; };
@@ -227,8 +230,8 @@
 		212E27C421E4984900E1BDD4 /* LYCoreData */ = {
 			isa = PBXGroup;
 			children = (
-				212E27C821E4998000E1BDD4 /* LYSpeedInfo+CoreDataClass.swift */,
-				212E27C921E4998000E1BDD4 /* LYSpeedInfo+CoreDataProperties.swift */,
+				212E27D421E5D06300E1BDD4 /* LYSpeedInfo+CoreDataClass.swift */,
+				212E27D521E5D06300E1BDD4 /* LYSpeedInfo+CoreDataProperties.swift */,
 				212E27C521E4988C00E1BDD4 /* LYSpeedInfoModel.xcdatamodeld */,
 				212E27CC21E49A6200E1BDD4 /* LYSpeedInfoManager.swift */,
 			);
@@ -239,6 +242,8 @@
 			isa = PBXGroup;
 			children = (
 				212E27CF21E4B1B600E1BDD4 /* LYTimeManager.swift */,
+				212E27D121E5B50200E1BDD4 /* LYArrayGroupManager.h */,
+				212E27D221E5B50200E1BDD4 /* LYArrayGroupManager.m */,
 			);
 			path = LYTimeManager;
 			sourceTree = "<group>";
@@ -646,6 +651,7 @@
 				2174F78621DDE8E800BB804A /* UILabel+lineSpacing.m in Sources */,
 				2174F78721DDE8E800BB804A /* NSMutableString+TagReplace.m in Sources */,
 				2174F78821DDE8E800BB804A /* WPAttributedStyleAction.m in Sources */,
+				212E27D621E5D06300E1BDD4 /* LYSpeedInfo+CoreDataClass.swift in Sources */,
 				2174F76921DCC52100BB804A /* LYResultHeadView.swift in Sources */,
 				2174F7A421DE03F400BB804A /* EasyShowOptions.m in Sources */,
 				216A352121D4B915007D73B5 /* APPMacro.swift in Sources */,
@@ -655,8 +661,8 @@
 				2174F7A221DE03F400BB804A /* EasyShowLodingView.m in Sources */,
 				216A354421D60AE4007D73B5 /* LYAboutUsController.swift in Sources */,
 				2174F76B21DCC90A00BB804A /* LYBuyInfoView.swift in Sources */,
-				212E27CA21E4998000E1BDD4 /* LYSpeedInfo+CoreDataClass.swift in Sources */,
 				2174F79E21DE03F400BB804A /* EasyShowUtils.m in Sources */,
+				212E27D721E5D06300E1BDD4 /* LYSpeedInfo+CoreDataProperties.swift in Sources */,
 				212E27C721E4988D00E1BDD4 /* LYSpeedInfoModel.xcdatamodeld in Sources */,
 				2174F7B421DF618300BB804A /* GetSystemInfoHelper.m in Sources */,
 				212E27CD21E49A6200E1BDD4 /* LYSpeedInfoManager.swift in Sources */,
@@ -673,6 +679,7 @@
 				216A350221D4850C007D73B5 /* LYTabBarController.swift in Sources */,
 				212E279E21DF6D6500E1BDD4 /* BHBNetworkSpeed.m in Sources */,
 				2174F78421DDE8E800BB804A /* WPHotspotLabel.m in Sources */,
+				212E27D321E5B50200E1BDD4 /* LYArrayGroupManager.m in Sources */,
 				216A34FE21D4843C007D73B5 /* LYBaseController.swift in Sources */,
 				216A354021D5EB3B007D73B5 /* LYSettingCell.swift in Sources */,
 				216A355521D757BE007D73B5 /* LYSubmitView.swift in Sources */,
@@ -690,7 +697,6 @@
 				2174F76521DCB3DC00BB804A /* LYUpgradeView.swift in Sources */,
 				216A350021D4848B007D73B5 /* LYBaseNavigationController.swift in Sources */,
 				218CEF7121D39B8600007B41 /* AppDelegate.swift in Sources */,
-				212E27CB21E4998000E1BDD4 /* LYSpeedInfo+CoreDataProperties.swift in Sources */,
 				216A355321D747F1007D73B5 /* LYScoreVeiw.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,6 +9,8 @@
 import UIKit
 
 class LYDetailHeadView: UIView {
+    let speedLable = UILabel()
+    let showKdImage = UIImageView()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -46,7 +48,6 @@ class LYDetailHeadView: UIView {
             make.top.equalTo(8)
         }
         /** 进度条 */
-        let showKdImage = UIImageView()
         showKdImage.image = UIImage(named: "icon_bandwidthBack_1")
         bgImage.addSubview(showKdImage)
         showKdImage.snp.makeConstraints { (make) in
@@ -55,8 +56,7 @@ class LYDetailHeadView: UIView {
             make.width.equalTo(70)
             make.height.equalTo(47)
         }
-        let speedLable = UILabel()
-        speedLable.text = "2.00M"
+        speedLable.text = "0.00M"
         speedLable.textColor = YCColorBlack
         if let font = UIFont(name: "Helvetica-Bold", size: 15) {
             speedLable.font = font
@@ -123,6 +123,7 @@ class LYDetailHeadView: UIView {
             let dateLable = UILabel()
             self.addSubview(dateLable)
             dateLable.text = dateArray[i]
+            dateLable.tag = i+10
             dateLable.font = YC_FONT_PFSC_Medium(16)
             dateLable.textAlignment = NSTextAlignment.center
             dateLable.textColor = YCColorWhite
@@ -146,6 +147,36 @@ class LYDetailHeadView: UIView {
             }
         }
     }
+    
+    func gaintInfoModel(infoModel:LYHomeModel) {
+        speedLable.text = "\(infoModel.downSpeed!)M"
+        let dateArray = ["\(infoModel.delay!) ms","\(infoModel.downSpeed!) Mbps","\(infoModel.upSpeed!) Mbps"]
+        for i in 0..<dateArray.count {
+            let dateLable:UILabel = self.viewWithTag(i+10) as! UILabel
+            dateLable.text = dateArray[i]
+        }
+        //返回的是个可选值，不一定有值，也可能是nill
+        let double = Double("\(infoModel.downSpeed!)")
+        //返回的double是个可选值，所以需要给个默认值或者用!强制解包
+        let downFloat = CGFloat(double ?? 0)
+        if downFloat<=18 {
+            showKdImage.image = UIImage(named: "icon_bandwidthBack_1")
+        }else if downFloat>18 && downFloat<=55{
+            showKdImage.image = UIImage(named: "icon_bandwidthBack_2")
+        }else if downFloat>55 && downFloat<=90{
+            showKdImage.image = UIImage(named: "icon_bandwidthBack_3")
+        }else if downFloat>90{
+            showKdImage.image = UIImage(named: "icon_bandwidthBack_4")
+        }
+        var progress = downFloat/100
+        if downFloat>90 {
+            progress = 90/100
+        }
+        showKdImage.snp.updateConstraints { (make) in
+            make.left.equalTo((Main_Screen_Width-40)*progress)
+        }
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
