@@ -31,7 +31,7 @@ class AppDelegate: UIResponder,UIApplicationDelegate,UITabBarControllerDelegate 
         print("docs======\(docs ?? "")")
         //! 友盟统计
         UMConfigure.initWithAppkey("5c1a28f4f1f5569a8b000300", channel: "App Store")
-        self.gaintIpList()
+//        self.gaintIpList()
         return true
     }
     

@@ -201,3 +201,8 @@ let YCKeFUPhone = "4007658376"
 let LYHomeADId = "ca-app-pub-6719639781124001/9290941595"
 //详情插播广告ID
 let LYDetailADId = "ca-app-pub-6719639781124001/4086104071"
+
+/** 内购ID */
+let APPSTORYBUYID = "bizhi001_233"
+//共享密钥
+let SHAREKEY = "ff1664c1f9d043da99e0b44200a44df4"

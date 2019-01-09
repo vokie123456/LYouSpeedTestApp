@@ -26,5 +26,7 @@
 #import "LYArrayGroupManager.h"
 #import <UMCommon/UMCommon.h>
 #import "GoogleMobileAds/GoogleMobileAds.h"
+#import "YQInAppPurchaseTool.h"
+#import "LYouLoadingView.h"
 
 #endif /* LYouSpeedTestApp_Bridging_Header_h */

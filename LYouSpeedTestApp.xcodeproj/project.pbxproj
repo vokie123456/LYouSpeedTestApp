@@ -24,6 +24,8 @@
 		212E27D321E5B50200E1BDD4 /* LYArrayGroupManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 212E27D221E5B50200E1BDD4 /* LYArrayGroupManager.m */; };
 		212E27D621E5D06300E1BDD4 /* LYSpeedInfo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212E27D421E5D06300E1BDD4 /* LYSpeedInfo+CoreDataClass.swift */; };
 		212E27D721E5D06300E1BDD4 /* LYSpeedInfo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212E27D521E5D06300E1BDD4 /* LYSpeedInfo+CoreDataProperties.swift */; };
+		212E27DD21E6137A00E1BDD4 /* YQInAppPurchaseTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 212E27DB21E6137A00E1BDD4 /* YQInAppPurchaseTool.m */; };
+		212E27E121E617A900E1BDD4 /* LYouLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 212E27E021E617A900E1BDD4 /* LYouLoadingView.m */; };
 		216A34FE21D4843C007D73B5 /* LYBaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216A34FD21D4843C007D73B5 /* LYBaseController.swift */; };
 		216A350021D4848B007D73B5 /* LYBaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216A34FF21D4848B007D73B5 /* LYBaseNavigationController.swift */; };
 		216A350221D4850C007D73B5 /* LYTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216A350121D4850C007D73B5 /* LYTabBarController.swift */; };
@@ -97,6 +99,10 @@
 		212E27D221E5B50200E1BDD4 /* LYArrayGroupManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYArrayGroupManager.m; sourceTree = "<group>"; };
 		212E27D421E5D06300E1BDD4 /* LYSpeedInfo+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LYSpeedInfo+CoreDataClass.swift"; sourceTree = "<group>"; };
 		212E27D521E5D06300E1BDD4 /* LYSpeedInfo+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LYSpeedInfo+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		212E27DB21E6137A00E1BDD4 /* YQInAppPurchaseTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YQInAppPurchaseTool.m; sourceTree = "<group>"; };
+		212E27DC21E6137A00E1BDD4 /* YQInAppPurchaseTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQInAppPurchaseTool.h; sourceTree = "<group>"; };
+		212E27DF21E617A900E1BDD4 /* LYouLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYouLoadingView.h; sourceTree = "<group>"; };
+		212E27E021E617A900E1BDD4 /* LYouLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYouLoadingView.m; sourceTree = "<group>"; };
 		216A34FD21D4843C007D73B5 /* LYBaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYBaseController.swift; sourceTree = "<group>"; };
 		216A34FF21D4848B007D73B5 /* LYBaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYBaseNavigationController.swift; sourceTree = "<group>"; };
 		216A350121D4850C007D73B5 /* LYTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYTabBarController.swift; sourceTree = "<group>"; };
@@ -248,6 +254,24 @@
 			path = LYTimeManager;
 			sourceTree = "<group>";
 		};
+		212E27DA21E6137A00E1BDD4 /* YQInAppPurchaseTool */ = {
+			isa = PBXGroup;
+			children = (
+				212E27DB21E6137A00E1BDD4 /* YQInAppPurchaseTool.m */,
+				212E27DC21E6137A00E1BDD4 /* YQInAppPurchaseTool.h */,
+			);
+			path = YQInAppPurchaseTool;
+			sourceTree = "<group>";
+		};
+		212E27DE21E617A900E1BDD4 /* LYouLoadView */ = {
+			isa = PBXGroup;
+			children = (
+				212E27DF21E617A900E1BDD4 /* LYouLoadingView.h */,
+				212E27E021E617A900E1BDD4 /* LYouLoadingView.m */,
+			);
+			path = LYouLoadView;
+			sourceTree = "<group>";
+		};
 		216A34FB21D483FA007D73B5 /* LYViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -324,6 +348,8 @@
 		216A352221D4DD0F007D73B5 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				212E27DE21E617A900E1BDD4 /* LYouLoadView */,
+				212E27DA21E6137A00E1BDD4 /* YQInAppPurchaseTool */,
 				212E27CE21E4B1A800E1BDD4 /* LYTimeManager */,
 				2174F7B121DF618300BB804A /* GetSystemInfoHelper */,
 				2174F78921DE03F300BB804A /* EasyShowView */,
@@ -640,6 +666,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				212E27DD21E6137A00E1BDD4 /* YQInAppPurchaseTool.m in Sources */,
 				2174F78321DDE8E800BB804A /* NSString+WPAttributedMarkup.m in Sources */,
 				2174F7A121DE03F400BB804A /* UIView+EasyShowExt.m in Sources */,
 				2174F79D21DE03F400BB804A /* EasyShowTextView.m in Sources */,
@@ -685,6 +712,7 @@
 				216A355521D757BE007D73B5 /* LYSubmitView.swift in Sources */,
 				216A354621D61ACA007D73B5 /* LYBuyMemController.swift in Sources */,
 				216A352621D4DD65007D73B5 /* LYCycleProgressView.m in Sources */,
+				212E27E121E617A900E1BDD4 /* LYouLoadingView.m in Sources */,
 				2174F78521DDE8E800BB804A /* WPTappableLabel.m in Sources */,
 				212E27A621E3200600E1BDD4 /* QBTools.m in Sources */,
 				212E27A721E3200600E1BDD4 /* LYDownFileNetTools.m in Sources */,
