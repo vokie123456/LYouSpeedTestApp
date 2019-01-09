@@ -72,7 +72,6 @@ class LYSettingController: LYBaseController,UITableViewDelegate,UITableViewDataS
                     self.submitView.alpha = 0
                 }, completion: { _ in
                 })
-//                EasyShowTextView.showText("反馈成功", in: self.view)
                 EasyShowTextView.showText("反馈成功")
             }else{
                 let opts: UIView.AnimationOptions = [.curveEaseOut]
@@ -82,6 +81,18 @@ class LYSettingController: LYBaseController,UITableViewDelegate,UITableViewDataS
                 })
             }
         }
+        /** 广告位 */
+        let adboadView = GADBannerView()
+        self.view.addSubview(adboadView)
+        adboadView.snp.makeConstraints { (make) in
+            make.left.equalTo(0);
+            make.right.equalTo(0);
+            make.bottom.equalTo(-5);
+            make.height.equalTo(50);
+        }
+        adboadView.adUnitID = LYDetailADId;
+        adboadView.rootViewController = self;
+        adboadView.load(GADRequest())
     }
     //MARK:===========UITableViewDelegate
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

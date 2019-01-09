@@ -12,7 +12,7 @@ class LYResultController: LYBaseController,UITableViewDelegate,UITableViewDataSo
     var allCurrenDataArray:Array = [Any]()
     var allSpeedInfoArray:Array = [Any]()
 
-    lazy var resultTableView = UITableView(frame: CGRect(x: 0, y: 10, width: Main_Screen_Width, height: Main_Screen_Height-NaviBarHeight-SafeBottomMargin-10-50-40), style: .grouped)
+    lazy var resultTableView = UITableView(frame: CGRect(x: 15, y: 10, width: Main_Screen_Width-30, height: Main_Screen_Height-NaviBarHeight-SafeBottomMargin-10-50-40), style: .grouped)
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -65,10 +65,18 @@ class LYResultController: LYBaseController,UITableViewDelegate,UITableViewDataSo
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 1
+        return 80
     }
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        return nil
+        /** 广告位 */
+        let adboadView = GADBannerView()  /** 广告版位 */
+        adboadView.layer.masksToBounds = true
+        adboadView.isUserInteractionEnabled = true
+        adboadView.layer.cornerRadius = 5
+        adboadView.adUnitID = LYDetailADId;
+        adboadView.rootViewController = self;
+        adboadView.load(GADRequest())
+        return adboadView
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

@@ -14,5 +14,12 @@ pod 'MJRefresh', '~> 3.1.15.7'
 pod 'Alamofire'
 pod 'MagicalRecord'
 
+pod 'UMCCommon'
+pod 'UMCAnalytics'
+pod 'UMCSecurityPlugins'
+
+pod 'Firebase/AdMob'
+pod 'Firebase/Core'
+
 # use_framework !
 end

@@ -197,4 +197,7 @@ func printLog<T>(message: T)
 // 客服电话
 let YCKeFUPhone = "4007658376"
 
-
+//主页全屏广告ID
+let LYHomeADId = "ca-app-pub-6719639781124001/9290941595"
+//详情插播广告ID
+let LYDetailADId = "ca-app-pub-6719639781124001/4086104071"

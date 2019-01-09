@@ -31,8 +31,8 @@ class LYResultCell: UITableViewCell {
         bgView.alpha = 0.5
         self.addSubview(bgView)
         bgView.snp.makeConstraints { (make) in
-            make.left.equalTo(15)
-            make.right.equalTo(-15)
+            make.left.equalTo(0)
+            make.right.equalTo(0)
             make.top.equalTo(0)
             make.height.equalTo(80)
         }

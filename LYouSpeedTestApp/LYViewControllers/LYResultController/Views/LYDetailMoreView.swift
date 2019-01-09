@@ -69,7 +69,7 @@ class LYDetailMoreView: UIView {
             progressImage.snp.makeConstraints { (make) in
                 make.top.equalTo(titleLable.snp.bottom).offset(20+i*40)
                 make.right.equalTo(progressLable.snp.left).offset(-10)
-                make.width.equalTo(100)
+                make.width.equalTo(90)
                 make.height.equalTo(8)
             }
         }

@@ -12,6 +12,8 @@ class LYResultDetailController: LYBaseController {
     var model = LYHomeModel()
     var shareRightView:UIButton = UIButton()
     let shareButton =   UIButton(type: .custom)
+    let adboadView = GADBannerView()  /** 广告版位 */
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false;
@@ -97,8 +99,19 @@ class LYResultDetailController: LYBaseController {
             make.height.equalTo(270);
         }
         moreView.gaintInfoModel(infoModel: self.model)
-
+       /** 广告位 */
+        self.view.addSubview(self.adboadView)
+        self.adboadView.snp.makeConstraints { (make) in
+            make.left.equalTo(0);
+            make.right.equalTo(0);
+            make.bottom.equalTo(0);
+            make.height.equalTo(55);
+        }
+        self.adboadView.adUnitID = LYDetailADId;
+        self.adboadView.rootViewController = self;
+        self.adboadView.load(GADRequest())
     }
+
     //分享按钮点击响应
     @objc func shareButtonClick(){
         iOSsystemShare()

@@ -24,5 +24,7 @@
 #import "QBTools.h"
 #import <MagicalRecord/MagicalRecord.h>
 #import "LYArrayGroupManager.h"
+#import <UMCommon/UMCommon.h>
+#import "GoogleMobileAds/GoogleMobileAds.h"
 
 #endif /* LYouSpeedTestApp_Bridging_Header_h */

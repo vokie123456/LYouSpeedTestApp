@@ -142,10 +142,6 @@ class LYHomeController: LYBaseController {
             }
         }
     })
-//    DispatchQueue.main.asyncAfter(deadline: .now()+0.1, execute:
-//    {
-//        
-//    })
 }
     //MARK:=======测试下载宽带
     func testDownloadSpeed(){
@@ -173,7 +169,7 @@ class LYHomeController: LYBaseController {
             if proData>=1{
                 self.currenProgressView.progress = 1
             }
-            print("即使速度\(proData)")
+            print("下载进度======\(progress)")
         }, finishMeasure: { speed in
             let kdSpeedStr = "\(QBTools.formatBandWidth(UInt64(speed))!)"
             self.downImage.isHidden = true
@@ -196,9 +192,9 @@ class LYHomeController: LYBaseController {
             self.testUpLoadSpeed()
         }, failedBlock: { error in
         })
-//        let url = "http://down.sandai.net/thunder7/Thunder_dl_7.9.34.4908.exe"
-//        meaurNet?.downLoadUrl = url
-        meaurNet?.downLoadUrl = DownLoadUrl()
+        let url = "http://down.sandai.net/thunder7/Thunder_dl_7.9.34.4908.exe"
+        meaurNet?.downLoadUrl = url
+//        meaurNet?.downLoadUrl = DownLoadUrl()
         meaurNet?.startMeasur()
     }
     //MARK:=======测试上传宽带
@@ -284,8 +280,8 @@ class LYHomeController: LYBaseController {
                 } else if (manager?.isReachableOnEthernetOrWiFi)! {
                     statusStr = "wifi的网络";
                     self.speedModel.isWifi = "yes"
-                    view.wifiLable.text = "Wifi:\n\(GetSystemInfoHelper.getWifiName()!)"
-                    self.speedModel.currenWifiName = "Wifi:\(GetSystemInfoHelper.getWifiName()!)"
+//                    view.wifiLable.text = "Wifi:\n\(GetSystemInfoHelper.getWifiName()!)"
+//                    self.speedModel.currenWifiName = "Wifi:\(GetSystemInfoHelper.getWifiName()!)"
                 }
                 print("===\(String(describing: statusStr))")
                 break

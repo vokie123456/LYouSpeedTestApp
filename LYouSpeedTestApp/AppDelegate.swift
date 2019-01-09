@@ -29,8 +29,8 @@ class AppDelegate: UIResponder,UIApplicationDelegate,UITabBarControllerDelegate 
         let docs = NSSearchPathForDirectoriesInDomains(.libraryDirectory, .userDomainMask, true).last
         //! 数据库地址
         print("docs======\(docs ?? "")")
-
-        
+        //! 友盟统计
+        UMConfigure.initWithAppkey("5c1a28f4f1f5569a8b000300", channel: "App Store")
         self.gaintIpList()
         return true
     }
