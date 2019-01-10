@@ -24,7 +24,9 @@
 #import "QBTools.h"
 #import <MagicalRecord/MagicalRecord.h>
 #import "LYArrayGroupManager.h"
-#import <UMCommon/UMCommon.h>
+//#import <UMCommon/UMCommon.h>
+#import <UMMobClick/MobClick.h>
+
 #import "GoogleMobileAds/GoogleMobileAds.h"
 #import "YQInAppPurchaseTool.h"
 #import "LYouLoadingView.h"

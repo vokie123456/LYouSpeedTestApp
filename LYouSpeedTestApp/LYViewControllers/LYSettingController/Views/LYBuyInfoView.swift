@@ -27,11 +27,11 @@ class LYBuyInfoView: UIView {
         mainScrollView.showsVerticalScrollIndicator = false //不显示垂直拖动的条
         mainScrollView.backgroundColor = UIColor.white.withAlphaComponent(0.0)
         self.addSubview(mainScrollView)
-        mainScrollView.contentSize = CGSize(width: Main_Screen_Width, height: Main_Screen_Height+350)
+        mainScrollView.contentSize = CGSize(width: Main_Screen_Width, height: 667+350)
         mainScrollView.snp.makeConstraints { (make) in
             make.left.right.equalTo(self);
             make.top.equalTo(self).offset(0);
-            make.height.equalTo(Main_Screen_Height);
+            make.height.equalTo(667);
         }
         /** 标题 */
         let titleLable = UILabel()

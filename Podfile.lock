@@ -73,10 +73,7 @@ PODS:
   - SwiftFCXRefresh (0.1.1)
   - SwiftyJSON (4.2.0)
   - SwiftyUserDefaults (3.0.1)
-  - UMCAnalytics (5.5.2):
-    - UMCCommon
-  - UMCCommon (1.5.3)
-  - UMCSecurityPlugins (1.0.6)
+  - UMengAnalytics-NO-IDFA (4.2.5)
 
 DEPENDENCIES:
   - Alamofire
@@ -93,9 +90,7 @@ DEPENDENCIES:
   - SwiftFCXRefresh
   - SwiftyJSON
   - SwiftyUserDefaults
-  - UMCAnalytics
-  - UMCCommon
-  - UMCSecurityPlugins
+  - UMengAnalytics-NO-IDFA
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -120,9 +115,7 @@ SPEC REPOS:
     - SwiftFCXRefresh
     - SwiftyJSON
     - SwiftyUserDefaults
-    - UMCAnalytics
-    - UMCCommon
-    - UMCSecurityPlugins
+    - UMengAnalytics-NO-IDFA
 
 SPEC CHECKSUMS:
   Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
@@ -146,10 +139,8 @@ SPEC CHECKSUMS:
   SwiftFCXRefresh: 74cad61a77485cb510a23b485913039f347e67ce
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
   SwiftyUserDefaults: 3d273b1739b68ada3145dc754a70ec775bc5c8be
-  UMCAnalytics: 6654fd3c8201ff6da5c86a3ae29cd5c8436d3b7b
-  UMCCommon: 016af43c0f769feb1ae1861d65aaf2b23b89c9c7
-  UMCSecurityPlugins: 0831a08f3988f3cea9f1d3a7626cd9bee4fef150
+  UMengAnalytics-NO-IDFA: 16666e32edce5be44ae5b14aaaa7f3582e09d6ab
 
-PODFILE CHECKSUM: ab831c397844ff24179d4e9b463bf1d82d1a15eb
+PODFILE CHECKSUM: 85541147f4519b11fbf32728808694f03d974b2d
 
 COCOAPODS: 1.5.3

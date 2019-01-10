@@ -60,7 +60,7 @@ class LYResultDetailController: LYBaseController {
         mainScrollView.showsVerticalScrollIndicator = false //不显示垂直拖动的条
         mainScrollView.backgroundColor = YCColorLightGray
         self.view.addSubview(mainScrollView)
-        mainScrollView.contentSize = CGSize(width: Main_Screen_Width, height: Main_Screen_Height+460)
+        mainScrollView.contentSize = CGSize(width: Main_Screen_Width, height: 667+460)
         mainScrollView.snp.makeConstraints { (make) in
             make.left.right.equalTo(self.view);
             make.top.equalTo(self.view).offset(0);

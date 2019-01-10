@@ -56,21 +56,16 @@ class LYHomeController: LYBaseController {
         startButton.setTitle("开始", for: .normal)
         startButton.titleLabel?.font = YC_FONT_PFSC_Medium(18)
         startButton.setBackgroundImage(UIImage.init(named: "ic_glassButton"), for: .normal)
-        startButton.snp.makeConstraints { (make) in
-            make.bottom.equalTo(-SafeBottomMargin-50)
-            make.left.equalTo(100)
-            make.right.equalTo(-100)
-            make.height.equalTo(50)
-        }
+        startButton.frame = CGRect(x: 100, y: progressView.frame.origin.y+Main_Screen_Width/3*2+20, width: Main_Screen_Width-200, height: 50)
         startButton.addTarget(self, action: #selector(startButtonClick), for: .touchUpInside)
         /** 左箭头 */
         self.view.addSubview(leftArrow)
         leftArrow.image = UIImage(named: "leftArrow")
-        leftArrow.frame = CGRect(x: 25, y: Main_Screen_Height-SafeBottomMargin-140, width: 40, height: 30)
+        leftArrow.frame = CGRect(x: 25, y: progressView.frame.origin.y+Main_Screen_Width/3*2+30, width: 40, height: 30)
         /** 右箭头 */
         self.view.addSubview(rightArrow)
         rightArrow.image = UIImage(named: "rightArrow")
-        rightArrow.frame = CGRect(x: Main_Screen_Width-65, y: Main_Screen_Height-SafeBottomMargin-140, width: 40, height: 30)
+        rightArrow.frame = CGRect(x: Main_Screen_Width-65, y: progressView.frame.origin.y+Main_Screen_Width/3*2+30, width: 40, height: 30)
         /** 监听网络变化 */
         currentNetReachability(view:progressView)
         /** 监听上传下载速度变化 */

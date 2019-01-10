@@ -12,6 +12,15 @@ class LYBuyMemController: LYBaseController,YQInAppPurchaseToolDelegate {
 
     var IAPTool = YQInAppPurchaseTool()
     let infoView = LYBuyInfoView()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        MobClick.beginLogPageView("LYBuyMemController")
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        MobClick.endLogPageView("LYBuyMemController")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         /** 初始化内购 */
@@ -46,6 +55,8 @@ class LYBuyMemController: LYBaseController,YQInAppPurchaseToolDelegate {
             //向苹果询问哪些商品能够购买
             self.IAPTool.requestProducts(withProductArray:[APPSTORYBUYID])
             LYouLoadingView.show()
+            //友盟统计购买事件
+            MobClick.event("ClickBuyMember")
         }
         infoView.recoverBuyMemBlock = {() in
             print("恢复购买商品===")

@@ -30,32 +30,29 @@ class AppDelegate: UIResponder,UIApplicationDelegate,UITabBarControllerDelegate 
         //! 数据库地址
         print("docs======\(docs ?? "")")
         //! 友盟统计
-        UMConfigure.initWithAppkey("5c1a28f4f1f5569a8b000300", channel: "App Store")
-//        self.gaintIpList()
+        let config = UMAnalyticsConfig.sharedInstance()
+        config?.appKey = "5c36c30af1f556d8be00033f"
+        config?.channelId = "App Store"
+        MobClick.start(withConfigure: config)
+        //! 统计不同版本
+        let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
+        MobClick.setAppVersion(version)
+        
+        gaintTestPoint()
         return true
     }
     
-    //MARK=========获取服务器ip地址
-    func gaintIpList() {
-        NetworkRequest.sharedInstance.getRequest(urlString: LYIPListURL, params: [:], success: { (json) in
-            
-            let jsonDic = JSON(json)
-            let ipStr = "\(jsonDic["ip"])"
-            UserDefaults.standard.set(ipStr, forKey:"ipAdress")
-            print("ip地址=========\(IPADRESS())")
-            self.gaintTestPoint()
-        }) { (error) in
-            EasyShowTextView .showText("服务器异常!")
-        }
-    }
     //MARK=========获取服务器下载上传地址
     func gaintTestPoint() {
         NetworkRequest.sharedInstance.getRequest(urlString: LYTestPointURL, params: [:], success: { (json) in
             let jsonDic = JSON(json)
+            let ipStr = "\(jsonDic["ip"])"
             let downstreamStr = "\(jsonDic["downstream"])"
             let upstreamStr = "\(jsonDic["upstream"])"
+            UserDefaults.standard.set(ipStr, forKey:"ipAdress")
             UserDefaults.standard.set(downstreamStr, forKey:"downLoadUrl")
             UserDefaults.standard.set(upstreamStr, forKey:"upLoadUrl")
+            print("ip地址=========\(IPADRESS())")
             print("下载测试=========\(DownLoadUrl())")
             print("上传测试=========\(UpLoadUrl())")
 

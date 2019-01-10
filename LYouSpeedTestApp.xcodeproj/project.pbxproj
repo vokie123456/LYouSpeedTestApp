@@ -26,6 +26,7 @@
 		212E27D721E5D06300E1BDD4 /* LYSpeedInfo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212E27D521E5D06300E1BDD4 /* LYSpeedInfo+CoreDataProperties.swift */; };
 		212E27DD21E6137A00E1BDD4 /* YQInAppPurchaseTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 212E27DB21E6137A00E1BDD4 /* YQInAppPurchaseTool.m */; };
 		212E27E121E617A900E1BDD4 /* LYouLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 212E27E021E617A900E1BDD4 /* LYouLoadingView.m */; };
+		212E27E321E6FBE700E1BDD4 /* libz.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 212E27E221E6FBE700E1BDD4 /* libz.1.dylib */; };
 		216A34FE21D4843C007D73B5 /* LYBaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216A34FD21D4843C007D73B5 /* LYBaseController.swift */; };
 		216A350021D4848B007D73B5 /* LYBaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216A34FF21D4848B007D73B5 /* LYBaseNavigationController.swift */; };
 		216A350221D4850C007D73B5 /* LYTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216A350121D4850C007D73B5 /* LYTabBarController.swift */; };
@@ -103,6 +104,7 @@
 		212E27DC21E6137A00E1BDD4 /* YQInAppPurchaseTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YQInAppPurchaseTool.h; sourceTree = "<group>"; };
 		212E27DF21E617A900E1BDD4 /* LYouLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYouLoadingView.h; sourceTree = "<group>"; };
 		212E27E021E617A900E1BDD4 /* LYouLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYouLoadingView.m; sourceTree = "<group>"; };
+		212E27E221E6FBE700E1BDD4 /* libz.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.dylib; path = ../../../../../usr/lib/libz.1.dylib; sourceTree = "<group>"; };
 		216A34FD21D4843C007D73B5 /* LYBaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYBaseController.swift; sourceTree = "<group>"; };
 		216A34FF21D4848B007D73B5 /* LYBaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYBaseNavigationController.swift; sourceTree = "<group>"; };
 		216A350121D4850C007D73B5 /* LYTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYTabBarController.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				212E27E321E6FBE700E1BDD4 /* libz.1.dylib in Frameworks */,
 				1700B89EA859D1834628AC67 /* libPods-LYouSpeedTestApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -534,6 +537,7 @@
 		CFEFC7D955FDA3D0D4D2D713 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				212E27E221E6FBE700E1BDD4 /* libz.1.dylib */,
 				6B53FAC59A1B802E1185810D /* libPods-LYouSpeedTestApp.a */,
 			);
 			name = Frameworks;
