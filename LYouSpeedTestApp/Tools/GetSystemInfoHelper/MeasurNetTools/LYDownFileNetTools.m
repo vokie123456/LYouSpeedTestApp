@@ -132,8 +132,8 @@
 //    NSLog(@"_oneMinData:%lu  data:%lu",(unsigned long)_oneMinData.length,(unsigned long)data.length);
     //计算下载进度
     self.currentSize += data.length;
-    float progress =  self.currentSize*1.0/[self getServerFileSize];
-    currenProgress = progress;
+    float progress =  self.currentSize/[self getServerFileSize];
+    NSLog(@"文件大小=========%lld",self.currentSize);
 }
 
 - (void) connectionDidFinishLoading:(NSURLConnection *)connection{
@@ -151,10 +151,8 @@
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     //设置HEAD请求方法
     request.HTTPMethod = @"HEAD";
-    
     //创建NSURLResponse
     NSURLResponse *response  = [NSURLResponse new];
-    
     //HEAD请求可以用同步的方法
     [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:NULL];
     //给文件总长度赋值

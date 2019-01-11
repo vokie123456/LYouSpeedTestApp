@@ -75,6 +75,9 @@ class AppDelegate: UIResponder,UIApplicationDelegate,UITabBarControllerDelegate 
     
     //MARK=========校验是否购买会员
     func IsHaveBuyMenBer() {
+        if ISHAVEBUYMEMBER()=="no" {
+            return
+        }
         /** 本地服务器校验 */
         let receiptURL: URL? = Bundle.main.appStoreReceiptURL
         let receiptData = try! Data(contentsOf:receiptURL!)
@@ -88,7 +91,7 @@ class AppDelegate: UIResponder,UIApplicationDelegate,UITabBarControllerDelegate 
             let states = "\(jsonDic["status"])"
             UserDefaults.standard.set(states, forKey:"isHaveBuyMemBer")
             print("是否购买会员=========\(ISHAVEBUYMEMBER())")
-            
+
         }) { (error) in
             EasyShowTextView.showText("服务器校验失败!")
         }

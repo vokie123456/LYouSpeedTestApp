@@ -66,6 +66,6 @@ func ISHAVEBUYMEMBER() -> String {
     if isHaveBuyMemBer != nil {
         return isHaveBuyMemBer!
     }else{
-        return ""
+        return "no"
     }
 }

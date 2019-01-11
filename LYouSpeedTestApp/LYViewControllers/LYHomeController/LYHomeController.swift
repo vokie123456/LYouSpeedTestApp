@@ -92,6 +92,9 @@ class LYHomeController: LYBaseController {
     }
     
     @objc private func startButtonClick()  {
+        if IPADRESS().count==0 {
+            return
+        }
     /** 测试延时 */
     self.currenProgressView.progress = 0.0
     self.YansImage = self.headView.viewWithTag(100) as! UIImageView
@@ -123,7 +126,7 @@ class LYHomeController: LYBaseController {
     }, completion: { _ in
         self.YansImage.alpha = 1
     })
-        
+    
     self.pingServices = STDPingServices.startPingAddress(IPADRESS(), callbackHandler: {pingItem, pingItems in
         if pingItem?.status != STDPingStatus.finished {
             if pingItem?.timeMilliseconds != 0{
@@ -165,7 +168,7 @@ class LYHomeController: LYBaseController {
             if proData>=1{
                 self.currenProgressView.progress = 1
             }
-            print("下载进度======\(progress)")
+//            print("下载进度======\(progress)")
         }, finishMeasure: { speed in
             let kdSpeedStr = "\(QBTools.formatBandWidth(UInt64(speed))!)"
             self.downImage.isHidden = true
