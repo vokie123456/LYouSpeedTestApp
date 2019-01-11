@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class LYBuyMemController: LYBaseController,YQInAppPurchaseToolDelegate {
 
@@ -100,6 +101,22 @@ class LYBuyMemController: LYBaseController,YQInAppPurchaseToolDelegate {
     func iapToolBoughtProductSuccessed(withProductID productID: String!, andInfo infoDic: [AnyHashable : Any]!) {
         //商品完全购买成功且验证成功了。（若CheckAfterPay为NO，则会在购买成功后直接触发此方法）
         /** 本地服务器校验 */
+        let receiptURL: URL? = Bundle.main.appStoreReceiptURL
+        let receiptData = try! Data(contentsOf:receiptURL!)
+        var encodeStr = receiptData.base64EncodedString(options: [])
+        if (encodeStr.count) == 0 {
+            encodeStr = ""
+        }
+        let paramsDic = ["receipt-data":encodeStr,"password":SHAREKEY]
+        NetworkRequest.sharedInstance.postRequest(urlString: LYIosCheck, params: paramsDic, success: { (json) in
+            let jsonDic = JSON(json)
+            let states = "\(jsonDic["status"])"
+            UserDefaults.standard.set(states, forKey:"isHaveBuyMemBer")
+            print("是否购买会员=========\(ISHAVEBUYMEMBER())")
+
+        }) { (error) in
+            EasyShowTextView.showText("服务器校验失败!")
+        }
     }
     func iapToolCheckFailed(withProductID productID: String!, andInfo infoData: Data!) {
         //商品购买成功了，但向苹果服务器验证失败了

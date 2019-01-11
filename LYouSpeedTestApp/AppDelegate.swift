@@ -62,13 +62,35 @@ class AppDelegate: UIResponder,UIApplicationDelegate,UITabBarControllerDelegate 
     
     //MARK=========审核开关
     func isCheckIOS() {
-        NetworkRequest.sharedInstance.getRequest(urlString: LYIosCheck, params: [:], success: { (json) in
+        NetworkRequest.sharedInstance.getRequest(urlString: LYIosSwitch, params: [:], success: { (json) in
             let jsonDic = JSON(json)
             let isCheckIos = "\(jsonDic["status"])"
              UserDefaults.standard.set(isCheckIos, forKey:"isCheckIos")
             print("审核状态=========\(ISCHECKIOS())")
+            self.IsHaveBuyMenBer()
         }) { (error) in
             EasyShowTextView .showText("服务器异常!")
+        }
+    }
+    
+    //MARK=========校验是否购买会员
+    func IsHaveBuyMenBer() {
+        /** 本地服务器校验 */
+        let receiptURL: URL? = Bundle.main.appStoreReceiptURL
+        let receiptData = try! Data(contentsOf:receiptURL!)
+        var encodeStr = receiptData.base64EncodedString(options: [])
+        if (encodeStr.count) == 0 {
+            encodeStr = ""
+        }
+        let paramsDic = ["receipt-data":encodeStr,"password":SHAREKEY]
+        NetworkRequest.sharedInstance.postRequest(urlString: LYIosCheck, params: paramsDic, success: { (json) in
+            let jsonDic = JSON(json)
+            let states = "\(jsonDic["status"])"
+            UserDefaults.standard.set(states, forKey:"isHaveBuyMemBer")
+            print("是否购买会员=========\(ISHAVEBUYMEMBER())")
+            
+        }) { (error) in
+            EasyShowTextView.showText("服务器校验失败!")
         }
     }
     

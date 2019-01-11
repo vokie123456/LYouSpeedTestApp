@@ -9,11 +9,13 @@
 import Foundation
 
 /** 获取ip列表 */
-let LYIosCheck = "http://bz.pk2game.com/LYouSpeedIosSwitch"
+let LYIosSwitch = "http://bz.pk2game.com/LYouSpeedIosSwitch"
 /** 获取ip列表 */
 let LYIPListURL = "http://bz.pk2game.com/ipList"
 /** 上下行测试地址 */
 let LYTestPointURL = "http://bz.pk2game.com/testPoint"
+/** 校验苹果支付成功凭证 */
+let LYIosCheck = "http://bz.pk2game.com/LYouSpeedIosCheck"
 
 //IP地址
 func IPADRESS() -> String {
@@ -47,7 +49,6 @@ func UpLoadUrl() -> String {
         return ""
     }
 }
-
 //审核状态
 func ISCHECKIOS() -> String {
     let isCheckIos = UserDefaults.standard.string(forKey: "isCheckIos")
@@ -58,4 +59,13 @@ func ISCHECKIOS() -> String {
         return ""
     }
 }
-
+//是否购买会员
+func ISHAVEBUYMEMBER() -> String {
+    let isHaveBuyMemBer = UserDefaults.standard.string(forKey: "isHaveBuyMemBer")
+    //判断UserDefaults中是否已经存在
+    if isHaveBuyMemBer != nil {
+        return isHaveBuyMemBer!
+    }else{
+        return ""
+    }
+}
