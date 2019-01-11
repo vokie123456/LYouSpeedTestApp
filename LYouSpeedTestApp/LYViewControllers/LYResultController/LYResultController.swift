@@ -26,6 +26,7 @@ class LYResultController: LYBaseController,UITableViewDelegate,UITableViewDataSo
         self.backButton.frame.size.width = 42
         self.rightView.isHidden = false
         self.resultTableView.separatorStyle = UITableViewCell.SeparatorStyle.none
+        self.resultTableView.showsVerticalScrollIndicator = false
         self.resultTableView.delegate = self
         self.resultTableView.dataSource = self
         self.resultTableView.backgroundColor = YCColorMain
@@ -68,15 +69,19 @@ class LYResultController: LYBaseController,UITableViewDelegate,UITableViewDataSo
         return 80
     }
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let footView = UIView()
         /** 广告位 */
-        let adboadView = GADBannerView()  /** 广告版位 */
+        let adboadView = GADBannerView()
         adboadView.layer.masksToBounds = true
         adboadView.isUserInteractionEnabled = true
         adboadView.layer.cornerRadius = 5
         adboadView.adUnitID = LYDetailADId;
         adboadView.rootViewController = self;
         adboadView.load(GADRequest())
-        return adboadView
+        adboadView.frame = CGRect(x: 0, y: 0, width: Main_Screen_Width-30, height: 70)
+        footView .addSubview(adboadView)
+        
+        return footView
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

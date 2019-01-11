@@ -9,6 +9,8 @@
 import Foundation
 
 /** 获取ip列表 */
+let LYIosCheck = "http://bz.pk2game.com/LYouSpeedIosSwitch"
+/** 获取ip列表 */
 let LYIPListURL = "http://bz.pk2game.com/ipList"
 /** 上下行测试地址 */
 let LYTestPointURL = "http://bz.pk2game.com/testPoint"
@@ -45,3 +47,15 @@ func UpLoadUrl() -> String {
         return ""
     }
 }
+
+//审核状态
+func ISCHECKIOS() -> String {
+    let isCheckIos = UserDefaults.standard.string(forKey: "isCheckIos")
+    //判断UserDefaults中是否已经存在
+    if isCheckIos != nil {
+        return isCheckIos!
+    }else{
+        return ""
+    }
+}
+

@@ -37,7 +37,6 @@ class AppDelegate: UIResponder,UIApplicationDelegate,UITabBarControllerDelegate 
         //! 统计不同版本
         let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
         MobClick.setAppVersion(version)
-        
         gaintTestPoint()
         return true
     }
@@ -55,7 +54,19 @@ class AppDelegate: UIResponder,UIApplicationDelegate,UITabBarControllerDelegate 
             print("ip地址=========\(IPADRESS())")
             print("下载测试=========\(DownLoadUrl())")
             print("上传测试=========\(UpLoadUrl())")
-
+            self.isCheckIOS()
+        }) { (error) in
+            EasyShowTextView .showText("服务器异常!")
+        }
+    }
+    
+    //MARK=========审核开关
+    func isCheckIOS() {
+        NetworkRequest.sharedInstance.getRequest(urlString: LYIosCheck, params: [:], success: { (json) in
+            let jsonDic = JSON(json)
+            let isCheckIos = "\(jsonDic["status"])"
+             UserDefaults.standard.set(isCheckIos, forKey:"isCheckIos")
+            print("审核状态=========\(ISCHECKIOS())")
         }) { (error) in
             EasyShowTextView .showText("服务器异常!")
         }

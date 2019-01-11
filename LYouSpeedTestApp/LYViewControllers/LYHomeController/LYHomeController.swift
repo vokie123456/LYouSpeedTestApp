@@ -123,6 +123,7 @@ class LYHomeController: LYBaseController {
     }, completion: { _ in
         self.YansImage.alpha = 1
     })
+        
     self.pingServices = STDPingServices.startPingAddress(IPADRESS(), callbackHandler: {pingItem, pingItems in
         if pingItem?.status != STDPingStatus.finished {
             if pingItem?.timeMilliseconds != 0{
