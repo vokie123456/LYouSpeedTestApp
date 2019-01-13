@@ -21,15 +21,14 @@ class LYResultController: LYBaseController,UITableViewDelegate,UITableViewDataSo
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.backButton.setImage(UIImage(named:""), for: .normal)
-        self.backButton.setTitle("结果", for: .normal)
-        self.backButton.frame.size.width = 42
+        self.backButton.isHidden = true
+        self.navigationItem.title = "历史记录"
         self.rightView.isHidden = false
         self.resultTableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         self.resultTableView.showsVerticalScrollIndicator = false
         self.resultTableView.delegate = self
         self.resultTableView.dataSource = self
-        self.resultTableView.backgroundColor = YCColorMain
+        self.resultTableView.backgroundColor = YCColorGray
         //注册cell重用
         self.resultTableView .register(LYResultCell.self, forCellReuseIdentifier:"ResultCellIdentifier")
         self.view.addSubview(resultTableView)

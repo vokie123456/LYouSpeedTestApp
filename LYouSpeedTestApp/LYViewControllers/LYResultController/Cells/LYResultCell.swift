@@ -17,18 +17,17 @@ class LYResultCell: UITableViewCell {
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        self.backgroundColor = YCColorMain
+        self.backgroundColor = YCColorGray
         creatUI()
     }
     
     func creatUI() {
         /** 背景框 */
         let bgView = UIView()
-        bgView.backgroundColor = gof_ColorWithHex(0x212D37)
+        bgView.backgroundColor = YCColorWhite
         bgView.layer.borderWidth = 1
         bgView.layer.borderColor = YCColorWhite.cgColor
         bgView.layer.cornerRadius = 5
-        bgView.alpha = 0.5
         self.addSubview(bgView)
         bgView.snp.makeConstraints { (make) in
             make.left.equalTo(0)
@@ -40,8 +39,7 @@ class LYResultCell: UITableViewCell {
         bgView.addSubview(timeLable)
         timeLable.text = "12:16"
         timeLable.font = YC_FONT_PFSC_Medium(12)
-        timeLable.textColor = YCColorWhite
-        timeLable.alpha = 0.6
+        timeLable.textColor = YCColorBlack
         timeLable.snp.makeConstraints { (make) in
             make.left.equalTo(18)
             make.top.equalTo(12)
@@ -49,7 +47,6 @@ class LYResultCell: UITableViewCell {
         /** 网络 */
         bgView.addSubview(netImage)
         netImage.image = UIImage(named: "im_network_wifi")
-        netImage.alpha = 0.8
         netImage.snp.makeConstraints { (make) in
             make.left.equalTo(20)
             make.top.equalTo(timeLable.snp.bottom).offset(10)
@@ -59,7 +56,6 @@ class LYResultCell: UITableViewCell {
         let line = UIView()
         bgView.addSubview(line)
         line.backgroundColor = YCColorWhite
-        line.alpha = 0.5
         line.snp.makeConstraints { (make) in
             make.left.equalTo(timeLable.snp.right).offset(20)
             make.top.equalTo(12)
@@ -71,8 +67,7 @@ class LYResultCell: UITableViewCell {
         bgView.addSubview(yanchiLable)
         yanchiLable.text = "延迟"
         yanchiLable.font = YC_FONT_PFSC_Medium(12)
-        yanchiLable.textColor = YCColorWhite
-        yanchiLable.alpha = 0.6
+        yanchiLable.textColor = YCColorBlack
         yanchiLable.snp.makeConstraints { (make) in
             make.left.equalTo(line).offset(20)
             make.top.equalTo(12)
@@ -80,7 +75,7 @@ class LYResultCell: UITableViewCell {
         bgView.addSubview(yancContentLable)
         yancContentLable.text = "0.0"
         yancContentLable.font = YC_FONT_PFSC_Semibold(20)
-        yancContentLable.textColor = YCColorWhite
+        yancContentLable.textColor = YCColorStanBlue
         yancContentLable.snp.makeConstraints { (make) in
             make.left.equalTo(line).offset(20)
             make.top.equalTo(yanchiLable.snp.bottom).offset(0)
@@ -89,7 +84,7 @@ class LYResultCell: UITableViewCell {
         bgView.addSubview(ycLable)
         ycLable.text = "ms"
         ycLable.font = YC_FONT_PFSC_Medium(12)
-        ycLable.textColor = YCColorWhite
+        ycLable.textColor = YCColorBlack
         ycLable.snp.makeConstraints { (make) in
             make.left.equalTo(line).offset(20)
             make.top.equalTo(yancContentLable.snp.bottom).offset(0)
@@ -99,8 +94,7 @@ class LYResultCell: UITableViewCell {
         bgView.addSubview(downLoadLable)
         downLoadLable.text = "下载"
         downLoadLable.font = YC_FONT_PFSC_Medium(12)
-        downLoadLable.textColor = YCColorWhite
-        downLoadLable.alpha = 0.6
+        downLoadLable.textColor = YCColorBlack
         downLoadLable.snp.makeConstraints { (make) in
             make.left.equalTo(Main_Screen_Width/2-40)
             make.top.equalTo(12)
@@ -108,7 +102,7 @@ class LYResultCell: UITableViewCell {
         bgView.addSubview(downContentLable)
         downContentLable.text = "0.0"
         downContentLable.font = YC_FONT_PFSC_Semibold(20)
-        downContentLable.textColor = YCColorWhite
+        downContentLable.textColor = YCColorStanBlue
         downContentLable.snp.makeConstraints { (make) in
             make.left.equalTo(Main_Screen_Width/2-40)
             make.top.equalTo(downLoadLable.snp.bottom).offset(0)
@@ -117,7 +111,7 @@ class LYResultCell: UITableViewCell {
         bgView.addSubview(dwLable)
         dwLable.text = "Mbps"
         dwLable.font = YC_FONT_PFSC_Medium(12)
-        dwLable.textColor = YCColorWhite
+        dwLable.textColor = YCColorBlack
         dwLable.snp.makeConstraints { (make) in
             make.left.equalTo(Main_Screen_Width/2-40)
             make.top.equalTo(downContentLable.snp.bottom).offset(0)
@@ -127,8 +121,7 @@ class LYResultCell: UITableViewCell {
         bgView.addSubview(upLoadLable)
         upLoadLable.text = "上传"
         upLoadLable.font = YC_FONT_PFSC_Medium(12)
-        upLoadLable.textColor = YCColorWhite
-        upLoadLable.alpha = 0.6
+        upLoadLable.textColor = YCColorBlack
         upLoadLable.snp.makeConstraints { (make) in
             make.left.equalTo(Main_Screen_Width/2+40)
             make.top.equalTo(12)
@@ -136,7 +129,7 @@ class LYResultCell: UITableViewCell {
         bgView.addSubview(upContentLable)
         upContentLable.text = "0.0"
         upContentLable.font = YC_FONT_PFSC_Semibold(20)
-        upContentLable.textColor = YCColorWhite
+        upContentLable.textColor = YCColorStanBlue
         upContentLable.snp.makeConstraints { (make) in
             make.left.equalTo(Main_Screen_Width/2+40)
             make.top.equalTo(upLoadLable.snp.bottom).offset(0)
@@ -145,7 +138,7 @@ class LYResultCell: UITableViewCell {
         bgView.addSubview(upLable)
         upLable.text = "Mbps"
         upLable.font = YC_FONT_PFSC_Medium(12)
-        upLable.textColor = YCColorWhite
+        upLable.textColor = YCColorBlack
         upLable.snp.makeConstraints { (make) in
             make.left.equalTo(Main_Screen_Width/2+40)
             make.top.equalTo(upContentLable.snp.bottom).offset(0)

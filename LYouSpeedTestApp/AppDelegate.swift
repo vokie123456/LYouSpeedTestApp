@@ -23,7 +23,9 @@ class AppDelegate: UIResponder,UIApplicationDelegate,UITabBarControllerDelegate 
         self.window?.rootViewController = rootVC
         self.window!.makeKeyAndVisible()
         IQKeyboardManager.shared.enable = true
-        
+        #if DEBUG
+        Bundle(path: "/Applications/InjectionIII.app/Contents/Resources/iOSInjection10.bundle")?.load()
+        #endif
         //! 数据库
         MagicalRecord.setupCoreDataStack(withStoreNamed: "LYouSpeedInfoData.sqlite")
         let docs = NSSearchPathForDirectoriesInDomains(.libraryDirectory, .userDomainMask, true).last

@@ -19,8 +19,8 @@ class LYBaseController: UIViewController {
         super.viewDidLoad()
         setNavBarBgColor()
         self.navigationController!.navigationBar.barStyle = UIBarStyle(rawValue: 1)!
-        self.view.backgroundColor = YCColorMain
-        self.navigationController?.navigationBar.barTintColor = YCColorMain
+        self.view.backgroundColor = YCColorGray
+        self.navigationController?.navigationBar.barTintColor = YCColorStanBlue
         //自定义返回按钮
         leftView = UIButton(type: .custom);
         leftView.frame = CGRect(x:0, y:0, width:100, height:40)
@@ -57,7 +57,7 @@ class LYBaseController: UIViewController {
     //MARK:=======设置NavBar背景色
     func setNavBarBgColor() {
         let navBar = UINavigationBar.appearance()
-        navBar.barTintColor = YCColorMain
+        navBar.barTintColor = YCColorStanBlue
         let dict = [NSAttributedString.Key.foregroundColor:YCColorWhite]
         navBar.titleTextAttributes = dict
         self.navigationController!.navigationBar.isTranslucent = false

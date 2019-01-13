@@ -17,7 +17,7 @@ class LYSettingCell: UITableViewCell {
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        self.backgroundColor = YCColorMain
+        self.backgroundColor = YCColorWhite
         creatUI()
     }
     
@@ -25,14 +25,14 @@ class LYSettingCell: UITableViewCell {
         self.addSubview(iocnImageView)
         iocnImageView.snp.makeConstraints { (make) in
             make.left.equalTo(20)
-            make.top.equalTo(10)
+            make.top.equalTo(12)
             make.width.equalTo(25)
             make.height.equalTo(25)
         }
         self.addSubview(titleLable)
         titleLable.textAlignment = NSTextAlignment.left
-        titleLable.font = YC_FONT_PFSC_Medium(15)
-        titleLable.textColor = YCColorWhite
+        titleLable.font = YC_FONT_PFSC_Medium(13)
+        titleLable.textColor = YCColorBlack
         titleLable.alpha = 0.8
         titleLable.snp.makeConstraints { (make) in
             make.left.equalTo(iocnImageView.snp.right).offset(25)
@@ -42,11 +42,10 @@ class LYSettingCell: UITableViewCell {
         }
         let line = UIView()
         self.addSubview(line)
-        line.backgroundColor = YCColorWhite
-        line.alpha = 0.1
+        line.backgroundColor = YCColorGray
         line.snp.makeConstraints { (make) in
             make.left.equalTo(20)
-            make.top.equalTo(50)
+            make.top.equalTo(43)
             make.right.equalTo(-20)
             make.height.equalTo(1)
         }
@@ -64,31 +63,32 @@ class LYSettingCell: UITableViewCell {
         swichView.isHidden = true
         swichView.backgroundColor = UIColor(white: 1, alpha: 0)
         swichView.snp.makeConstraints { (make) in
-            make.right.equalTo(-20)
+            make.right.equalTo(0)
             make.top.equalTo(0)
-            make.width.equalTo(180)
-            make.height.equalTo(55)
+            make.width.equalTo(170)
+            make.height.equalTo(45)
         }
         let tilArr = ["Mbps","KB/s"]
         for i in 0..<2 {
             let selButton = UIButton()
             swichView.addSubview(selButton)
-            selButton.layer.cornerRadius = 35/2
+            selButton.layer.cornerRadius = 25/2
             selButton.layer.borderWidth = 1
             selButton.tag = i+10
             selButton.setTitle(tilArr[i], for: .normal)
-            selButton.titleLabel?.font = YC_FONT_PFSC_Medium(14)
-            selButton.layer.borderColor = YCColorWhite.cgColor
+            selButton.titleLabel?.font = YC_FONT_PFSC_Medium(11)
+            selButton.layer.borderColor = YCColorDarkLight.cgColor
+            selButton.setTitleColor(YCColorDarkLight, for: .normal)
             selButton.snp.makeConstraints { (make) in
-                make.left.equalTo(35+i*80)
-                make.top.equalTo(5)
-                make.width.equalTo(68)
-                make.height.equalTo(35)
+                make.left.equalTo(35+i*65)
+                make.top.equalTo(10)
+                make.width.equalTo(50)
+                make.height.equalTo(25)
             }
             if(selButton.tag==10){
-                selButton.setTitleColor(YCColorBlack, for: .normal)
+                selButton.layer.borderColor = YCColorStanBlue.cgColor
+                selButton.setTitleColor(YCColorStanBlue, for: .normal)
                 selButton.backgroundColor = YCColorWhite
-                selButton.alpha = 0.8
             }
             selButton.addTarget(self, action: #selector(selButtonClick(_:)), for:.touchUpInside)
         }
@@ -97,13 +97,13 @@ class LYSettingCell: UITableViewCell {
     @objc func selButtonClick(_ button:UIButton){
         for i in 0..<2 {
             let btn:UIButton = self.viewWithTag(i+10) as! UIButton
-            btn.setTitleColor(YCColorWhite, for: .normal)
+            btn.layer.borderColor = YCColorDarkLight.cgColor
+            btn.setTitleColor(YCColorDarkLight, for: .normal)
             btn.backgroundColor = UIColor.clear
-            btn.alpha = 1
         }
-        button.setTitleColor(YCColorBlack, for: .normal)
+        button.setTitleColor(YCColorStanBlue, for: .normal)
+        button.layer.borderColor = YCColorStanBlue.cgColor
         button.backgroundColor = YCColorWhite
-        button.alpha = 0.8
         callSelBlock!(button.tag)
     }
     
@@ -113,21 +113,21 @@ class LYSettingCell: UITableViewCell {
             arrow.isHidden = true
             swichView.isHidden = false
             break
-        case 3:
+        case 21:
             iocnImageView.snp.updateConstraints { (make) in
                 make.top.equalTo(11)
                 make.width.equalTo(23)
-                make.height.equalTo(23)
+                make.height.equalTo(18)
             }
             break
-        case 4:
+        case 22:
             iocnImageView.snp.updateConstraints { (make) in
                 make.top.equalTo(17)
                 make.width.equalTo(23)
                 make.height.equalTo(15)
             }
             break
-        case 5:
+        case 30:
             titleLable.snp.updateConstraints { (make) in
                 make.top.equalTo(-2)
             }

@@ -65,6 +65,9 @@ var gof_ColorWithHex: (NSInteger) -> UIColor = {hex in
 }
 
 // MARK: ---- 三大色调
+let YCColorMainGray = gof_ColorWithHex(0x777777);   // 主色调，浅灰色
+let YCColorStanBlue = gof_ColorWithHex(0x1485FF);   //全局标准蓝色
+let YCColorGray = gof_ColorWithHex(0xF2F2F2);   // 主色调，灰色
 
 let YCColorDarkRed = gof_ColorWithHex(0xA74460);     // 主色调，深红色
 let YCColorMain = gof_ColorWithHex(0x1C2029);     // 主色调，棕色
@@ -72,18 +75,15 @@ let YCColorGreen = gof_ColorWithHex(0x00FF7F);     // 主色调，绿色
 let YCColorDarkGreen = gof_ColorWithHex(0x55DC87);     // 主色调，深绿色
 let YCColorYellow = gof_ColorWithHex(0xF5C637);     // 主色调，黄色
 let YCColorWhite = gof_ColorWithHex(0xFFFFFF);     // 主色调，白色
-let YCColorBlack = gof_ColorWithHex(0x2D2D2D);   // 主色调，纯黑色
+let YCColorBlack = gof_ColorWithHex(0x000000);   // 主色调，纯黑色
 let YCColorLightBlack = gof_ColorWithHex(0x7A7A7A);   //  浅黑色
 let YCColorTitleBlack = gof_ColorWithHex(0x666666);   // 主色调，标题黑色
-let YCColorGray = gof_ColorWithHex(0x9898A3);   // 主色调，灰色
 let YCColorLightGray = gof_ColorWithHex(0xE7E7E7);   // 主色调，浅灰色
-let YCColorMainGray = gof_ColorWithHex(0x54565E);   // 主色调，浅灰色
 
 let YCColorLight = gof_ColorWithHex(0xF2F4F6);   //全局灰色
 let YCColorDarkLight = gof_ColorWithHex(0xA6A6A6);   //全局深灰色
 
 let YCColorBlue = gof_ColorWithHex(0x309FFF);   //全局浅蓝色
-let YCColorStanBlue = gof_ColorWithHex(0x4899F0);   //全局标准蓝色
 let YCColorDarkBlue = gof_ColorWithHex(0x3A69EF);   //全局深蓝色
 
 let YCColorRed = gof_ColorWithHex(0xFF2633);   //全局红色

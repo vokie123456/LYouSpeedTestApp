@@ -22,12 +22,12 @@ class LYUpgradeView: UIView {
     
     func creatUI(){
         let upgradeButton = UIButton()
-        upgradeButton.backgroundColor = YCColorYellow
+        upgradeButton.backgroundColor = YCColorStanBlue
         upgradeButton.setImage(UIImage(named: "updateIcon"), for: .normal)
         upgradeButton.setImage(UIImage(named: "updateIcon"), for: [.normal,.highlighted])
         upgradeButton.imageEdgeInsets = UIEdgeInsets(top: 5, left: 0, bottom: 5, right: 0)
         upgradeButton.setTitle("升级到高级版", for: .normal)
-        upgradeButton.setTitleColor(YCColorMain, for: .normal)
+        upgradeButton.setTitleColor(YCColorWhite, for: .normal)
         self.addSubview(upgradeButton)
         upgradeButton.snp.makeConstraints { (make) in
             make.left.equalTo(0)

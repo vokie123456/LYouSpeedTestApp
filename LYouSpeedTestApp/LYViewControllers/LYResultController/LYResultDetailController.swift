@@ -27,16 +27,6 @@ class LYResultDetailController: LYBaseController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = model.currenWifiName
-        let tlabel = UILabel(frame: CGRect(x: 0, y: 0, width: Main_Screen_Width, height: 30))
-        tlabel.textAlignment = NSTextAlignment.center
-        tlabel.text = navigationItem.title
-        tlabel.textColor = UIColor.white
-        if let font = UIFont(name: "Helvetica-Bold", size: 17.0) {
-            tlabel.font = font
-        }
-        tlabel.backgroundColor = UIColor.clear
-        tlabel.adjustsFontSizeToFitWidth = true
-        self.navigationItem.titleView = tlabel
         backButton.frame.origin.y = 12
         //自定义分享按钮
         shareRightView = UIButton(type: .custom);
