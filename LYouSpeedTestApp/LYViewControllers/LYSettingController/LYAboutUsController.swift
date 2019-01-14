@@ -46,6 +46,7 @@ class LYAboutUsController: LYBaseController {
             titlelable.text = titleArr[i]
             titlelable.font = YC_FONT_PFSC_Medium(13)
             titlelable.textColor = YCColorBlack
+            titlelable.alpha = 0.8
             titlelable.snp.makeConstraints { (make) in
                 make.left.equalTo(20)
                 make.top.equalTo(15)
@@ -53,23 +54,21 @@ class LYAboutUsController: LYBaseController {
             }
             let line = UIView()
             line.backgroundColor = YCColorGray
-//            line.alpha = 0.1
             bgView.addSubview(line)
             line.snp.makeConstraints { (make) in
                 make.left.equalTo(20)
                 make.right.equalTo(-20)
-                make.top.equalTo(titlelable.snp.bottom).offset(12)
+                make.top.equalTo(titlelable.snp.bottom).offset(15)
                 make.height.equalTo(1)
             }
             let arrow = UIImageView()
             arrow.image = UIImage(named:"backToRight")
             bgView.addSubview(arrow)
-            arrow.alpha = 0.8
             arrow.snp.makeConstraints { (make) in
                 make.right.equalTo(-20)
                 make.top.equalTo(15)
-                make.width.equalTo(12)
-                make.height.equalTo(20)
+                make.width.equalTo(10)
+                make.height.equalTo(15)
             }
             if i==0{
                 arrow.isHidden = true
@@ -90,7 +89,9 @@ class LYAboutUsController: LYBaseController {
         versionLable.textColor = YCColorMainGray
         versionLable.textAlignment = NSTextAlignment.right
         versionLable.font = YC_FONT_PFSC_Medium(13)
-        versionLable.text = "1.0.0"
+        let infoDictionary = Bundle.main.infoDictionary
+        let app_Version = infoDictionary!["CFBundleShortVersionString"] as? String
+        versionLable.text = app_Version
         versionLable.snp.makeConstraints { (make) in
             make.right.equalTo(-20)
             make.top.equalTo(iconImageView.snp.bottom).offset(54)

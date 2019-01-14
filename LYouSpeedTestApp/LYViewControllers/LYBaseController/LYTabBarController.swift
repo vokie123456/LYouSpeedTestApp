@@ -36,7 +36,7 @@ class LYTabBarController: UITabBarController {
         //tabBar 底部工具栏背景颜色 (以下两个都行)
         self.tabBar.barTintColor = YCColorGray
         //设置 tabBar 工具栏字体颜色 (未选中  和  选中)
-        self.tabBar.tintColor = YCColorGreen
+        self.tabBar.tintColor = YCColorStanBlue
         self.tabBar.isTranslucent = false
         // 自定义顶部分割线
         let lineView = UIView()

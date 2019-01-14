@@ -14,9 +14,7 @@ class LYSettingController: LYBaseController,UITableViewDelegate,UITableViewDataS
     let submitView = LYSubmitView()
     
     lazy var settingTableView = UITableView(frame: CGRect(x: 0, y: 0, width: Main_Screen_Width, height: Main_Screen_Height), style: .grouped)
-//    let cionArr = ["im_unit","icon_share_green","im_rating","icon_crown","icon_email","im_about"]
     let cionArr = [["im_unit"],["icon_share_green","im_rating"],["icon_crown","icon_email"],["im_about"]]
-//    let titleArr = ["速度单位","分享","评分","升级到高级版","意见反馈","关于"]
     let titleArr = [["速度单位"],["分享","评分"],["升级到高级版","意见反馈"],["关于"]]
     
     override func viewDidLoad() {
@@ -31,23 +29,23 @@ class LYSettingController: LYBaseController,UITableViewDelegate,UITableViewDataS
         self.settingTableView .register(LYSettingCell.self, forCellReuseIdentifier:"setCellIdentifier")
         self.view.addSubview(settingTableView)
         /** 评分 */
-        scoreView.frame = CGRect(x: 40, y: 170, width: Main_Screen_Width-80, height: 170)
-        scoreView.layer.cornerRadius = 10
+        scoreView.frame = CGRect(x: 0, y: 0, width: Main_Screen_Width, height: Main_Screen_Height)
         scoreView.alpha = 0
-        self.view.addSubview(scoreView)
+        let window: UIWindow? = UIApplication.shared.keyWindow
+        window!.addSubview(scoreView)
         scoreView.closeBlock = {() in
             let opts: UIView.AnimationOptions = [.curveEaseOut]
-            UIView.animate(withDuration: 0.4, delay: 0, options: opts, animations: {
+            UIView.animate(withDuration: 0.1, delay: 0, options: opts, animations: {
                 self.scoreView.alpha = 0
             }, completion: { _ in
             })
         }
         scoreView.selStarBlock = {() in
             let opts: UIView.AnimationOptions = [.curveEaseOut]
-            UIView.animate(withDuration: 0.4, delay: 0, options: opts, animations: {
+            UIView.animate(withDuration: 0.1, delay: 0, options: opts, animations: {
                 self.scoreView.alpha = 0
                 let opts: UIView.AnimationOptions = [.curveEaseIn]
-                UIView.animate(withDuration: 0.4, delay: 0, options: opts, animations: {
+                UIView.animate(withDuration: 0.1, delay: 0, options: opts, animations: {
                     self.submitView.alpha = 1
                 }, completion: { _ in
                 })
@@ -55,10 +53,11 @@ class LYSettingController: LYBaseController,UITableViewDelegate,UITableViewDataS
             })
         }
         /** 提交反馈 */
-        submitView.frame = CGRect(x: 40, y: 140, width: Main_Screen_Width-80, height: 240)
+        submitView.frame = CGRect(x: 0, y: 0, width: Main_Screen_Width, height: Main_Screen_Height)
         submitView.layer.cornerRadius = 10
         submitView.alpha = 0
-        self.view.addSubview(submitView)
+        let subwindow: UIWindow? = UIApplication.shared.keyWindow
+        subwindow!.addSubview(submitView)
         submitView.selSubmitBlock = {(title:NSString) in
             self.selTitle = title
         }
@@ -69,14 +68,14 @@ class LYSettingController: LYBaseController,UITableViewDelegate,UITableViewDataS
                 }
                 /** 提交 */
                 let opts: UIView.AnimationOptions = [.curveEaseOut]
-                UIView.animate(withDuration: 0.4, delay: 0, options: opts, animations: {
+                UIView.animate(withDuration: 0.1, delay: 0, options: opts, animations: {
                     self.submitView.alpha = 0
                 }, completion: { _ in
                 })
                 EasyShowTextView.showText("反馈成功")
             }else{
                 let opts: UIView.AnimationOptions = [.curveEaseOut]
-                UIView.animate(withDuration: 0.4, delay: 0, options: opts, animations: {
+                UIView.animate(withDuration: 0.1, delay: 0, options: opts, animations: {
                     self.submitView.alpha = 0
                 }, completion: { _ in
                 })
@@ -146,7 +145,7 @@ class LYSettingController: LYBaseController,UITableViewDelegate,UITableViewDataS
         }else if index==11{
             /** 评分 */
             let opts: UIView.AnimationOptions = [.curveEaseIn]
-            UIView.animate(withDuration: 0.4, delay: 0, options: opts, animations: {
+            UIView.animate(withDuration: 0.1, delay: 0, options: opts, animations: {
                 self.scoreView.alpha = 1
             }, completion: { _ in
             })

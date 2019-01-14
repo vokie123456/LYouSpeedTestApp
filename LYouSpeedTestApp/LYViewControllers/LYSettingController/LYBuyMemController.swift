@@ -31,27 +31,16 @@ class LYBuyMemController: LYBaseController,YQInAppPurchaseToolDelegate {
         self.IAPTool.delegate = self;
         //购买后，向苹果服务器验证一下购买结果。默认为YES。不建议关闭
         self.IAPTool.checkAfterPay = false;
-        
+        self.view.backgroundColor = YCColorGray
+        self.view.addSubview(infoView)
         self.navigationItem.title = "升级到高级版"
-        let bgImage = UIImageView()
-        bgImage.isUserInteractionEnabled = true
-        bgImage.image = UIImage(named: "im_bg_resultCard")
-        self.view.addSubview(bgImage)
-        bgImage.snp.makeConstraints { (make) in
-            make.left.equalTo(0)
-            make.right.equalTo(0)
-            make.top.equalTo(0)
-            make.height.equalTo(Main_Screen_Height)
-        }
-        bgImage.addSubview(infoView)
         infoView.snp.makeConstraints { (make) in
             make.left.equalTo(0)
             make.right.equalTo(0)
             make.top.equalTo(0)
             make.height.equalTo(Main_Screen_Height)
         }
-        infoView.selBuyMemBlock = {(tag:NSInteger) in
-            print("选择购买商品===\(tag)")
+        infoView.selBuyMemBlock = {() in
             /** 发起内购 */
             //向苹果询问哪些商品能够购买
             self.IAPTool.requestProducts(withProductArray:[APPSTORYBUYID])

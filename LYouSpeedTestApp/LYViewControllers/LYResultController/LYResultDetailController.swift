@@ -9,6 +9,8 @@
 import UIKit
 
 class LYResultDetailController: LYBaseController {
+    var isFromHome = false
+    
     var model = LYHomeModel()
     var shareRightView:UIButton = UIButton()
     let shareButton =   UIButton(type: .custom)
@@ -28,21 +30,6 @@ class LYResultDetailController: LYBaseController {
         super.viewDidLoad()
         self.navigationItem.title = model.currenWifiName
         backButton.frame.origin.y = 12
-        //自定义分享按钮
-        shareRightView = UIButton(type: .custom);
-        shareRightView.frame = CGRect(x:Main_Screen_Width-100, y:0, width:100, height:40)
-        shareRightView.addTarget(self, action: #selector(shareButtonClick), for: .touchUpInside)
-        shareButton.frame = CGRect(x:70, y:10, width:30, height:30)
-        shareButton.setImage(UIImage(named:"icon_share_white"), for: .normal)
-        shareButton.setImage(UIImage(named:"icon_share_white"), for: [.normal,.highlighted])
-        shareButton.addTarget(self, action: #selector(shareButtonClick), for: .touchUpInside)
-        shareRightView.addSubview(shareButton)
-        let shareBarBtn = UIBarButtonItem(customView: shareRightView)
-        //用于消除右边空隙，要不然按钮顶不到最前面
-        let spacer = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil,
-                                      action: nil)
-        spacer.width = 0;
-        self.navigationItem.rightBarButtonItems = [spacer,shareBarBtn]
         /** 主页面 */
         let mainScrollView = UIScrollView()
         mainScrollView.bounces = false
@@ -50,7 +37,7 @@ class LYResultDetailController: LYBaseController {
         mainScrollView.showsVerticalScrollIndicator = false //不显示垂直拖动的条
         mainScrollView.backgroundColor = YCColorLightGray
         self.view.addSubview(mainScrollView)
-        mainScrollView.contentSize = CGSize(width: Main_Screen_Width, height: 667+460)
+        mainScrollView.contentSize = CGSize(width: Main_Screen_Width, height: 667+500)
         mainScrollView.snp.makeConstraints { (make) in
             make.left.right.equalTo(self.view);
             make.top.equalTo(self.view).offset(0);
@@ -63,7 +50,18 @@ class LYResultDetailController: LYBaseController {
             make.left.equalTo(0);
             make.width.equalTo(Main_Screen_Width)
             make.top.equalTo(mainScrollView).offset(0);
-            make.height.equalTo(250);
+            make.height.equalTo(320);
+        }
+        if !isFromHome {
+            headView.discritlable.isHidden = true
+            headView.restartButton.isHidden = true
+            headView.snp.updateConstraints { (make) in
+                make.height.equalTo(240);
+            }
+            mainScrollView.contentSize = CGSize(width: Main_Screen_Width, height: 667+420)
+        }
+        headView.restartButtonBlock = {()in
+            self.navigationController?.popViewController(animated: true)
         }
         headView.gaintInfoModel(infoModel: self.model)
         /** 网速排名 */
@@ -73,7 +71,7 @@ class LYResultDetailController: LYBaseController {
             make.left.equalTo(0);
             make.width.equalTo(Main_Screen_Width)
             make.top.equalTo(headView.snp.bottom).offset(15);
-            make.height.equalTo(455);
+            make.height.equalTo(320);
         }
         contentView.gaintInfoModel(infoModel: self.model)
         contentView.speedButtonBlock = {()in
@@ -89,6 +87,24 @@ class LYResultDetailController: LYBaseController {
             make.height.equalTo(270);
         }
         moreView.gaintInfoModel(infoModel: self.model)
+        /** 测试结果 */
+        let resultView = LYDetailTestResultView()
+        mainScrollView.addSubview(resultView)
+        resultView.snp.makeConstraints { (make) in
+            make.left.equalTo(0);
+            make.width.equalTo(Main_Screen_Width)
+            make.top.equalTo(moreView.snp.bottom).offset(15);
+            make.height.equalTo(85);
+        }
+        resultView.resultButtonBlock = {()in
+            resultView.removeFromSuperview()
+            if self.isFromHome {
+                mainScrollView.contentSize = CGSize(width: Main_Screen_Width, height: 667+410)
+            }else{
+                mainScrollView.contentSize = CGSize(width: Main_Screen_Width, height: 667+330)
+            }
+            EasyShowTextView.showText("反馈成功")
+        }
        /** 广告位 */
         self.view.addSubview(self.adboadView)
         self.adboadView.snp.makeConstraints { (make) in

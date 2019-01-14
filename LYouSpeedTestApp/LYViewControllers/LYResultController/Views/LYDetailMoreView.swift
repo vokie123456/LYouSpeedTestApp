@@ -19,9 +19,9 @@ class LYDetailMoreView: UIView {
         /** 标题 */
         let titleLable = UILabel()
         titleLable.text = "更多详情"
-        titleLable.textColor = YCColorBlack
+        titleLable.textColor = YCColorTitleLight
         titleLable.alpha = 0.8
-        titleLable.font = YC_FONT_PFSC_Medium(16)
+        titleLable.font = YC_FONT_PFSC_Medium(15)
         self.addSubview(titleLable)
         titleLable.snp.makeConstraints { (make) in
             make.left.equalTo(20)
@@ -33,20 +33,38 @@ class LYDetailMoreView: UIView {
             /** 图标 */
             let iconImage = UIImageView()
             self.addSubview(iconImage)
+            iconImage.tag = i+10000
             iconImage.image = UIImage(named: imageArray[i])
             iconImage.snp.makeConstraints { (make) in
                 make.top.equalTo(titleLable.snp.bottom).offset(15+i*40)
                 make.left.equalTo(22)
-                make.width.equalTo(22)
-                make.height.equalTo(22)
+                make.width.equalTo(18)
+                make.height.equalTo(18)
             }
+            if iconImage.tag==10000{
+                iconImage.snp.updateConstraints { (make) in
+                    make.height.equalTo(16)
+                }
+            }
+            if iconImage.tag==10001{
+                iconImage.snp.updateConstraints { (make) in
+                    make.top.equalTo(titleLable.snp.bottom).offset(15+i*38)
+                }
+            }
+            if iconImage.tag==10002{
+                iconImage.snp.updateConstraints { (make) in
+                    make.top.equalTo(titleLable.snp.bottom).offset(15+i*41)
+                    make.height.equalTo(15)
+                }
+            }
+            
             /** 标题 */
             let titLable = UILabel()
             self.addSubview(titLable)
             titLable.text = titleArray[i]
             titLable.tag = i+10
-            titLable.font = YC_FONT_PFSC_Medium(14)
-            titLable.textColor = YCColorDarkGreen
+            titLable.font = YC_FONT_PFSC_Medium(13)
+            titLable.textColor = YCColorStanBlue
             titLable.snp.makeConstraints { (make) in
                 make.top.equalTo(titleLable.snp.bottom).offset(15+i*40)
                 make.left.equalTo(iconImage.snp.right).offset(20)
@@ -57,7 +75,7 @@ class LYDetailMoreView: UIView {
             progressLable.text = "1/5"
             progressLable.tag = i+100
             progressLable.font = YC_FONT_PFSC_Medium(12)
-            progressLable.textColor = YCColorGray
+            progressLable.textColor = YCColorTitleLight
             progressLable.snp.makeConstraints { (make) in
                 make.top.equalTo(titleLable.snp.bottom).offset(16+i*40)
                 make.right.equalTo(-20)
@@ -87,7 +105,7 @@ class LYDetailMoreView: UIView {
         }
         let imageArray1 = ["im_data","im_ip"]
         let titleArray1 = ["流量消耗","IP地址"]
-        let contentArray = ["20M",IPADRESS()]
+        let contentArray = ["26M",IPADRESS()]
         for i in 0..<titleArray1.count {
             /** 图标 */
             let iconImage = UIImageView()
@@ -96,15 +114,15 @@ class LYDetailMoreView: UIView {
             iconImage.snp.makeConstraints { (make) in
                 make.top.equalTo(line.snp.bottom).offset(20+i*40)
                 make.left.equalTo(22)
-                make.width.equalTo(22)
-                make.height.equalTo(22)
+                make.width.equalTo(31.5/2)
+                make.height.equalTo(31.5/2)
             }
             /** 标题 */
             let titLable = UILabel()
             self.addSubview(titLable)
             titLable.text = titleArray1[i]
-            titLable.font = YC_FONT_PFSC_Medium(14)
-            titLable.textColor = YCColorDarkGreen
+            titLable.font = YC_FONT_PFSC_Medium(13)
+            titLable.textColor = YCColorStanBlue
             titLable.snp.makeConstraints { (make) in
                 make.top.equalTo(line.snp.bottom).offset(20+i*40)
                 make.left.equalTo(iconImage.snp.right).offset(20)
@@ -114,7 +132,7 @@ class LYDetailMoreView: UIView {
             self.addSubview(contentLable)
             contentLable.text = contentArray[i]
             contentLable.font = YC_FONT_PFSC_Medium(14)
-            contentLable.textColor = YCColorGray
+            contentLable.textColor = YCColorTitleLight
             contentLable.snp.makeConstraints { (make) in
                 make.top.equalTo(line.snp.bottom).offset(20+i*40)
                 make.right.equalTo(-20)

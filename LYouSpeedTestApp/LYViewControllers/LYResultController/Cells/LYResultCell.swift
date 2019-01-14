@@ -40,6 +40,7 @@ class LYResultCell: UITableViewCell {
         timeLable.text = "12:16"
         timeLable.font = YC_FONT_PFSC_Medium(12)
         timeLable.textColor = YCColorBlack
+        timeLable.alpha = 0.8
         timeLable.snp.makeConstraints { (make) in
             make.left.equalTo(18)
             make.top.equalTo(12)
@@ -49,9 +50,9 @@ class LYResultCell: UITableViewCell {
         netImage.image = UIImage(named: "im_network_wifi")
         netImage.snp.makeConstraints { (make) in
             make.left.equalTo(20)
-            make.top.equalTo(timeLable.snp.bottom).offset(10)
-            make.width.equalTo(20)
-            make.height.equalTo(22)
+            make.top.equalTo(timeLable.snp.bottom).offset(13)
+            make.width.equalTo(21)
+            make.height.equalTo(15)
         }
         let line = UIView()
         bgView.addSubview(line)
@@ -68,6 +69,7 @@ class LYResultCell: UITableViewCell {
         yanchiLable.text = "延迟"
         yanchiLable.font = YC_FONT_PFSC_Medium(12)
         yanchiLable.textColor = YCColorBlack
+        yanchiLable.alpha = 0.8
         yanchiLable.snp.makeConstraints { (make) in
             make.left.equalTo(line).offset(20)
             make.top.equalTo(12)
@@ -85,6 +87,7 @@ class LYResultCell: UITableViewCell {
         ycLable.text = "ms"
         ycLable.font = YC_FONT_PFSC_Medium(12)
         ycLable.textColor = YCColorBlack
+        ycLable.alpha = 0.8
         ycLable.snp.makeConstraints { (make) in
             make.left.equalTo(line).offset(20)
             make.top.equalTo(yancContentLable.snp.bottom).offset(0)
@@ -95,6 +98,7 @@ class LYResultCell: UITableViewCell {
         downLoadLable.text = "下载"
         downLoadLable.font = YC_FONT_PFSC_Medium(12)
         downLoadLable.textColor = YCColorBlack
+        downLoadLable.alpha = 0.8
         downLoadLable.snp.makeConstraints { (make) in
             make.left.equalTo(Main_Screen_Width/2-40)
             make.top.equalTo(12)
@@ -112,6 +116,7 @@ class LYResultCell: UITableViewCell {
         dwLable.text = "Mbps"
         dwLable.font = YC_FONT_PFSC_Medium(12)
         dwLable.textColor = YCColorBlack
+        dwLable.alpha = 0.8
         dwLable.snp.makeConstraints { (make) in
             make.left.equalTo(Main_Screen_Width/2-40)
             make.top.equalTo(downContentLable.snp.bottom).offset(0)
@@ -122,6 +127,7 @@ class LYResultCell: UITableViewCell {
         upLoadLable.text = "上传"
         upLoadLable.font = YC_FONT_PFSC_Medium(12)
         upLoadLable.textColor = YCColorBlack
+        upLoadLable.alpha = 0.8
         upLoadLable.snp.makeConstraints { (make) in
             make.left.equalTo(Main_Screen_Width/2+40)
             make.top.equalTo(12)
@@ -139,6 +145,7 @@ class LYResultCell: UITableViewCell {
         upLable.text = "Mbps"
         upLable.font = YC_FONT_PFSC_Medium(12)
         upLable.textColor = YCColorBlack
+        upLable.alpha = 0.8
         upLable.snp.makeConstraints { (make) in
             make.left.equalTo(Main_Screen_Width/2+40)
             make.top.equalTo(upContentLable.snp.bottom).offset(0)
@@ -146,12 +153,12 @@ class LYResultCell: UITableViewCell {
         /** 箭头 */
         let arrowImage = UIImageView()
         bgView.addSubview(arrowImage)
-        arrowImage.image = UIImage(named: "backToRight")
+        arrowImage.image = UIImage(named: "resultBackToRight")
         arrowImage.snp.makeConstraints { (make) in
             make.right.equalTo(-20)
             make.centerY.equalToSuperview()
-            make.width.equalTo(12)
-            make.height.equalTo(18)
+            make.width.equalTo(8)
+            make.height.equalTo(15)
         }
     }
     

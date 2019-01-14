@@ -74,6 +74,7 @@
 		218CEF7621D39B8600007B41 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 218CEF7421D39B8600007B41 /* Main.storyboard */; };
 		218CEF7821D39B8800007B41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 218CEF7721D39B8800007B41 /* Assets.xcassets */; };
 		218CEF7B21D39B8800007B41 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 218CEF7921D39B8800007B41 /* LaunchScreen.storyboard */; };
+		218F78FE21EC7D3900207D83 /* LYDetailTestResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218F78FD21EC7D3900207D83 /* LYDetailTestResultView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -178,6 +179,7 @@
 		218CEF7721D39B8800007B41 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		218CEF7A21D39B8800007B41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		218CEF7C21D39B8800007B41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		218F78FD21EC7D3900207D83 /* LYDetailTestResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYDetailTestResultView.swift; sourceTree = "<group>"; };
 		4D63708E398CEDE856A7FA13 /* Pods-LYouSpeedTestApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LYouSpeedTestApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LYouSpeedTestApp/Pods-LYouSpeedTestApp.debug.xcconfig"; sourceTree = "<group>"; };
 		6B53FAC59A1B802E1185810D /* libPods-LYouSpeedTestApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LYouSpeedTestApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5E27FF72D1A07C6134E1B6D /* Pods-LYouSpeedTestApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LYouSpeedTestApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-LYouSpeedTestApp/Pods-LYouSpeedTestApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -423,6 +425,7 @@
 				2174F7A621DE0F8300BB804A /* LYDetailHeadView.swift */,
 				2174F7AA21DF352E00BB804A /* LYDetailContentView.swift */,
 				2174F7AC21DF40FD00BB804A /* LYDetailMoreView.swift */,
+				218F78FD21EC7D3900207D83 /* LYDetailTestResultView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -684,6 +687,7 @@
 				2174F78821DDE8E800BB804A /* WPAttributedStyleAction.m in Sources */,
 				212E27D621E5D06300E1BDD4 /* LYSpeedInfo+CoreDataClass.swift in Sources */,
 				2174F76921DCC52100BB804A /* LYResultHeadView.swift in Sources */,
+				218F78FE21EC7D3900207D83 /* LYDetailTestResultView.swift in Sources */,
 				2174F7A421DE03F400BB804A /* EasyShowOptions.m in Sources */,
 				216A352121D4B915007D73B5 /* APPMacro.swift in Sources */,
 				2174F77521DDB76300BB804A /* LYBuyButton.swift in Sources */,

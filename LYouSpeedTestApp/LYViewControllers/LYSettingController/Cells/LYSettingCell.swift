@@ -25,9 +25,9 @@ class LYSettingCell: UITableViewCell {
         self.addSubview(iocnImageView)
         iocnImageView.snp.makeConstraints { (make) in
             make.left.equalTo(20)
-            make.top.equalTo(12)
-            make.width.equalTo(25)
-            make.height.equalTo(25)
+            make.top.equalTo(15)
+            make.width.equalTo(17)
+            make.height.equalTo(16)
         }
         self.addSubview(titleLable)
         titleLable.textAlignment = NSTextAlignment.left
@@ -113,24 +113,17 @@ class LYSettingCell: UITableViewCell {
             arrow.isHidden = true
             swichView.isHidden = false
             break
-        case 21:
+        case 20:
             iocnImageView.snp.updateConstraints { (make) in
-                make.top.equalTo(11)
-                make.width.equalTo(23)
-                make.height.equalTo(18)
+                make.top.equalTo(16)
             }
             break
-        case 22:
+        case 21:
             iocnImageView.snp.updateConstraints { (make) in
                 make.top.equalTo(17)
-                make.width.equalTo(23)
-                make.height.equalTo(15)
             }
             break
         case 30:
-            titleLable.snp.updateConstraints { (make) in
-                make.top.equalTo(-2)
-            }
             break
         default:
             break

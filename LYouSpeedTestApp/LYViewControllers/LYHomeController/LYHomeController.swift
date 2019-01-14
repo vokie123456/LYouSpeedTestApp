@@ -242,6 +242,7 @@ class LYHomeController: LYBaseController {
             /** 测速完成跳转到详情页 */
             let detailVC = LYResultDetailController()
             detailVC.model = self.speedModel
+            detailVC.isFromHome = true
             detailVC.hidesBottomBarWhenPushed = true
             self.navigationController?.pushViewController(detailVC, animated: true)
         }, failedBlock: { error in

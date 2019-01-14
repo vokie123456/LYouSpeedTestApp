@@ -15,16 +15,26 @@ class LYSubmitView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = UIColor.white
+        self.backgroundColor = UIColor(red: 0 / 255.0, green: 0 / 255.0, blue: 0 / 255.0, alpha: 0.5) // 设置半透明颜色
         creatUI()
     }
     func creatUI(){
+        /** 背景框 */
+        let bgView = UIView()
+        bgView.layer.masksToBounds = true
+        bgView.isUserInteractionEnabled = true
+        bgView.layer.cornerRadius = 10
+        bgView.backgroundColor = YCColorWhite
+        bgView.frame = CGRect(x: 60, y: 0, width: Main_Screen_Width-120, height: 240)
+        bgView.center.y = Main_Screen_Height/2-20
+        self.addSubview(bgView)
+        
         let titlelabel = UILabel()
         titlelabel.text = "您为什么不喜欢测速大师？"
         titlelabel.textAlignment = NSTextAlignment.center
         titlelabel.font = YC_FONT_PFSC_Medium(16)
         titlelabel.textColor = UIColor.gray
-        self.addSubview(titlelabel)
+        bgView.addSubview(titlelabel)
         titlelabel.snp.makeConstraints { (make) in
             make.left.equalTo(0)
             make.right.equalTo(0)
@@ -43,7 +53,7 @@ class LYSubmitView: UIView {
             selBtn.titleLabel?.font = YC_FONT_PFSC_Medium(14)
             selBtn.contentHorizontalAlignment = .left
             selBtn.titleEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0);
-            self.addSubview(selBtn)
+            bgView.addSubview(selBtn)
             selBtn.snp.makeConstraints { (make) in
                 make.top.equalTo(titlelabel.snp.bottom).offset(10+i*35)
                 make.left.equalTo(50)
@@ -58,10 +68,10 @@ class LYSubmitView: UIView {
             let submitBtn = UIButton()
             submitBtn.tag = i+100
             submitBtn.setTitle(submitArr[i], for: .normal)
-            submitBtn.setTitleColor(YCColorGreen, for: .normal)
+            submitBtn.setTitleColor(YCColorStanBlue, for: .normal)
             submitBtn.titleLabel?.font = YC_FONT_PFSC_Medium(18)
             submitBtn.contentHorizontalAlignment = .center
-            self.addSubview(submitBtn)
+            bgView.addSubview(submitBtn)
             submitBtn.snp.makeConstraints { (make) in
                 make.bottom.equalTo(0)
                 make.right.equalTo(-20-i*60)

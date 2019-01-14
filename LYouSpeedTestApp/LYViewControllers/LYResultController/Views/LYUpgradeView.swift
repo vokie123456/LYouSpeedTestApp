@@ -25,7 +25,7 @@ class LYUpgradeView: UIView {
         upgradeButton.backgroundColor = YCColorStanBlue
         upgradeButton.setImage(UIImage(named: "updateIcon"), for: .normal)
         upgradeButton.setImage(UIImage(named: "updateIcon"), for: [.normal,.highlighted])
-        upgradeButton.imageEdgeInsets = UIEdgeInsets(top: 5, left: 0, bottom: 5, right: 0)
+        upgradeButton.imageEdgeInsets = UIEdgeInsets(top: 5, left: -20, bottom: 5, right: 0)
         upgradeButton.setTitle("升级到高级版", for: .normal)
         upgradeButton.setTitleColor(YCColorWhite, for: .normal)
         self.addSubview(upgradeButton)

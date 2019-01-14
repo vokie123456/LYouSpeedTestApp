@@ -24,6 +24,7 @@ class LYResultHeadView: UIView {
         dateTitlelable.text = "12月16日"
         dateTitlelable.font = YC_FONT_PFSC_Medium(18)
         dateTitlelable.textColor = YCColorBlack
+        dateTitlelable.alpha = 0.8
         dateTitlelable.frame = CGRect(x: 0, y: -5, width: 100, height: 40)
         self.addSubview(dateTitlelable)
     }
