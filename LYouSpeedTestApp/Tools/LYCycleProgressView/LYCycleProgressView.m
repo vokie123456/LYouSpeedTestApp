@@ -55,7 +55,7 @@
     _backLayer = [CAShapeLayer layer];//创建一个track shape layer
     _backLayer.frame = self.bounds;
     _backLayer.fillColor = [[UIColor clearColor] CGColor];  //填充色为无色
-    _backLayer.strokeColor = ColorWithHexRGB(0x3D485A).CGColor; //指定path的渲染颜色,这里可以设置任意不透明颜色
+    _backLayer.strokeColor = ColorWithHexRGB(0xDADADA).CGColor; //指定path的渲染颜色,这里可以设置任意不透明颜色
     _backLayer.opacity = 1; //背景颜色的透明度
     _backLayer.lineCap = kCALineCapSquare;//指定线的边缘是圆的
     _backLayer.lineWidth = 20;//线的宽度
@@ -170,7 +170,7 @@
 - (UILabel *)countJump {
     if (!_countJump) {
         _countJump = [[UILabel alloc]init];
-        _countJump.textColor = [UIColor whiteColor];
+        _countJump.textColor = ColorWithHexRGB(0x1485FF);
         _countJump.font = [UIFont systemFontOfSize:18];
         _countJump.textAlignment = NSTextAlignmentCenter;
         _countJump.text = [NSString stringWithFormat:@"0Mbps"];

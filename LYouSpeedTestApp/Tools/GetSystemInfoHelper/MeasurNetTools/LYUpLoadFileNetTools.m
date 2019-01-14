@@ -92,6 +92,7 @@
  * 测速完成
  */
 -(void)finishMeasure{
+    NSLog(@"完成===========");
     [_timer invalidate];
     _timer = nil;
     if(_second!=0){

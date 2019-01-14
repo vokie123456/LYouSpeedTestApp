@@ -28,12 +28,13 @@ class LYUpgradeView: UIView {
         upgradeButton.imageEdgeInsets = UIEdgeInsets(top: 5, left: -20, bottom: 5, right: 0)
         upgradeButton.setTitle("升级到高级版", for: .normal)
         upgradeButton.setTitleColor(YCColorWhite, for: .normal)
+        upgradeButton.titleLabel?.font = YC_FONT_PFSC_Medium(15)
         self.addSubview(upgradeButton)
         upgradeButton.snp.makeConstraints { (make) in
             make.left.equalTo(0)
             make.right.equalTo(0)
             make.top.equalTo(0)
-            make.height.equalTo(50)
+            make.height.equalTo(40)
         }
         upgradeButton.addTarget(self, action: #selector(upgradeButton(_:)), for: .touchUpInside)
     }

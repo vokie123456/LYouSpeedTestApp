@@ -219,7 +219,7 @@ static YQInAppPurchaseTool *storeTool;
      */
     NSString *encodeStr = [receiptData base64EncodedStringWithOptions:NSDataBase64EncodingEndLineWithLineFeed];
     
-    NSString *payload = [NSString stringWithFormat:@"{\"receipt-data\" : \"%@\",\"password\" : \"%@\"}", encodeStr,"ff1664c1f9d043da99e0b44200a44df4"];
+    NSString *payload = [NSString stringWithFormat:@"{\"receipt-data\" : \"%@\",\"password\" : \"%@\"}", encodeStr,"7eeb7be9cab649c7b3cfc7f20b0be0d3"];
 
     NSData *payloadData = [payload dataUsingEncoding:NSUTF8StringEncoding];
     

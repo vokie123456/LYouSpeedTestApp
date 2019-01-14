@@ -208,6 +208,6 @@ let LYHomeADId = "ca-app-pub-6719639781124001/9290941595"
 let LYDetailADId = "ca-app-pub-6719639781124001/4086104071"
 
 /** 内购ID */
-let APPSTORYBUYID = "bizhi001_233"
+let APPSTORYBUYID = "TXSPEEDVIP"
 //共享密钥
-let SHAREKEY = "ff1664c1f9d043da99e0b44200a44df4"
+let SHAREKEY = "7eeb7be9cab649c7b3cfc7f20b0be0d3"

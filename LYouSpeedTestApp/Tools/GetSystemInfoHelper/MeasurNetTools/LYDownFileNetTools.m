@@ -133,7 +133,7 @@
     //计算下载进度
     self.currentSize += data.length;
     float progress =  self.currentSize/[self getServerFileSize];
-    NSLog(@"文件大小=========%lld",self.currentSize);
+//    NSLog(@"文件大小=========%lld",self.currentSize);
 }
 
 - (void) connectionDidFinishLoading:(NSURLConnection *)connection{

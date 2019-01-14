@@ -126,7 +126,7 @@ class LYResultController: LYBaseController,UITableViewDelegate,UITableViewDataSo
     }
     
     lazy var updateView:LYUpgradeView = {
-        let  updateView = LYUpgradeView(frame: CGRect(x: 0, y: Main_Screen_Height-50-kTabBarHeight-NaviBarHeight, width: Main_Screen_Width, height: 50))
+        let  updateView = LYUpgradeView(frame: CGRect(x: 0, y: Main_Screen_Height-40-kTabBarHeight-NaviBarHeight, width: Main_Screen_Width, height: 40))
         return updateView
     }()
     

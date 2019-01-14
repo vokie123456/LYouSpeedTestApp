@@ -30,18 +30,18 @@ class LYHomeController: LYBaseController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.view.addSubview(bgImageView)
+        self.navigationItem.title = "TX SPEED"
+        self.backButton.isHidden = true
         self.view.addSubview(headView)
         headView.snp.makeConstraints { (make) in
-            make.top.equalTo(StatusBarHeight)
+            make.top.equalTo(0)
             make.left.right.equalToSuperview()
             make.height.equalTo(kWidth(R: 180))
         }
         /** 创建进度条 */
         let progressView = LYCycleProgressView(frame: CGRect(x: 0, y: 0, width: Main_Screen_Width/3*2, height: Main_Screen_Width/3*2))
         progressView.center.x = self.view.center.x
-        progressView.center.y = self.view.center.y+20
+        progressView.center.y = self.view.center.y-50
         progressView.progress = 0.0
         self.view.addSubview(progressView)
         currenProgressView = progressView
@@ -49,23 +49,29 @@ class LYHomeController: LYBaseController {
         /** 开始按钮 */
         let startButton = UIButton()
         self.view.addSubview(startButton)
-        startButton.layer.borderWidth = 1
         startButton.layer.masksToBounds = true
-        startButton.layer.borderColor = YCColorWhite.cgColor
-        startButton.layer.cornerRadius = 25
+        startButton.layer.cornerRadius = 40/2
         startButton.setTitle("开始", for: .normal)
-        startButton.titleLabel?.font = YC_FONT_PFSC_Medium(18)
-        startButton.setBackgroundImage(UIImage.init(named: "ic_glassButton"), for: .normal)
-        startButton.frame = CGRect(x: 100, y: progressView.frame.origin.y+Main_Screen_Width/3*2+20, width: Main_Screen_Width-200, height: 50)
+        startButton.titleLabel?.font = YC_FONT_PFSC_Medium(15)
+        startButton.backgroundColor = YCColorStanBlue
+        startButton.frame = CGRect(x: 70, y: progressView.frame.origin.y+Main_Screen_Width/3*2+20, width: Main_Screen_Width-140, height: 40)
         startButton.addTarget(self, action: #selector(startButtonClick), for: .touchUpInside)
-        /** 左箭头 */
-        self.view.addSubview(leftArrow)
-        leftArrow.image = UIImage(named: "leftArrow")
-        leftArrow.frame = CGRect(x: 25, y: progressView.frame.origin.y+Main_Screen_Width/3*2+30, width: 40, height: 30)
-        /** 右箭头 */
-        self.view.addSubview(rightArrow)
-        rightArrow.image = UIImage(named: "rightArrow")
-        rightArrow.frame = CGRect(x: Main_Screen_Width-65, y: progressView.frame.origin.y+Main_Screen_Width/3*2+30, width: 40, height: 30)
+//        /** 左箭头 */
+//        self.view.addSubview(leftArrow)
+//        leftArrow.image = UIImage(named: "leftArrow")
+//        leftArrow.frame = CGRect(x: 25, y: progressView.frame.origin.y+Main_Screen_Width/3*2+30, width: 40, height: 30)
+//        /** 右箭头 */
+//        self.view.addSubview(rightArrow)
+//        rightArrow.image = UIImage(named: "rightArrow")
+//        rightArrow.frame = CGRect(x: Main_Screen_Width-65, y: progressView.frame.origin.y+Main_Screen_Width/3*2+30, width: 40, height: 30)
+        /** 升级到高级版 */
+        self.view.addSubview(self.updateView)
+        self.updateView.updateBlock = {() in
+            /** 升级到高级版 */
+            let buyMemVC = LYBuyMemController()
+            buyMemVC.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(buyMemVC, animated: true)
+        }
         /** 监听网络变化 */
         currentNetReachability(view:progressView)
         /** 监听上传下载速度变化 */
@@ -73,22 +79,16 @@ class LYHomeController: LYBaseController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.navigationBar.isHidden = true
         super.viewWillAppear(animated)
-        /** 动起来!!! */
-        let opts: UIView.AnimationOptions = [.autoreverse , .repeat]
-        UIView.animate(withDuration: 0.6, delay: 0, options: opts, animations: {
-            self.leftArrow.frame.origin.x = 55
-            self.rightArrow.frame.origin.x = Main_Screen_Width-95
-        }, completion: { _ in
-            self.leftArrow.frame.origin.x = 25
-            self.rightArrow.frame.origin.x = Main_Screen_Width-65
-        })
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        self.navigationController?.navigationBar.isHidden = false
+//        /** 动起来!!! */
+//        let opts: UIView.AnimationOptions = [.autoreverse , .repeat]
+//        UIView.animate(withDuration: 0.6, delay: 0, options: opts, animations: {
+//            self.leftArrow.frame.origin.x = 55
+//            self.rightArrow.frame.origin.x = Main_Screen_Width-95
+//        }, completion: { _ in
+//            self.leftArrow.frame.origin.x = 25
+//            self.rightArrow.frame.origin.x = Main_Screen_Width-65
+//        })
     }
     
     @objc private func startButtonClick()  {
@@ -168,7 +168,7 @@ class LYHomeController: LYBaseController {
             if proData>=1{
                 self.currenProgressView.progress = 1
             }
-//            print("下载进度======\(progress)")
+//            print("下载进度======\(proData)")
         }, finishMeasure: { speed in
             let kdSpeedStr = "\(QBTools.formatBandWidth(UInt64(speed))!)"
             self.downImage.isHidden = true
@@ -191,9 +191,9 @@ class LYHomeController: LYBaseController {
             self.testUpLoadSpeed()
         }, failedBlock: { error in
         })
-        let url = "http://down.sandai.net/thunder7/Thunder_dl_7.9.34.4908.exe"
-        meaurNet?.downLoadUrl = url
-//        meaurNet?.downLoadUrl = DownLoadUrl()
+//        let url = "http://down.sandai.net/thunder7/Thunder_dl_7.9.34.4908.exe"
+//        meaurNet?.downLoadUrl = url
+        meaurNet?.downLoadUrl = DownLoadUrl()
         meaurNet?.startMeasur()
     }
     //MARK:=======测试上传宽带
@@ -251,13 +251,6 @@ class LYHomeController: LYBaseController {
         meaurNet.startMeasur()
     }
     
-    //MARK:=====添加背景图
-    private lazy var bgImageView:UIImageView = {
-        let  bgImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: Main_Screen_Width, height: Main_Screen_Height))
-        bgImageView.image = UIImage(named:"im_bg_home")
-        return bgImageView
-    }()
-    
     //MARK:=====监听网络变化
     func currentNetReachability(view:LYCycleProgressView) {
         let manager = NetworkReachabilityManager()
@@ -306,5 +299,8 @@ class LYHomeController: LYBaseController {
         model.currenDate = LYTimeManager.shared.gaintCurrenDate()
         LYSpeedInfoManager.shared.addSpeedInfo(toLocalData: model)
     }
-
+    lazy var updateView:LYUpgradeView = {
+        let  updateView = LYUpgradeView(frame: CGRect(x: 0, y: Main_Screen_Height-40-kTabBarHeight-NaviBarHeight, width: Main_Screen_Width, height: 40))
+        return updateView
+    }()
 }
