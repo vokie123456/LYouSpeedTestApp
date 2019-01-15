@@ -202,6 +202,9 @@ class LYDetailHeadView: UIView {
         if downFloat>90 {
             progress = 90/100
         }
+        if downFloat==0.0{
+            progress = 5/100
+        }
         showKdImage.snp.updateConstraints { (make) in
             make.left.equalTo((Main_Screen_Width-40)*progress)
         }

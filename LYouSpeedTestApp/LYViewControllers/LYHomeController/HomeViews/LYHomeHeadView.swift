@@ -92,7 +92,7 @@ class LYHomeHeadView: UIView {
                 width = Int(Main_Screen_Width-90)
             }
             titleLable.snp.makeConstraints { (make) in
-                make.top.equalTo(self).offset(10)
+                make.top.equalTo(self).offset(20)
                 make.left.equalTo(width)
                 make.width.equalTo(40)
             }

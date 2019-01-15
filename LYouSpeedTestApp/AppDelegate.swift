@@ -45,6 +45,7 @@ class AppDelegate: UIResponder,UIApplicationDelegate,UITabBarControllerDelegate 
     
     //MARK=========获取服务器下载上传地址
     func gaintTestPoint() {
+        LYouLoadingView.show()
         NetworkRequest.sharedInstance.getRequest(urlString: LYTestPointURL, params: [:], success: { (json) in
             let jsonDic = JSON(json)
             let ipStr = "\(jsonDic["ip"])"
@@ -58,6 +59,7 @@ class AppDelegate: UIResponder,UIApplicationDelegate,UITabBarControllerDelegate 
             print("上传测试=========\(UpLoadUrl())")
             self.isCheckIOS()
         }) { (error) in
+            LYouLoadingView.hide()
             EasyShowTextView .showText("服务器异常!")
         }
     }
@@ -71,6 +73,7 @@ class AppDelegate: UIResponder,UIApplicationDelegate,UITabBarControllerDelegate 
             print("审核状态=========\(ISCHECKIOS())")
             self.IsHaveBuyMenBer()
         }) { (error) in
+            LYouLoadingView.hide()
             EasyShowTextView .showText("服务器异常!")
         }
     }
@@ -78,6 +81,7 @@ class AppDelegate: UIResponder,UIApplicationDelegate,UITabBarControllerDelegate 
     //MARK=========校验是否购买会员
     func IsHaveBuyMenBer() {
         if ISHAVEBUYMEMBER()=="no" {
+            LYouLoadingView.hide()
             return
         }
         /** 本地服务器校验 */
@@ -93,8 +97,9 @@ class AppDelegate: UIResponder,UIApplicationDelegate,UITabBarControllerDelegate 
             let states = "\(jsonDic["status"])"
             UserDefaults.standard.set(states, forKey:"isHaveBuyMemBer")
             print("是否购买会员=========\(ISHAVEBUYMEMBER())")
-
+            LYouLoadingView.hide()
         }) { (error) in
+            LYouLoadingView.hide()
             EasyShowTextView.showText("服务器校验失败!")
         }
     }

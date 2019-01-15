@@ -40,10 +40,11 @@
     
     CGPoint center = CGPointMake(CGRectGetWidth(self.bounds)/2, CGRectGetHeight(self.bounds)/2);
    
-    CGFloat radius = 110;
-    CGFloat startA =  M_PI_4 * 3;  //设置进度条起点位置
-    CGFloat endA = M_PI * 2 + M_PI_4;  //设置进度条终点位置
-    
+    CGFloat radius = 105;
+//    CGFloat startA =  M_PI_4 * 3;  //设置进度条起点位置
+//    CGFloat endA = M_PI * 2 + M_PI_4;  //设置进度条终点位置
+    CGFloat startA =  M_PI_4 * 2.75;  //设置进度条起点位置
+    CGFloat endA = M_PI * 2.06 + M_PI_4;  //设置进度条终点位置
     _backBorderLayer = [CAShapeLayer layer];
     _backBorderLayer.frame = self.bounds;
     _backBorderLayer.fillColor = [[UIColor clearColor] CGColor];
@@ -84,11 +85,10 @@
 
 - (void)setProgress:(CGFloat)progress {
     _progress = progress;
-//    [self countJumpAction];
     CGPoint center = CGPointMake(CGRectGetWidth(self.bounds)/2, CGRectGetHeight(self.bounds)/2);
-    CGFloat radius = 110;
-    CGFloat startA =  M_PI_4 * 3;  //设置进度条起点位置
-    CGFloat endA = M_PI_4 * 3 + M_PI_2 * 3 * _progress;  //设置进度条终点位置
+    CGFloat radius = 105;
+    CGFloat startA =  M_PI_4 * 2.75;  //设置进度条起点位置
+    CGFloat endA = M_PI_4 * 2.75 + M_PI_2 * 3 * _progress;  //设置进度条终点位置
      UIBezierPath *path = [UIBezierPath bezierPathWithArcCenter:center radius:radius startAngle:startA endAngle:endA clockwise:YES];
     _progressLayer.path = path.CGPath;
     [_progressLayer removeAnimationForKey:@"animation1"];
@@ -172,8 +172,9 @@
         _countJump = [[UILabel alloc]init];
         _countJump.textColor = ColorWithHexRGB(0x1485FF);
         _countJump.font = [UIFont systemFontOfSize:18];
+        _countJump.numberOfLines = 0;
         _countJump.textAlignment = NSTextAlignmentCenter;
-        _countJump.text = [NSString stringWithFormat:@"0Mbps"];
+        _countJump.text = [NSString stringWithFormat:@"0\nMbps"];
     }
     return _countJump;
 }

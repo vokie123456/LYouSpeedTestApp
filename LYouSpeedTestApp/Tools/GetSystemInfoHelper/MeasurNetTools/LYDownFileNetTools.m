@@ -131,8 +131,8 @@
     [_oneMinData appendData:data];
 //    NSLog(@"_oneMinData:%lu  data:%lu",(unsigned long)_oneMinData.length,(unsigned long)data.length);
     //计算下载进度
-    self.currentSize += data.length;
-    float progress =  self.currentSize/[self getServerFileSize];
+//    self.currentSize += data.length;
+//    float progress =  self.currentSize/[self getServerFileSize];
 //    NSLog(@"文件大小=========%lld",self.currentSize);
 }
 

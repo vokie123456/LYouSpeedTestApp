@@ -5,7 +5,11 @@
 //  Created by MAC on 16/12/16.
 //  Copyright © 2016年 MrBai. All rights reserved.
 //
-
+/*! 颜色 */
+#define ColorWithRGBA(r,g,b,a) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
+#define ColorWithRGB(r,g,b) ColorWithRGBA(r,g,b,1)
+#define ColorWithHexRGBA(rgbValue, alphaValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:alphaValue]
+#define ColorWithHexRGB(rgbValue) ColorWithHexRGBA(rgbValue,1.0)
 #import "LYouLoadingView.h"
 
 static LYouLoadingView *activiyView;
@@ -124,7 +128,7 @@ static LYouLoadingView *activiyView;
         //子图层的仿射变换是基于repelicator图层的锚点，因此这里将子图层的位置摆放到此
         CGPoint point = [repelicator convertPoint:repelicator.position fromLayer:self.layer];
         layer.position = CGPointMake(point.x, point.y - 20);
-        layer.backgroundColor = [UIColor whiteColor].CGColor;
+        layer.backgroundColor = ColorWithHexRGB(0x00D3FC).CGColor;
         layer.cornerRadius = 5;
         layer.transform = CATransform3DMakeScale(0.01, 0.01, 1);
         _showlayer = layer;

@@ -10,6 +10,10 @@ import UIKit
 import Alamofire
 
 class LYHomeController: LYBaseController {
+    var currenDownMeaurNet = LYDownFileNetTools()
+    var currenUpMeaurNet = LYUpLoadFileNetTools()
+    var scaleImageView = UIImageView()
+
     let speedModel = LYHomeModel()
     let headView = LYHomeHeadView()
     var currenProgressView = LYCycleProgressView()
@@ -27,6 +31,21 @@ class LYHomeController: LYBaseController {
     var upLoadImage = UIImageView()
     var upLoadLable = UILabel()
     var upLoadDanwLable = UILabel()
+    
+    let startButton = UIButton()
+    let testSpeedView = LYSpeedProgresView()
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        startButton.isHidden = false
+        testSpeedView.isHidden = true
+        self.currenProgressView.progress = 0.0
+        self.currenProgressView.countJump.text = String(format: "0\nMbps")
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +57,12 @@ class LYHomeController: LYBaseController {
             make.left.right.equalToSuperview()
             make.height.equalTo(kWidth(R: 180))
         }
+        /** 创建刻度盘 */
+        scaleImageView.frame = CGRect(x: 0, y: 0, width: Main_Screen_Width/3*2.5, height: Main_Screen_Width/3*2.4)
+        scaleImageView.image = UIImage(named: "scaleDownImage")
+        scaleImageView.center.x = self.view.center.x
+        scaleImageView.center.y = self.view.center.y-55
+        self.view.addSubview(scaleImageView)
         /** 创建进度条 */
         let progressView = LYCycleProgressView(frame: CGRect(x: 0, y: 0, width: Main_Screen_Width/3*2, height: Main_Screen_Width/3*2))
         progressView.center.x = self.view.center.x
@@ -47,48 +72,43 @@ class LYHomeController: LYBaseController {
         currenProgressView = progressView
 
         /** 开始按钮 */
-        let startButton = UIButton()
         self.view.addSubview(startButton)
         startButton.layer.masksToBounds = true
         startButton.layer.cornerRadius = 40/2
         startButton.setTitle("开始", for: .normal)
         startButton.titleLabel?.font = YC_FONT_PFSC_Medium(15)
         startButton.backgroundColor = YCColorStanBlue
-        startButton.frame = CGRect(x: 70, y: progressView.frame.origin.y+Main_Screen_Width/3*2+20, width: Main_Screen_Width-140, height: 40)
+        startButton.frame = CGRect(x: 70, y: progressView.frame.origin.y+Main_Screen_Width/3*2+40, width: Main_Screen_Width-140, height: 40)
         startButton.addTarget(self, action: #selector(startButtonClick), for: .touchUpInside)
-//        /** 左箭头 */
-//        self.view.addSubview(leftArrow)
-//        leftArrow.image = UIImage(named: "leftArrow")
-//        leftArrow.frame = CGRect(x: 25, y: progressView.frame.origin.y+Main_Screen_Width/3*2+30, width: 40, height: 30)
-//        /** 右箭头 */
-//        self.view.addSubview(rightArrow)
-//        rightArrow.image = UIImage(named: "rightArrow")
-//        rightArrow.frame = CGRect(x: Main_Screen_Width-65, y: progressView.frame.origin.y+Main_Screen_Width/3*2+30, width: 40, height: 30)
+        /** 测速中进度条 */
+        self.view.addSubview(testSpeedView)
+        testSpeedView.isHidden = true
+        testSpeedView.frame = CGRect(x: 0, y: progressView.frame.origin.y+Main_Screen_Width/3*2+20, width: Main_Screen_Width, height: 50)
         /** 升级到高级版 */
         self.view.addSubview(self.updateView)
         self.updateView.updateBlock = {() in
             /** 升级到高级版 */
-            let buyMemVC = LYBuyMemController()
-            buyMemVC.hidesBottomBarWhenPushed = true
-            self.navigationController?.pushViewController(buyMemVC, animated: true)
+            let tipsView = LYFreeTipsView()
+            tipsView.frame = CGRect(x: 0, y: 0, width: Main_Screen_Width, height: Main_Screen_Height)
+            let window: UIWindow? = UIApplication.shared.keyWindow
+            window!.addSubview(tipsView)
+            tipsView.closeBlock = {() in
+                tipsView.removeFromSuperview()
+            }
+            tipsView.selUpdateBlock = {() in
+                tipsView.removeFromSuperview()
+                let buyMemVC = LYBuyMemController()
+                buyMemVC.hidesBottomBarWhenPushed = true
+                self.navigationController?.pushViewController(buyMemVC, animated: true)
+            }
+//            let buyMemVC = LYBuyMemController()
+//            buyMemVC.hidesBottomBarWhenPushed = true
+//            self.navigationController?.pushViewController(buyMemVC, animated: true)
         }
         /** 监听网络变化 */
         currentNetReachability(view:progressView)
         /** 监听上传下载速度变化 */
         listenNetworkSpeed()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-//        /** 动起来!!! */
-//        let opts: UIView.AnimationOptions = [.autoreverse , .repeat]
-//        UIView.animate(withDuration: 0.6, delay: 0, options: opts, animations: {
-//            self.leftArrow.frame.origin.x = 55
-//            self.rightArrow.frame.origin.x = Main_Screen_Width-95
-//        }, completion: { _ in
-//            self.leftArrow.frame.origin.x = 25
-//            self.rightArrow.frame.origin.x = Main_Screen_Width-65
-//        })
     }
     
     @objc private func startButtonClick()  {
@@ -126,8 +146,8 @@ class LYHomeController: LYBaseController {
     }, completion: { _ in
         self.YansImage.alpha = 1
     })
-    
     self.pingServices = STDPingServices.startPingAddress(IPADRESS(), callbackHandler: {pingItem, pingItems in
+        print("网络延迟======\(String(describing: pingItem?.timeMilliseconds))")
         if pingItem?.status != STDPingStatus.finished {
             if pingItem?.timeMilliseconds != 0{
                 self.YansImage.isHidden = true
@@ -139,11 +159,21 @@ class LYHomeController: LYBaseController {
                 /** 测试下载宽带 */
                 self.testDownloadSpeed()
             }
+            if pingItem?.status == STDPingStatus.finished{
+                self.YansLable.text = String.init(format:"5.0")
+            }
         }
     })
 }
     //MARK:=======测试下载宽带
     func testDownloadSpeed(){
+        /** 显示测试进度 */
+        startButton.isHidden = true
+        testSpeedView.isHidden = false
+        testSpeedView.leftProgresView.image = UIImage(named: "leftDownProgress")
+        testSpeedView.progressView.image = UIImage(named: "downLoadProgress")
+        testSpeedView.titlelabel.text = "正在测试下载速度"
+        
         self.downImage = self.headView.viewWithTag(101) as! UIImageView
         self.downLable = self.headView.viewWithTag(1001) as! UILabel
         self.downDanwLable = self.headView.viewWithTag(10001) as! UILabel
@@ -155,7 +185,7 @@ class LYHomeController: LYBaseController {
         }, completion: { _ in
             self.downImage.alpha = 1
         })
-        self.currenProgressView.progressLayer.strokeColor = gof_ColorWithHex(0x00FF7F).cgColor
+        self.currenProgressView.progressLayer.strokeColor = YCColorStanBlue.cgColor
         let meaurNet = LYDownFileNetTools(block: {speed,progress in
             let kdSpeedStr = "\(QBTools.formatBandWidth(UInt64(speed))!)"
 //            print("即使速度\(kdSpeedStr)")
@@ -164,11 +194,11 @@ class LYHomeController: LYBaseController {
             //返回的double是个可选值，所以需要给个默认值或者用!强制解包
             let proData = CGFloat(double ?? 0)/100
             self.currenProgressView.progress = proData
-            self.currenProgressView.countJump.text = String(format: "%@Mbps", kdSpeedStr)
+            self.currenProgressView.countJump.text = String(format: "%@\nMbps", kdSpeedStr)
             if proData>=1{
                 self.currenProgressView.progress = 1
             }
-//            print("下载进度======\(proData)")
+//            print("下载进度======\(String(describing: double))")
         }, finishMeasure: { speed in
             let kdSpeedStr = "\(QBTools.formatBandWidth(UInt64(speed))!)"
             self.downImage.isHidden = true
@@ -181,7 +211,7 @@ class LYHomeController: LYBaseController {
             //返回的double是个可选值，所以需要给个默认值或者用!强制解包
             let proData = CGFloat(double ?? 0)/100
             self.currenProgressView.progress = proData
-            self.currenProgressView.countJump.text = String(format: "%@Mbps", kdSpeedStr)
+            self.currenProgressView.countJump.text = String(format: "%@\nMbps", kdSpeedStr)
             if proData>=1{
                 self.currenProgressView.progress = 1
             }
@@ -195,9 +225,17 @@ class LYHomeController: LYBaseController {
 //        meaurNet?.downLoadUrl = url
         meaurNet?.downLoadUrl = DownLoadUrl()
         meaurNet?.startMeasur()
+        currenDownMeaurNet = meaurNet!
     }
     //MARK:=======测试上传宽带
     func testUpLoadSpeed(){
+        /** 显示测试进度 */
+        startButton.isHidden = true
+        testSpeedView.isHidden = false
+        testSpeedView.leftProgresView.image = UIImage(named: "leftUpProgress")
+        testSpeedView.progressView.image = UIImage(named: "upLoadProgress")
+        testSpeedView.titlelabel.text = "正在测试上传速度"
+        
         self.upLoadImage = self.headView.viewWithTag(102) as! UIImageView
         self.upLoadLable = self.headView.viewWithTag(1002) as! UILabel
         self.upLoadDanwLable = self.headView.viewWithTag(10002) as! UILabel
@@ -215,7 +253,7 @@ class LYHomeController: LYBaseController {
             let double = Double(kdSpeedStr)
             let proData = CGFloat(double ?? 0)/100
             self.currenProgressView.progress = proData
-            self.currenProgressView.countJump.text = String(format: "%@Mbps", kdSpeedStr)
+            self.currenProgressView.countJump.text = String(format: "%@\nMbps", kdSpeedStr)
             if proData>=1{
                 self.currenProgressView.progress = 1
             }
@@ -231,12 +269,14 @@ class LYHomeController: LYBaseController {
             //返回的double是个可选值，所以需要给个默认值或者用!强制解包
             let proData = CGFloat(double ?? 0)/100
             self.currenProgressView.progress = proData
-            self.currenProgressView.countJump.text = String(format: "%@Mbps", kdSpeedStr)
+            self.currenProgressView.countJump.text = String(format: "%@\nMbps", kdSpeedStr)
             if proData>=1{
                 self.currenProgressView.progress = 1
             }
             self.speedModel.upSpeed = self.upLoadLable.text
             self.upLoadImage.layer.removeAllAnimations()
+            self.startButton.isHidden = false
+            self.testSpeedView.isHidden = true
             /** 保存测速数据 */
             self.saveSpeedInfoToLocal(model: self.speedModel)
             /** 测速完成跳转到详情页 */
@@ -249,6 +289,7 @@ class LYHomeController: LYBaseController {
         })
         meaurNet.upLoadUrl = UpLoadUrl()
         meaurNet.startMeasur()
+        currenUpMeaurNet = meaurNet
     }
     
     //MARK:=====监听网络变化

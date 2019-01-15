@@ -132,7 +132,7 @@ class LYResultController: LYBaseController,UITableViewDelegate,UITableViewDataSo
     
     lazy var notDateLable:UILabel = {
         let  notDateLable = UILabel(frame: CGRect(x: 0, y: Main_Screen_Height/2-100, width: Main_Screen_Width, height: 50))
-        notDateLable.textColor = YCColorWhite
+        notDateLable.textColor = YCColorBlack
         notDateLable.font = YC_FONT_PFSC_Medium(20)
         notDateLable.textAlignment = NSTextAlignment.center
         notDateLable.text = "您还没有任何测速结果呦!"
