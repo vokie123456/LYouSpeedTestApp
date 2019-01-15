@@ -133,6 +133,11 @@ class LYSettingController: LYBaseController,UITableViewDelegate,UITableViewDataS
         /** 选择单位 */
         cell.callSelBlock = {(_ buttonTag:Int) in
             print("========\(buttonTag)")
+            if buttonTag==10 {
+                UserDefaults.standard.set("no", forKey:"isSelKbps")
+            }else{
+                UserDefaults.standard.set("yes", forKey:"isSelKbps")
+            }
         }
         return cell
     }
@@ -156,7 +161,7 @@ class LYSettingController: LYBaseController,UITableViewDelegate,UITableViewDataS
             self.navigationController?.pushViewController(buyMemVC, animated: true)
         }else if index==21{
             /** 发送意见反馈 */
-            if let url = URL(string: "mailto:example@example.com") {
+            if let url = URL(string: "mailto:grx0917@sina.com") {
             UIApplication.shared.open(url, options: [:]) { (result) in
             }}
         }else if index==30{
@@ -171,7 +176,7 @@ class LYSettingController: LYBaseController,UITableViewDelegate,UITableViewDataS
     func iOSsystemShare() {
         let textToShare = "我正在使用全网测"
         let imageToShare = UIImage(named: "shareImage")
-        let urlToShare = URL(string: "http://www.baidu.com")        
+        let urlToShare = URL(string: "http://itunes.apple.com/lookup?id=\(APPSTOREID)")
         let activityItems = [textToShare, imageToShare as Any, urlToShare as Any] as [Any]
         let activityVC = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
 //        activityVC.excludedActivityTypes = [.print, .copyToPasteboard, .assignToContact, .saveToCameraRoll, .message]

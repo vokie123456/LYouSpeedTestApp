@@ -145,4 +145,34 @@
 //    return emoticonData
 //}
 
++ (NSString *)formatKbFileSize:(unsigned long long)size
+{
+    return [self formatKbFileSize:size suffixLenth:NULL];
+}
+
++ (NSString *)formatKbFileSize:(unsigned long long)size suffixLenth:(NSInteger *)length
+{
+    NSInteger len = 0;
+    NSString *formattedStr = nil;
+    if (size == 0)
+    formattedStr = NSLocalizedString(@"0/Kb",@""), len = 2;
+    else
+    if (size > 0 && size < 1024)
+    formattedStr = [NSString stringWithFormat:@"%qu/bytes", size], *length = 2, len = 7;
+    else
+    if (size >= 1024 && size < pow(1024, 2))
+    formattedStr = [NSString stringWithFormat:@"%.2f/Kb", (size / 1024.)], len = 2;
+    else
+    if (size >= pow(1024, 2) && size < pow(1024, 3))
+    formattedStr = [NSString stringWithFormat:@"%.2f/Mb", (size / pow(1024, 2))], len = 2;
+    else
+    if (size >= pow(1024, 3))
+    formattedStr = [NSString stringWithFormat:@"%.2f/Gb", (size / pow(1024, 3))], len = 2;
+    if (length) {
+        *length = len;
+    }
+    return formattedStr;
+}
+
+
 @end

@@ -69,3 +69,14 @@ func ISHAVEBUYMEMBER() -> String {
         return "no"
     }
 }
+
+//是否选择Mbps
+func ISSELKBPS() -> String {
+    let isSelKbps = UserDefaults.standard.string(forKey: "isSelKbps")
+    //判断UserDefaults中是否已经存在
+    if isSelKbps != nil {
+        return isSelKbps!
+    }else{
+        return "no"
+    }
+}

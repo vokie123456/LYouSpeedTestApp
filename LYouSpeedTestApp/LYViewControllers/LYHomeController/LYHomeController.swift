@@ -40,7 +40,11 @@ class LYHomeController: LYBaseController {
         startButton.isHidden = false
         testSpeedView.isHidden = true
         self.currenProgressView.progress = 0.0
-        self.currenProgressView.countJump.text = String(format: "0\nMbps")
+        if ISSELKBPS()=="no"{
+            self.currenProgressView.countJump.text = String(format: "0\nMbps")
+        }else{
+            self.currenProgressView.countJump.text = String(format: "0\nKb/s")
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -188,34 +192,44 @@ class LYHomeController: LYBaseController {
         self.currenProgressView.progressLayer.strokeColor = YCColorStanBlue.cgColor
         let meaurNet = LYDownFileNetTools(block: {speed,progress in
             let kdSpeedStr = "\(QBTools.formatBandWidth(UInt64(speed))!)"
+            let kbSpeedDate = "\(QBTools.formatKbFileSize(UInt64(speed))!)"
 //            print("即使速度\(kdSpeedStr)")
             //返回的是个可选值，不一定有值，也可能是nill
             let double = Double(kdSpeedStr)
             //返回的double是个可选值，所以需要给个默认值或者用!强制解包
             let proData = CGFloat(double ?? 0)/100
             self.currenProgressView.progress = proData
-            self.currenProgressView.countJump.text = String(format: "%@\nMbps", kdSpeedStr)
+            self.settingCountJumpText(kdSpeedStr: kdSpeedStr, kbSpeedStr: kbSpeedDate)
             if proData>=1{
                 self.currenProgressView.progress = 1
             }
-//            print("下载进度======\(String(describing: double))")
+//            print("下载进度======\(kbSpeedStr)/S")
         }, finishMeasure: { speed in
             let kdSpeedStr = "\(QBTools.formatBandWidth(UInt64(speed))!)"
+            let kbSpeedDate = "\(QBTools.formatKbFileSize(UInt64(speed))!)"
+
             self.downImage.isHidden = true
             self.downImage.image = UIImage(named: "im_download_wait")
             self.downLable.isHidden = false
             self.downDanwLable.isHidden = false
-            self.downLable.text = "\(kdSpeedStr)"
+            if ISSELKBPS()=="no"{
+                self.downLable.text = "\(kdSpeedStr)"
+            }else{
+                let speedStr:Array = kbSpeedDate.components(separatedBy:"/")
+                self.downLable.text = "\(speedStr[0])"
+                self.downDanwLable.text = "\(speedStr[1])/S"
+            }
             //返回的是个可选值，不一定有值，也可能是nill
             let double = Double("\(kdSpeedStr)")
             //返回的double是个可选值，所以需要给个默认值或者用!强制解包
             let proData = CGFloat(double ?? 0)/100
             self.currenProgressView.progress = proData
-            self.currenProgressView.countJump.text = String(format: "%@\nMbps", kdSpeedStr)
+            self.settingCountJumpText(kdSpeedStr: kdSpeedStr, kbSpeedStr: kbSpeedDate)
+
             if proData>=1{
                 self.currenProgressView.progress = 1
             }
-            self.speedModel.downSpeed = self.downLable.text
+            self.speedModel.downSpeed = "\(kdSpeedStr)"
             self.downImage.layer.removeAllAnimations()
             /** 测试上传 */
             self.testUpLoadSpeed()
@@ -250,30 +264,39 @@ class LYHomeController: LYBaseController {
         })
         let meaurNet = LYUpLoadFileNetTools(block: { speed,progress in
             let kdSpeedStr = "\(QBTools.formatBandWidth(UInt64(speed))!)"
+            let kbSpeedDate = "\(QBTools.formatKbFileSize(UInt64(speed))!)"
             let double = Double(kdSpeedStr)
             let proData = CGFloat(double ?? 0)/100
             self.currenProgressView.progress = proData
-            self.currenProgressView.countJump.text = String(format: "%@\nMbps", kdSpeedStr)
+            self.settingCountJumpText(kdSpeedStr: kdSpeedStr, kbSpeedStr: kbSpeedDate)
+
             if proData>=1{
                 self.currenProgressView.progress = 1
             }
         }, finishMeasure: { speed in
             let kdSpeedStr = "\(QBTools.formatBandWidth(UInt64(speed))!)"
+            let kbSpeedDate = "\(QBTools.formatKbFileSize(UInt64(speed))!)"
             self.upLoadImage.isHidden = true
             self.upLoadImage.image = UIImage(named: "im_upload_wait")
             self.upLoadLable.isHidden = false
             self.upLoadDanwLable.isHidden = false
-            self.upLoadLable.text = "\(kdSpeedStr)"
+            if ISSELKBPS()=="no"{
+                self.upLoadLable.text = "\(kdSpeedStr)"
+            }else{
+                let speedStr:Array = kbSpeedDate.components(separatedBy:"/")
+                self.upLoadLable.text = "\(speedStr[0])"
+                self.upLoadDanwLable.text = "\(speedStr[1])/S"
+            }
             //返回的是个可选值，不一定有值，也可能是nill
             let double = Double("\(kdSpeedStr)")
             //返回的double是个可选值，所以需要给个默认值或者用!强制解包
             let proData = CGFloat(double ?? 0)/100
             self.currenProgressView.progress = proData
-            self.currenProgressView.countJump.text = String(format: "%@\nMbps", kdSpeedStr)
+            self.settingCountJumpText(kdSpeedStr: kdSpeedStr, kbSpeedStr: kbSpeedDate)
             if proData>=1{
                 self.currenProgressView.progress = 1
             }
-            self.speedModel.upSpeed = self.upLoadLable.text
+            self.speedModel.upSpeed = "\(kdSpeedStr)"
             self.upLoadImage.layer.removeAllAnimations()
             self.startButton.isHidden = false
             self.testSpeedView.isHidden = true
@@ -290,6 +313,16 @@ class LYHomeController: LYBaseController {
         meaurNet.upLoadUrl = UpLoadUrl()
         meaurNet.startMeasur()
         currenUpMeaurNet = meaurNet
+    }
+    
+    //MARK:=====设置测试速度
+    func settingCountJumpText(kdSpeedStr:String,kbSpeedStr:String) {
+        if ISSELKBPS() == "no"{
+            self.currenProgressView.countJump.text = String(format: "%@\nMbps", kdSpeedStr)
+        }else{
+            let speedStr:Array = kbSpeedStr.components(separatedBy:"/")
+            self.currenProgressView.countJump.text = String(format: "%@\n%@/S", speedStr[0],speedStr[1])
+        }
     }
     
     //MARK:=====监听网络变化

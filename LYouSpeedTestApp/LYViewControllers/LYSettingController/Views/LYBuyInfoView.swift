@@ -88,7 +88,6 @@ class LYBuyInfoView: UIView {
         /** 购买协议 */
         let buyDislable = WPHotspotLabel()
         buyDislable.font = YC_FONT_PFSC_Medium(8)
-        buyDislable.numberOfLines = 0
         buyDislable.textColor = gof_ColorWithHex(0x444444)
         buyDislable.textAlignment = NSTextAlignment.left
         mainScrollView.addSubview(buyDislable)
@@ -96,8 +95,9 @@ class LYBuyInfoView: UIView {
             make.left.equalTo(30)
             make.width.equalTo(Main_Screen_Width-60)
             make.top.equalTo(infoContentLable.snp.bottom).offset(0)
+            make.height.equalTo(20)
         }
-    let recoverStyle = ["pro1":WPAttributedStyleAction.styledAction(action: {
+    let recoverStyle = ["body":YC_FONT_PFSC_Medium(8),"pro1":WPAttributedStyleAction.styledAction(action: {
         print("=====选择协议")
         self.selYsXyMemBlock!()
     }),"pro2":WPAttributedStyleAction.styledAction(action: {
@@ -136,6 +136,18 @@ class LYBuyInfoView: UIView {
             make.height.equalTo(45)
         }
         freeButton.addTarget(self, action: #selector(freeButton(_:)), for: .touchUpInside)
+        /** 试用说明 */
+        let priceLable = UILabel()
+        priceLable.text = "￡30.99/yearly after 7 days free trail!"
+        priceLable.font = YC_FONT_PFSC_Medium(12)
+        priceLable.textAlignment = NSTextAlignment.center
+        priceLable.textColor = gof_ColorWithHex(0x444444)
+        priceLable.isUserInteractionEnabled = true
+        mainScrollView.addSubview(priceLable)
+        priceLable.snp.makeConstraints { (make) in
+            make.left.right.equalTo(self)
+            make.top.equalTo(freeButton.snp.bottom).offset(20)
+        }
     }
     
     @objc func freeButton(_ button:UIButton) {

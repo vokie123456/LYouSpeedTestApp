@@ -91,9 +91,20 @@ class LYSettingCell: UITableViewCell {
                 selButton.backgroundColor = YCColorWhite
             }
             selButton.addTarget(self, action: #selector(selButtonClick(_:)), for:.touchUpInside)
+            
+            if ISSELKBPS()=="yes"{
+                if(selButton.tag==10){
+                    selButton.layer.borderColor = YCColorDarkLight.cgColor
+                    selButton.setTitleColor(YCColorDarkLight, for: .normal)
+                    selButton.backgroundColor = UIColor.clear
+                }else{
+                    selButton.layer.borderColor = YCColorStanBlue.cgColor
+                    selButton.setTitleColor(YCColorStanBlue, for: .normal)
+                    selButton.backgroundColor = YCColorWhite
+                }
+            }
         }
     }
-    
     @objc func selButtonClick(_ button:UIButton){
         for i in 0..<2 {
             let btn:UIButton = self.viewWithTag(i+10) as! UIButton

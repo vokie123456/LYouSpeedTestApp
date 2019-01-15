@@ -23,5 +23,8 @@
 + (int)formatBandWidthInt:(unsigned long long) size;
 //获取本地文件
 + (NSData *)readLocalData:(NSString *)fileNameStr withType:(NSString *)type;
- 
+
+//获取Kb/s
++ (NSString *)formatKbFileSize:(unsigned long long)size;
+
 @end

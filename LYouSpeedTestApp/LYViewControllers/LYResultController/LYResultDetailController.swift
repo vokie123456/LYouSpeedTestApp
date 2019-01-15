@@ -126,7 +126,7 @@ class LYResultDetailController: LYBaseController {
     func iOSsystemShare() {
         let textToShare = "我正在使用全网测"
         let imageToShare = UIImage(named: "shareImage")
-        let urlToShare = URL(string: "http://www.baidu.com")
+        let urlToShare = URL(string: "http://itunes.apple.com/lookup?id=\(APPSTOREID)")
         let activityItems = [textToShare, imageToShare as Any, urlToShare as Any] as [Any]
         let activityVC = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
 //        activityVC.excludedActivityTypes = [.print, .copyToPasteboard, .assignToContact, .saveToCameraRoll]

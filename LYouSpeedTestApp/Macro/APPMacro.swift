@@ -198,10 +198,8 @@ func printLog<T>(message: T)
     print("\(message)");
     #endif
 }
-
-// 客服电话
-let YCKeFUPhone = "4007658376"
-
+//AppStore ID
+let APPSTOREID  = "1449452746"
 //主页全屏广告ID
 let LYHomeADId = "ca-app-pub-6719639781124001/9290941595"
 //详情插播广告ID
