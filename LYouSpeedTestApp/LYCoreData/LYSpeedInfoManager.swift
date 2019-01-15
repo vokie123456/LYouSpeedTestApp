@@ -24,6 +24,9 @@ class LYSpeedInfoManager: NSObject {
         info?.currenTime = model?.currenTime
         info?.currenDate = model?.currenDate
         info?.currenWifiName = model?.currenWifiName
+        info?.downOringSpeed = (model?.downOringSpeed)!
+        info?.upOringSpeed = (model?.upOringSpeed)!
+
         NSManagedObjectContext.mr_default().mr_saveToPersistentStoreAndWait()
     }
     /** 查询本地所有数据 */

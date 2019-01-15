@@ -105,6 +105,8 @@ class LYResultController: LYBaseController,UITableViewDelegate,UITableViewDataSo
         speedModel.downSpeed = infoModel.downSpeed
         speedModel.upSpeed = infoModel.upSpeed
         speedModel.currenWifiName = infoModel.currenWifiName
+        speedModel.downOringSpeed = infoModel.downOringSpeed
+        speedModel.upOringSpeed = infoModel.upOringSpeed
         detailVC.model = speedModel
         detailVC.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(detailVC, animated: true)

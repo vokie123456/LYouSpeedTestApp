@@ -182,9 +182,9 @@
 - (UILabel *)wifiLable {
     if (!_wifiLable) {
         _wifiLable = [[UILabel alloc]init];
-        _wifiLable.frame = CGRectMake(0, self.frame.size.height-60, self.frame.size.width, 50);
+        _wifiLable.frame = CGRectMake(0, self.frame.size.height-40, self.frame.size.width, 50);
         _wifiLable.numberOfLines = 0;
-        _wifiLable.textColor = [UIColor whiteColor];
+        _wifiLable.textColor = ColorWithHexRGB(0x909090);
         _wifiLable.font = [UIFont systemFontOfSize:14];
         _wifiLable.textAlignment = NSTextAlignmentCenter;
     }

@@ -9,6 +9,8 @@
 import UIKit
 
 class LYHomeModel: NSObject {
+    var downOringSpeed:Float?;              //速度
+    var upOringSpeed:Float?;              //速度
     var delay:String?;              //延时
     var downSpeed:String?;          //下载宽带
     var upSpeed:String?;            //上传宽带

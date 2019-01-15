@@ -40,10 +40,29 @@ class LYHomeController: LYBaseController {
         startButton.isHidden = false
         testSpeedView.isHidden = true
         self.currenProgressView.progress = 0.0
+        scaleImageView.image = UIImage(named: "scaleDefaleImage")
         if ISSELKBPS()=="no"{
             self.currenProgressView.countJump.text = String(format: "0\nMbps")
+            if self.speedModel.downOringSpeed==nil{
+            }else{
+                self.downLable.text = self.speedModel.downSpeed
+                self.downDanwLable.text = "Mbps"
+                self.upLoadLable.text = self.speedModel.upSpeed
+                self.upLoadDanwLable.text = "Mbps"
+            }
         }else{
             self.currenProgressView.countJump.text = String(format: "0\nKb/s")
+            if self.speedModel.downOringSpeed==nil{
+            }else{
+                let kbDownSpeedDate = "\(QBTools.formatKbFileSize(UInt64(self.speedModel.downOringSpeed!))!)"
+                let kbUpSpeedDate = "\(QBTools.formatKbFileSize(UInt64(self.speedModel.upOringSpeed!))!)"
+                let speedDownStr:Array = kbDownSpeedDate.components(separatedBy:"/")
+                self.downLable.text = "\(speedDownStr[0])"
+                self.downDanwLable.text = "\(speedDownStr[1])/S"
+                let speedUpStr:Array = kbUpSpeedDate.components(separatedBy:"/")
+                self.upLoadLable.text = "\(speedUpStr[0])"
+                self.upLoadDanwLable.text = "\(speedUpStr[1])/S"
+            }
         }
     }
     
@@ -63,7 +82,7 @@ class LYHomeController: LYBaseController {
         }
         /** 创建刻度盘 */
         scaleImageView.frame = CGRect(x: 0, y: 0, width: Main_Screen_Width/3*2.5, height: Main_Screen_Width/3*2.4)
-        scaleImageView.image = UIImage(named: "scaleDownImage")
+        scaleImageView.image = UIImage(named: "scaleDefaleImage")
         scaleImageView.center.x = self.view.center.x
         scaleImageView.center.y = self.view.center.y-55
         self.view.addSubview(scaleImageView)
@@ -177,7 +196,8 @@ class LYHomeController: LYBaseController {
         testSpeedView.leftProgresView.image = UIImage(named: "leftDownProgress")
         testSpeedView.progressView.image = UIImage(named: "downLoadProgress")
         testSpeedView.titlelabel.text = "正在测试下载速度"
-        
+        scaleImageView.image = UIImage(named: "scaleDownImage")
+
         self.downImage = self.headView.viewWithTag(101) as! UIImageView
         self.downLable = self.headView.viewWithTag(1001) as! UILabel
         self.downDanwLable = self.headView.viewWithTag(10001) as! UILabel
@@ -230,6 +250,7 @@ class LYHomeController: LYBaseController {
                 self.currenProgressView.progress = 1
             }
             self.speedModel.downSpeed = "\(kdSpeedStr)"
+            self.speedModel.downOringSpeed = speed
             self.downImage.layer.removeAllAnimations()
             /** 测试上传 */
             self.testUpLoadSpeed()
@@ -249,7 +270,8 @@ class LYHomeController: LYBaseController {
         testSpeedView.leftProgresView.image = UIImage(named: "leftUpProgress")
         testSpeedView.progressView.image = UIImage(named: "upLoadProgress")
         testSpeedView.titlelabel.text = "正在测试上传速度"
-        
+        scaleImageView.image = UIImage(named: "scaleUpImage")
+
         self.upLoadImage = self.headView.viewWithTag(102) as! UIImageView
         self.upLoadLable = self.headView.viewWithTag(1002) as! UILabel
         self.upLoadDanwLable = self.headView.viewWithTag(10002) as! UILabel
@@ -297,6 +319,7 @@ class LYHomeController: LYBaseController {
                 self.currenProgressView.progress = 1
             }
             self.speedModel.upSpeed = "\(kdSpeedStr)"
+            self.speedModel.upOringSpeed = speed
             self.upLoadImage.layer.removeAllAnimations()
             self.startButton.isHidden = false
             self.testSpeedView.isHidden = true
@@ -347,8 +370,8 @@ class LYHomeController: LYBaseController {
                 } else if (manager?.isReachableOnEthernetOrWiFi)! {
                     statusStr = "wifi的网络";
                     self.speedModel.isWifi = "yes"
-//                    view.wifiLable.text = "Wifi:\n\(GetSystemInfoHelper.getWifiName()!)"
-//                    self.speedModel.currenWifiName = "Wifi:\(GetSystemInfoHelper.getWifiName()!)"
+                    view.wifiLable.text = "Wi-Fi:\n\(GetSystemInfoHelper.getWifiName()!)"
+                    self.speedModel.currenWifiName = "Wi-Fi:\(GetSystemInfoHelper.getWifiName()!)"
                 }
                 print("===\(String(describing: statusStr))")
                 break

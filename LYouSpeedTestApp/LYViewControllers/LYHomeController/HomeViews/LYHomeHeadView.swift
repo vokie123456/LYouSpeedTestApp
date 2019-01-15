@@ -103,9 +103,9 @@ class LYHomeHeadView: UIView {
             imageView.tag = i+100
             imageView.snp.makeConstraints { (make) in
                 make.top.equalTo(titleLable.snp.bottom).offset(5)
-                make.left.equalTo(width+10)
-                make.width.equalTo(20)
-                make.height.equalTo(20)
+                make.left.equalTo(width+13)
+                make.width.equalTo(14)
+                make.height.equalTo(12)
             }
             /** 测试数据 */
             let dateLable = UILabel()

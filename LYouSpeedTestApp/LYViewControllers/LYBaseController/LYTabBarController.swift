@@ -34,7 +34,7 @@ class LYTabBarController: UITabBarController {
         }
         self.viewControllers = NavVCArr as? [UIViewController]
         //tabBar 底部工具栏背景颜色 (以下两个都行)
-        self.tabBar.barTintColor = YCColorGray
+        self.tabBar.barTintColor = YCColorWhite
         //设置 tabBar 工具栏字体颜色 (未选中  和  选中)
         self.tabBar.tintColor = YCColorStanBlue
         self.tabBar.isTranslucent = false

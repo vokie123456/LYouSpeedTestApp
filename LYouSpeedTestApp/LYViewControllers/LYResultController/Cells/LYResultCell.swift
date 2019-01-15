@@ -14,6 +14,8 @@ class LYResultCell: UITableViewCell {
     let yancContentLable = UILabel()
     let downContentLable = UILabel()
     let upContentLable = UILabel()
+    let dwLable = UILabel()
+    let upLable = UILabel()
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -111,7 +113,6 @@ class LYResultCell: UITableViewCell {
             make.left.equalTo(Main_Screen_Width/2-40)
             make.top.equalTo(downLoadLable.snp.bottom).offset(0)
         }
-        let dwLable = UILabel()
         bgView.addSubview(dwLable)
         dwLable.text = "Mbps"
         dwLable.font = YC_FONT_PFSC_Medium(12)
@@ -140,7 +141,6 @@ class LYResultCell: UITableViewCell {
             make.left.equalTo(Main_Screen_Width/2+40)
             make.top.equalTo(upLoadLable.snp.bottom).offset(0)
         }
-        let upLable = UILabel()
         bgView.addSubview(upLable)
         upLable.text = "Mbps"
         upLable.font = YC_FONT_PFSC_Medium(12)
@@ -165,12 +165,20 @@ class LYResultCell: UITableViewCell {
     func gaintInfoModel(model:LYSpeedInfo) {
         timeLable.text = model.currenTime
         yancContentLable.text = model.delayeSpeed
-        downContentLable.text = model.downSpeed
-        upContentLable.text = model.upSpeed
         if model.isWifi=="no" {
-            netImage.image = UIImage(named: "im_4g_fromLeft")
+            netImage.image = UIImage(named: "im_network_wifi")
         }else{
             netImage.image = UIImage(named: "im_network_wifi")
+        }
+        downContentLable.text = model.downSpeed
+        upContentLable.text = model.upSpeed
+        if ISSELKBPS()=="no" {
+            downContentLable.text = model.downSpeed
+            dwLable.text = "Mbps"
+            upContentLable.text = model.upSpeed
+            upLable.text = "Mbps"
+        }else{
+            
         }
     }
     
