@@ -124,7 +124,7 @@ class LYResultDetailController: LYBaseController {
     }
     //MARK:============iOS系统分享=============
     func iOSsystemShare() {
-        let textToShare = "我正在使用全网测"
+        let textToShare = "我正在使用TX Speed"
         let imageToShare = UIImage(named: "shareImage")
         let urlToShare = URL(string: "http://itunes.apple.com/lookup?id=\(APPSTOREID)")
         let activityItems = [textToShare, imageToShare as Any, urlToShare as Any] as [Any]
