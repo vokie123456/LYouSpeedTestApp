@@ -42,7 +42,8 @@ class LYHomeController: LYBaseController {
         self.currenProgressView.progress = 0.0
         scaleImageView.image = UIImage(named: "scaleDefaleImage")
         if ISSELKBPS()=="no"{
-            self.currenProgressView.countJump.text = String(format: "0\nMbps")
+            let recoverStyle = ["body":UIFont(name: "DBLCDTempBlack", size: 30) as Any,"u":UIFont(name: "DBLCDTempBlack", size: 15) as Any] as [String : Any]
+            self.currenProgressView.countJump.attributedText = String(format: "0\n<u>Mbps</u>").attributedString(withStyleBook: recoverStyle)
             if self.speedModel.downOringSpeed==nil{
             }else{
                 self.downLable.text = self.speedModel.downSpeed
@@ -51,7 +52,8 @@ class LYHomeController: LYBaseController {
                 self.upLoadDanwLable.text = "Mbps"
             }
         }else{
-            self.currenProgressView.countJump.text = String(format: "0\nKb/s")
+            let recoverStyle = ["body":UIFont(name: "DBLCDTempBlack", size: 30) as Any,"u":UIFont(name: "DBLCDTempBlack", size: 15) as Any] as [String : Any]
+            self.currenProgressView.countJump.attributedText = String(format: "0\n<u>Kb/s</u>").attributedString(withStyleBook: recoverStyle)
             if self.speedModel.downOringSpeed==nil{
             }else{
                 let kbDownSpeedDate = "\(QBTools.formatKbFileSize(UInt64(self.speedModel.downOringSpeed!))!)"
@@ -355,10 +357,12 @@ class LYHomeController: LYBaseController {
     //MARK:=====设置测试速度
     func settingCountJumpText(kdSpeedStr:String,kbSpeedStr:String) {
         if ISSELKBPS() == "no"{
-            self.currenProgressView.countJump.text = String(format: "%@\nMbps", kdSpeedStr)
+            let recoverStyle = ["body":UIFont(name: "DBLCDTempBlack", size: 30) as Any,"u":UIFont(name: "DBLCDTempBlack", size: 15) as Any] as [String : Any]
+            self.currenProgressView.countJump.attributedText = String(format: "%@\n<u>Mbps</u>", kdSpeedStr).attributedString(withStyleBook: recoverStyle)
         }else{
             let speedStr:Array = kbSpeedStr.components(separatedBy:"/")
-            self.currenProgressView.countJump.text = String(format: "%@\n%@/s", speedStr[0],speedStr[1])
+            let recoverStyle = ["body":UIFont(name: "DBLCDTempBlack", size: 30) as Any,"u":UIFont(name: "DBLCDTempBlack", size: 15) as Any] as [String : Any]
+            self.currenProgressView.countJump.attributedText = String(format: "%@\n<u>%@/s</u>", speedStr[0],speedStr[1]).attributedString(withStyleBook: recoverStyle)
         }
     }
     

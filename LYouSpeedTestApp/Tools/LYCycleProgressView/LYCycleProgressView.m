@@ -7,7 +7,9 @@
 //
 
 #import "LYCycleProgressView.h"
-
+#import "NSString+WPAttributedMarkup.h"
+#import "WPAttributedStyleAction.h"
+#import "WPHotspotLabel.h"
 /*! 颜色 */
 #define ColorWithRGBA(r,g,b,a) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
 #define ColorWithRGB(r,g,b) ColorWithRGBA(r,g,b,1)
@@ -169,12 +171,15 @@
 
 - (UILabel *)countJump {
     if (!_countJump) {
-        _countJump = [[UILabel alloc]init];
+        _countJump = [[WPHotspotLabel alloc]init];
         _countJump.textColor = ColorWithHexRGB(0x1485FF);
-        _countJump.font = [UIFont systemFontOfSize:18];
+//        _countJump.font = [UIFont fontWithName:@"DBLCDTempBlack" size:20];
         _countJump.numberOfLines = 0;
         _countJump.textAlignment = NSTextAlignmentCenter;
-        _countJump.text = [NSString stringWithFormat:@"0\nMbps"];
+//        _countJump.text = [NSString stringWithFormat:@"0\nMbps"];
+        NSDictionary* xieyStyle = @{@"body":[UIFont fontWithName:@"DBLCDTempBlack" size:30],
+                                    @"u": [UIFont fontWithName:@"DBLCDTempBlack" size:15]};
+        _countJump.attributedText = [@"0\n<u>Mbps</u>" attributedStringWithStyleBook:xieyStyle];
     }
     return _countJump;
 }

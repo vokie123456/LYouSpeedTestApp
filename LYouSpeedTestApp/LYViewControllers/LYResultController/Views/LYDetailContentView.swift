@@ -138,16 +138,19 @@ class LYDetailContentView: UIView {
 //            rankingImage.image = UIImage(named: "cn_rank0")
             titleArray = ["全国","我","全省"]
             dateArray = ["71.5Mbps","\(downFloat)Mbps","49.8Mbps"]
+            titleLable.text = "我是网速冠军"
         }else if downFloat<71.5 && downFloat>=49.8{
             /** 第二名 */
 //            rankingImage.image = UIImage(named: "cn_rank1")
             titleArray = ["我","全国","全省"]
             dateArray = ["\(downFloat)Mbps","71.5Mbps","49.8Mbps"]
+            titleLable.text = "我是网速亚军"
         }else if downFloat<49.8{
             /** 第三名 */
 //            rankingImage.image = UIImage(named: "cn_rank2")
             titleArray = ["全省","全国","我"]
             dateArray = ["49.8Mbps","71.5Mbps","\(downFloat)Mbps"]
+            titleLable.text = "我是网速季军"
         }
         for i in 0..<dateArray.count {
             let titleLable:UILabel = self.viewWithTag(i+10) as! UILabel
