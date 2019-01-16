@@ -11,6 +11,8 @@
 #import "WPAttributedStyleAction.h"
 #import "WPHotspotLabel.h"
 /*! 颜色 */
+#define Main_Screen_Width  [[UIScreen mainScreen] bounds].size.width
+#define kWidth(R) (R)*(Main_Screen_Width)/375
 #define ColorWithRGBA(r,g,b,a) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
 #define ColorWithRGB(r,g,b) ColorWithRGBA(r,g,b,1)
 #define ColorWithHexRGBA(rgbValue, alphaValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:alphaValue]
@@ -42,7 +44,7 @@
     
     CGPoint center = CGPointMake(CGRectGetWidth(self.bounds)/2, CGRectGetHeight(self.bounds)/2);
    
-    CGFloat radius = 105;
+    CGFloat radius = kWidth(105);
 //    CGFloat startA =  M_PI_4 * 3;  //设置进度条起点位置
 //    CGFloat endA = M_PI * 2 + M_PI_4;  //设置进度条终点位置
     CGFloat startA =  M_PI_4 * 2.75;  //设置进度条起点位置
@@ -88,7 +90,7 @@
 - (void)setProgress:(CGFloat)progress {
     _progress = progress;
     CGPoint center = CGPointMake(CGRectGetWidth(self.bounds)/2, CGRectGetHeight(self.bounds)/2);
-    CGFloat radius = 105;
+    CGFloat radius = kWidth(105);
     CGFloat startA =  M_PI_4 * 2.75;  //设置进度条起点位置
     CGFloat endA = M_PI_4 * 2.75 + M_PI_2 * 3 * _progress;  //设置进度条终点位置
      UIBezierPath *path = [UIBezierPath bezierPathWithArcCenter:center radius:radius startAngle:startA endAngle:endA clockwise:YES];

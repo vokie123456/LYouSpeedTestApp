@@ -93,7 +93,7 @@ class LYHomeController: LYBaseController {
         scaleImageView.frame = CGRect(x: 0, y: 0, width: Main_Screen_Width/3*2.5, height: Main_Screen_Width/3*2.4)
         scaleImageView.image = UIImage(named: "scaleDefaleImage")
         scaleImageView.center.x = self.view.center.x
-        scaleImageView.center.y = self.view.center.y-55
+        scaleImageView.center.y = self.view.center.y-58
         self.view.addSubview(scaleImageView)
         /** 创建进度条 */
         let progressView = LYCycleProgressView(frame: CGRect(x: 0, y: 0, width: Main_Screen_Width/3*2, height: Main_Screen_Width/3*2))
@@ -115,7 +115,7 @@ class LYHomeController: LYBaseController {
         /** 测速中进度条 */
         self.view.addSubview(testSpeedView)
         testSpeedView.isHidden = true
-        testSpeedView.frame = CGRect(x: 0, y: progressView.frame.origin.y+Main_Screen_Width/3*2+20, width: Main_Screen_Width, height: 50)
+        testSpeedView.frame = CGRect(x: 0, y: progressView.frame.origin.y+Main_Screen_Width/3*2+40, width: Main_Screen_Width, height: 50)
         /** 升级到高级版 */
         if ISHAVEBUYMEMBER()=="no" {
             self.view.addSubview(self.updateView)
@@ -349,6 +349,9 @@ class LYHomeController: LYBaseController {
                 var count = FREEUSERCOUNT()
                 count += 1
                 UserDefaults.standard.set(count, forKey: "freeUserCount")
+                if count==5{
+                    UserDefaults.standard.set(LYTimeManager.shared.gaintCurrenDate(), forKey: "lastFreeData")
+                }
             }
             /** 测速完成跳转到详情页 */
             let detailVC = LYResultDetailController()
@@ -397,8 +400,8 @@ class LYHomeController: LYBaseController {
                 } else if (manager?.isReachableOnEthernetOrWiFi)! {
                     statusStr = "wifi的网络";
                     self.speedModel.isWifi = "yes"
-                    view.wifiLable.text = "Wi-Fi:\n\(GetSystemInfoHelper.getWifiName()!)"
-                    self.speedModel.currenWifiName = "Wi-Fi:\(GetSystemInfoHelper.getWifiName()!)"
+//                    view.wifiLable.text = "Wi-Fi:\n\(GetSystemInfoHelper.getWifiName()!)"
+//                    self.speedModel.currenWifiName = "Wi-Fi:\(GetSystemInfoHelper.getWifiName()!)"
                 }
                 print("===\(String(describing: statusStr))")
                 break

@@ -91,3 +91,14 @@ func FREEUSERCOUNT() -> NSInteger {
         return 0
     }
 }
+
+//存储最后一次试用日期
+func LASTFREEUSERDATA() -> String {
+    let lastFreeData = UserDefaults.standard.string(forKey: "lastFreeData")
+    //判断UserDefaults中是否已经存在
+    if lastFreeData != nil {
+        return lastFreeData!
+    }else{
+        return ""
+    }
+}

@@ -30,7 +30,7 @@ class LYSubmitView: UIView {
         self.addSubview(bgView)
         
         let titlelabel = UILabel()
-        titlelabel.text = "您为什么不喜欢测速大师？"
+        titlelabel.text = "您为什么不喜欢TX SPEED ?"
         titlelabel.textAlignment = NSTextAlignment.center
         titlelabel.font = YC_FONT_PFSC_Medium(16)
         titlelabel.textColor = UIColor.gray

@@ -23,9 +23,6 @@ class AppDelegate: UIResponder,UIApplicationDelegate,UITabBarControllerDelegate 
         self.window?.rootViewController = rootVC
         self.window!.makeKeyAndVisible()
         IQKeyboardManager.shared.enable = true
-        #if DEBUG
-        Bundle(path: "/Applications/InjectionIII.app/Contents/Resources/iOSInjection10.bundle")?.load()
-        #endif
         //! 数据库
         MagicalRecord.setupCoreDataStack(withStoreNamed: "LYouSpeedInfoData.sqlite")
         let docs = NSSearchPathForDirectoriesInDomains(.libraryDirectory, .userDomainMask, true).last
@@ -39,6 +36,13 @@ class AppDelegate: UIResponder,UIApplicationDelegate,UITabBarControllerDelegate 
         //! 统计不同版本
         let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
         MobClick.setAppVersion(version)
+        //! 今日试用结束明天重新计数
+        let currenData = LYTimeManager.shared.gaintCurrenDate()
+        if  currenData != LASTFREEUSERDATA(){
+            if FREEUSERCOUNT()==5{
+            UserDefaults.standard.set(0, forKey: "freeUserCount")
+            }
+        }
         IsHaveBuyMenBer()
         return true
     }

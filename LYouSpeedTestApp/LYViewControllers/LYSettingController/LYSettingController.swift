@@ -172,7 +172,7 @@ class LYSettingController: LYBaseController,UITableViewDelegate,UITableViewDataS
             self.navigationController?.pushViewController(buyMemVC, animated: true)
         }else if index==21{
             /** 发送意见反馈 */
-            if let url = URL(string: "mailto:grx0917@sina.com") {
+            if let url = URL(string: "mailto:txspeed@txspeed.com") {
             UIApplication.shared.open(url, options: [:]) { (result) in
             }}
         }else if index==30{
