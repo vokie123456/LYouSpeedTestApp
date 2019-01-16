@@ -178,10 +178,19 @@ class LYDetailHeadView: UIView {
     
     func gaintInfoModel(infoModel:LYHomeModel) {
         speedLable.text = "\(infoModel.downSpeed!)M"
-        let dateArray = ["\(infoModel.delay!) ms","\(infoModel.downSpeed!) Mbps","\(infoModel.upSpeed!) Mbps"]
+        var dateArray:NSArray = []
+        if ISSELKBPS()=="no"{
+            dateArray = ["\(infoModel.delay!) ms","\(infoModel.downSpeed!) Mbps","\(infoModel.upSpeed!) Mbps"]
+        }else{
+            let kbDownSpeedDate = "\(QBTools.formatKbFileSize(UInt64(infoModel.downOringSpeed!))!)"
+            let kbUpSpeedDate = "\(QBTools.formatKbFileSize(UInt64(infoModel.upOringSpeed!))!)"
+            let speedDownStr:Array = kbDownSpeedDate.components(separatedBy:"/")
+            let speedUpStr:Array = kbUpSpeedDate.components(separatedBy:"/")
+            dateArray = ["\(infoModel.delay!) ms","\(speedDownStr[0]) \(speedDownStr[1])/s","\(speedUpStr[0]) \(speedUpStr[1])/s"]
+        }
         for i in 0..<dateArray.count {
             let dateLable:UILabel = self.viewWithTag(i+10) as! UILabel
-            dateLable.text = dateArray[i]
+            dateLable.text = dateArray[i] as? String
         }
         showKdImage.image = UIImage(named: "icon_bandwidthBack_1")
 

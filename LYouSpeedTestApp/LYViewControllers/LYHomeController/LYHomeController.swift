@@ -58,10 +58,10 @@ class LYHomeController: LYBaseController {
                 let kbUpSpeedDate = "\(QBTools.formatKbFileSize(UInt64(self.speedModel.upOringSpeed!))!)"
                 let speedDownStr:Array = kbDownSpeedDate.components(separatedBy:"/")
                 self.downLable.text = "\(speedDownStr[0])"
-                self.downDanwLable.text = "\(speedDownStr[1])/S"
+                self.downDanwLable.text = "\(speedDownStr[1])/s"
                 let speedUpStr:Array = kbUpSpeedDate.components(separatedBy:"/")
                 self.upLoadLable.text = "\(speedUpStr[0])"
-                self.upLoadDanwLable.text = "\(speedUpStr[1])/S"
+                self.upLoadDanwLable.text = "\(speedUpStr[1])/s"
             }
         }
     }
@@ -223,7 +223,7 @@ class LYHomeController: LYBaseController {
             if proData>=1{
                 self.currenProgressView.progress = 1
             }
-//            print("下载进度======\(kbSpeedStr)/S")
+//            print("下载进度======\(kbSpeedStr)/s")
         }, finishMeasure: { speed in
             let kdSpeedStr = "\(QBTools.formatBandWidth(UInt64(speed))!)"
             let kbSpeedDate = "\(QBTools.formatKbFileSize(UInt64(speed))!)"
@@ -237,7 +237,7 @@ class LYHomeController: LYBaseController {
             }else{
                 let speedStr:Array = kbSpeedDate.components(separatedBy:"/")
                 self.downLable.text = "\(speedStr[0])"
-                self.downDanwLable.text = "\(speedStr[1])/S"
+                self.downDanwLable.text = "\(speedStr[1])/s"
             }
             //返回的是个可选值，不一定有值，也可能是nill
             let double = Double("\(kdSpeedStr)")
@@ -307,7 +307,7 @@ class LYHomeController: LYBaseController {
             }else{
                 let speedStr:Array = kbSpeedDate.components(separatedBy:"/")
                 self.upLoadLable.text = "\(speedStr[0])"
-                self.upLoadDanwLable.text = "\(speedStr[1])/S"
+                self.upLoadDanwLable.text = "\(speedStr[1])/s"
             }
             //返回的是个可选值，不一定有值，也可能是nill
             let double = Double("\(kdSpeedStr)")
@@ -344,7 +344,7 @@ class LYHomeController: LYBaseController {
             self.currenProgressView.countJump.text = String(format: "%@\nMbps", kdSpeedStr)
         }else{
             let speedStr:Array = kbSpeedStr.components(separatedBy:"/")
-            self.currenProgressView.countJump.text = String(format: "%@\n%@/S", speedStr[0],speedStr[1])
+            self.currenProgressView.countJump.text = String(format: "%@\n%@/s", speedStr[0],speedStr[1])
         }
     }
     
@@ -370,8 +370,8 @@ class LYHomeController: LYBaseController {
                 } else if (manager?.isReachableOnEthernetOrWiFi)! {
                     statusStr = "wifi的网络";
                     self.speedModel.isWifi = "yes"
-                    view.wifiLable.text = "Wi-Fi:\n\(GetSystemInfoHelper.getWifiName()!)"
-                    self.speedModel.currenWifiName = "Wi-Fi:\(GetSystemInfoHelper.getWifiName()!)"
+//                    view.wifiLable.text = "Wi-Fi:\n\(GetSystemInfoHelper.getWifiName()!)"
+//                    self.speedModel.currenWifiName = "Wi-Fi:\(GetSystemInfoHelper.getWifiName()!)"
                 }
                 print("===\(String(describing: statusStr))")
                 break

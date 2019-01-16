@@ -178,7 +178,14 @@ class LYResultCell: UITableViewCell {
             upContentLable.text = model.upSpeed
             upLable.text = "Mbps"
         }else{
-            
+            let kbDownSpeedDate = "\(QBTools.formatKbFileSize(UInt64(model.downOringSpeed))!)"
+            let kbUpSpeedDate = "\(QBTools.formatKbFileSize(UInt64(model.upOringSpeed))!)"
+            let speedDownStr:Array = kbDownSpeedDate.components(separatedBy:"/")
+            let speedUpStr:Array = kbUpSpeedDate.components(separatedBy:"/")
+            downContentLable.text = "\(speedDownStr[0])"
+            dwLable.text = "\(speedDownStr[1])/s"
+            upContentLable.text = "\(speedUpStr[0])"
+            upLable.text = "\(speedUpStr[1])/s"
         }
     }
     
