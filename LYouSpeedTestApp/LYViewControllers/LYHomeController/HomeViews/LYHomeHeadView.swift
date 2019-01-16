@@ -80,6 +80,7 @@ class LYHomeHeadView: UIView {
             let titleLable = UILabel()
             self.addSubview(titleLable)
             titleLable.text = titleArray[i]
+            titleLable.tag = i+10
             titleLable.font = YC_FONT_PFSC_Medium(14)
             titleLable.textAlignment = NSTextAlignment.center
             titleLable.textColor = YCColorTitleLight

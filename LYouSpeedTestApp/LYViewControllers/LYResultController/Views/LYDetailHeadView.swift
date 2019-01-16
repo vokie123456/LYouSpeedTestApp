@@ -49,7 +49,7 @@ class LYDetailHeadView: UIView {
         bgImage.addSubview(kdLable)
         kdLable.snp.makeConstraints { (make) in
             make.centerX.equalTo(bgImage).offset(10)
-            make.top.equalTo(15)
+            make.top.equalTo(14)
         }
         /** 进度条 */
         showKdImage.image = UIImage(named: "icon_bandwidthBack_1")

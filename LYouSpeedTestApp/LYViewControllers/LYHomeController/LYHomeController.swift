@@ -24,10 +24,12 @@ class LYHomeController: LYBaseController {
     var YansLable = UILabel()
     var YansDanwLable = UILabel()
     
+    var downTitle = UILabel()
     var downImage = UIImageView()
     var downLable = UILabel()
     var downDanwLable = UILabel()
     
+    var upTitle = UILabel()
     var upLoadImage = UIImageView()
     var upLoadLable = UILabel()
     var upLoadDanwLable = UILabel()
@@ -206,11 +208,13 @@ class LYHomeController: LYBaseController {
         testSpeedView.titlelabel.text = "正在测试下载速度"
         scaleImageView.image = UIImage(named: "scaleDownImage")
 
+        self.downTitle = self.headView.viewWithTag(11) as! UILabel
         self.downImage = self.headView.viewWithTag(101) as! UIImageView
         self.downLable = self.headView.viewWithTag(1001) as! UILabel
         self.downDanwLable = self.headView.viewWithTag(10001) as! UILabel
         self.downImage.isHidden = false
         self.downImage.image = UIImage(named: "im_download_ing")
+        self.downTitle.textColor = YCColorStanBlue
         let opts: UIView.AnimationOptions = [.autoreverse , .repeat]
         UIView.animate(withDuration: 0.5, delay: 0, options: opts, animations: {
             self.downImage.alpha = 0
@@ -241,6 +245,8 @@ class LYHomeController: LYBaseController {
             self.downImage.image = UIImage(named: "im_download_wait")
             self.downLable.isHidden = false
             self.downDanwLable.isHidden = false
+            self.downTitle.textColor = YCColorTitleLight
+
             if ISSELKBPS()=="no"{
                 self.downLable.text = "\(kdSpeedStr)"
             }else{
@@ -281,11 +287,13 @@ class LYHomeController: LYBaseController {
         testSpeedView.titlelabel.text = "正在测试上传速度"
         scaleImageView.image = UIImage(named: "scaleUpImage")
 
+        self.upTitle = self.headView.viewWithTag(12) as! UILabel
         self.upLoadImage = self.headView.viewWithTag(102) as! UIImageView
         self.upLoadLable = self.headView.viewWithTag(1002) as! UILabel
         self.upLoadDanwLable = self.headView.viewWithTag(10002) as! UILabel
         self.upLoadImage.isHidden = false
         self.upLoadImage.image = UIImage(named: "im_upload_ing")
+        self.upTitle.textColor = gof_ColorWithHex(0x8A2BE2)
         self.currenProgressView.progressLayer.strokeColor = gof_ColorWithHex(0x8A2BE2).cgColor
         let opts: UIView.AnimationOptions = [.autoreverse , .repeat]
         UIView.animate(withDuration: 0.5, delay: 0, options: opts, animations: {
@@ -311,6 +319,7 @@ class LYHomeController: LYBaseController {
             self.upLoadImage.image = UIImage(named: "im_upload_wait")
             self.upLoadLable.isHidden = false
             self.upLoadDanwLable.isHidden = false
+            self.upTitle.textColor = YCColorTitleLight
             if ISSELKBPS()=="no"{
                 self.upLoadLable.text = "\(kdSpeedStr)"
             }else{
@@ -388,8 +397,8 @@ class LYHomeController: LYBaseController {
                 } else if (manager?.isReachableOnEthernetOrWiFi)! {
                     statusStr = "wifi的网络";
                     self.speedModel.isWifi = "yes"
-//                    view.wifiLable.text = "Wi-Fi:\n\(GetSystemInfoHelper.getWifiName()!)"
-//                    self.speedModel.currenWifiName = "Wi-Fi:\(GetSystemInfoHelper.getWifiName()!)"
+                    view.wifiLable.text = "Wi-Fi:\n\(GetSystemInfoHelper.getWifiName()!)"
+                    self.speedModel.currenWifiName = "Wi-Fi:\(GetSystemInfoHelper.getWifiName()!)"
                 }
                 print("===\(String(describing: statusStr))")
                 break
