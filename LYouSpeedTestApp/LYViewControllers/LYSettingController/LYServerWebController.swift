@@ -16,8 +16,6 @@ class LYServerWebController: LYBaseH5Controller {
             self.startLoadWithTitle(title: "Terms of use", url: "http://bz.pk2game.com/LYspeed_term")
         }else if (titleStr=="2") {
             self.startLoadWithTitle(title: "Privacy Policy", url: "http://bz.pk2game.com/LYspeed_privacy_policy")
-        }else{
-            self.startLoadWithTitle(title: "Subscription Policy", url: "http://bz.pk2game.com/LYspeed_support")
         }
     }
     

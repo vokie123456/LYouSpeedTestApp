@@ -225,6 +225,7 @@ class LYHomeController: LYBaseController {
             //返回的double是个可选值，所以需要给个默认值或者用!强制解包
             let proData = CGFloat(double ?? 0)/100
             self.currenProgressView.progress = proData
+            self.currenProgressView.countJump.textColor = YCColorStanBlue
             self.settingCountJumpText(kdSpeedStr: kdSpeedStr, kbSpeedStr: kbSpeedDate)
             if proData>=1{
                 self.currenProgressView.progress = 1
@@ -296,8 +297,8 @@ class LYHomeController: LYBaseController {
             let double = Double(kdSpeedStr)
             let proData = CGFloat(double ?? 0)/100
             self.currenProgressView.progress = proData
+            self.currenProgressView.countJump.textColor = gof_ColorWithHex(0x8A2BE2)
             self.settingCountJumpText(kdSpeedStr: kdSpeedStr, kbSpeedStr: kbSpeedDate)
-
             if proData>=1{
                 self.currenProgressView.progress = 1
             }
@@ -329,6 +330,7 @@ class LYHomeController: LYBaseController {
             self.upLoadImage.layer.removeAllAnimations()
             self.startButton.isHidden = false
             self.testSpeedView.isHidden = true
+            self.currenProgressView.countJump.textColor = YCColorStanBlue
             /** 保存测速数据 */
             self.saveSpeedInfoToLocal(model: self.speedModel)
             /** 非会员记录测试次数 */
@@ -337,7 +339,6 @@ class LYHomeController: LYBaseController {
                 count += 1
                 UserDefaults.standard.set(count, forKey: "freeUserCount")
             }
-            
             /** 测速完成跳转到详情页 */
             let detailVC = LYResultDetailController()
             detailVC.model = self.speedModel

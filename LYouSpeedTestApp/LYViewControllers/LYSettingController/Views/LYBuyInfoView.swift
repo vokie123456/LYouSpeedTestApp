@@ -13,7 +13,6 @@ class LYBuyInfoView: UIView {
     var recoverBuyMemBlock:(()->Void)?
     var selYsXyMemBlock:(()->Void)?
     var selServerMemBlock:(()->Void)?
-    var selYinsMemBlock:(()->Void)?
     let freeButton = UIButton()
 
     override init(frame: CGRect) {
@@ -94,7 +93,7 @@ class LYBuyInfoView: UIView {
         freeButton.addTarget(self, action: #selector(freeButton(_:)), for: .touchUpInside)
         /** 试用说明 */
         let priceLable = UILabel()
-        priceLable.text = "￡30.99/yearly after 7 days free trail!"
+        priceLable.text = "￡32.99/yearly after 7 days free trail!"
         priceLable.font = YC_FONT_PFSC_Medium(12)
         priceLable.textAlignment = NSTextAlignment.center
         priceLable.textColor = gof_ColorWithHex(0x444444)
@@ -148,11 +147,8 @@ class LYBuyInfoView: UIView {
         }),"pro2":WPAttributedStyleAction.styledAction(action: {
             print("=====Privacy Policy")
             self.selServerMemBlock!()
-        }),"pro3":WPAttributedStyleAction.styledAction(action: {
-            print("=====Subscription Policy")
-            self.selYinsMemBlock!()
         }),"u":[gof_ColorWithHex(0x444444), [NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue]],"link":gof_ColorWithHex(0x444444)] as [String : Any]
-        buyDislable.attributedText = "This enadles a 7 day free trial,followed by a subscription to TX Speed Premium for £30.99/yearly.By joining, you accept our <pro1><u>Terms of use</u></pro1>,<pro2><u>Privacy Policy</u></pro2> and <pro3><u>Subscription Policy</u></pro3>.This subscription auto-renews at the and of each year term at £30.99,unless cancalled 24-hours in advance.The subscription fee is charged to your iTunes account at confirmation of purchase.You may manage your subscription and turn off auto-renewal by going to your Settings.No cancellation of the current subscription is allowed during active period.".attributedString(withStyleBook: recoverStyle)
+        buyDislable.attributedText = "This enadles a 7 day free trial,followed by a subscription to TX Speed Premium for £32.99/yearly.By joining, you accept our <pro1><u>Terms of use</u></pro1> and <pro2><u>Privacy Policy</u></pro2>.This subscription auto-renews at the and of each year term at £32.99,unless cancalled 24-hours in advance.The subscription fee is charged to your iTunes account at confirmation of purchase.You may manage your subscription and turn off auto-renewal by going to your Settings.No cancellation of the current subscription is allowed during active period.".attributedString(withStyleBook: recoverStyle)
     }
     
     @objc func freeButton(_ button:UIButton) {
