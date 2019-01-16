@@ -12,10 +12,20 @@ class LYSettingController: LYBaseController,UITableViewDelegate,UITableViewDataS
     var selTitle = NSString()
     let scoreView = LYScoreVeiw()
     let submitView = LYSubmitView()
-    
+    let adboadView = GADBannerView()
+
     lazy var settingTableView = UITableView(frame: CGRect(x: 0, y: 0, width: Main_Screen_Width, height: Main_Screen_Height), style: .grouped)
     let cionArr = [["im_unit"],["icon_share_green","im_rating"],["icon_crown","icon_email"],["im_about"]]
     let titleArr = [["速度单位"],["分享","评分"],["升级到高级版","意见反馈"],["关于"]]
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if ISHAVEBUYMEMBER()=="no"{
+            self.adboadView.isHidden = false
+        }else{
+            self.adboadView.isHidden = true
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -82,7 +92,7 @@ class LYSettingController: LYBaseController,UITableViewDelegate,UITableViewDataS
             }
         }
         /** 广告位 */
-        let adboadView = GADBannerView()
+        if ISHAVEBUYMEMBER()=="no"{
         self.view.addSubview(adboadView)
         adboadView.snp.makeConstraints { (make) in
             make.left.equalTo(0);
@@ -93,6 +103,7 @@ class LYSettingController: LYBaseController,UITableViewDelegate,UITableViewDataS
         adboadView.adUnitID = LYDetailADId;
         adboadView.rootViewController = self;
         adboadView.load(GADRequest())
+        }
     }
     //MARK:===========UITableViewDelegate
     func numberOfSections(in tableView: UITableView) -> Int {

@@ -40,6 +40,18 @@ class LYBuyMemController: LYBaseController,YQInAppPurchaseToolDelegate {
             make.top.equalTo(0)
             make.height.equalTo(Main_Screen_Height)
         }
+        /** 判断是否购买会员 */
+        if ISHAVEBUYMEMBER()=="no" {
+            infoView.freeButton.isEnabled = true
+            infoView.freeButton.backgroundColor = YCColorStanBlue
+            infoView.freeButton.setTitle("免费试用", for: .normal)
+            infoView.freeButton.setTitleColor(YCColorWhite, for: .normal)
+        }else{
+            infoView.freeButton.isEnabled = false
+            infoView.freeButton.backgroundColor = YCColorDarkLight
+            infoView.freeButton.setTitle("已订阅", for: .normal)
+            infoView.freeButton.setTitleColor(YCColorStanBlue, for: .normal)
+        }
         infoView.selBuyMemBlock = {() in
             /** 发起内购 */
             //向苹果询问哪些商品能够购买
@@ -50,7 +62,11 @@ class LYBuyMemController: LYBaseController,YQInAppPurchaseToolDelegate {
         }
         infoView.recoverBuyMemBlock = {() in
             print("恢复购买商品===")
-            self.IAPTool.restorePurchase()
+            if ISHAVEBUYMEMBER()=="no" {
+                self.IAPTool.restorePurchase()
+            }else{
+                EasyShowTextView.showText("服务已订阅!")
+            }
         }
         infoView.selYsXyMemBlock = {() in
             /** 隐私协议 */
@@ -104,11 +120,14 @@ class LYBuyMemController: LYBaseController,YQInAppPurchaseToolDelegate {
         }
         let paramsDic = ["receipt-data":encodeStr,"password":SHAREKEY]
         NetworkRequest.sharedInstance.postRequest(urlString: LYIosCheck, params: paramsDic, success: { (json) in
-            let jsonDic = JSON(json)
-            let states = "\(jsonDic["status"])"
-            UserDefaults.standard.set(states, forKey:"isHaveBuyMemBer")
+//            let jsonDic = JSON(json)
+//            let states = "\(jsonDic["status"])"
+            UserDefaults.standard.set("yes", forKey:"isHaveBuyMemBer")
             print("是否购买会员=========\(ISHAVEBUYMEMBER())")
-
+            self.infoView.freeButton.isEnabled = false
+            self.infoView.freeButton.backgroundColor = YCColorDarkLight
+            self.infoView.freeButton.setTitle("已订阅", for: .normal)
+            self.infoView.freeButton.setTitleColor(YCColorStanBlue, for: .normal)
         }) { (error) in
             EasyShowTextView.showText("服务器校验失败!")
         }

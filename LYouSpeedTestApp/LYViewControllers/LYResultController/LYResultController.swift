@@ -11,11 +11,21 @@ import UIKit
 class LYResultController: LYBaseController,UITableViewDelegate,UITableViewDataSource {
     var allCurrenDataArray:Array = [Any]()
     var allSpeedInfoArray:Array = [Any]()
+    let adboadView = GADBannerView()
 
     lazy var resultTableView = UITableView(frame: CGRect(x: 15, y: 10, width: Main_Screen_Width-30, height: Main_Screen_Height-NaviBarHeight-SafeBottomMargin-10-50-40), style: .grouped)
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        if ISHAVEBUYMEMBER()=="no"{
+            self.updateView.isHidden=false
+            self.adboadView.isHidden=false
+            self.resultTableView.frame.size.height = Main_Screen_Height-NaviBarHeight-SafeBottomMargin-10-50-40
+        }else{
+            self.resultTableView.frame.size.height = Main_Screen_Height-NaviBarHeight-SafeBottomMargin-10-50
+            self.adboadView.isHidden=true
+            self.updateView.isHidden=true
+        }
         gaintAllListArray()
     }
     
@@ -33,13 +43,14 @@ class LYResultController: LYBaseController,UITableViewDelegate,UITableViewDataSo
         self.resultTableView .register(LYResultCell.self, forCellReuseIdentifier:"ResultCellIdentifier")
         self.view.addSubview(resultTableView)
         /** 升级到高级版 */
+        if ISHAVEBUYMEMBER()=="no"{
         self.view.addSubview(self.updateView)
         self.updateView.updateBlock = {() in
             /** 升级到高级版 */
             let buyMemVC = LYBuyMemController()
             buyMemVC.hidesBottomBarWhenPushed = true
             self.navigationController?.pushViewController(buyMemVC, animated: true)
-        }
+        }}
         //空数据页
         self.view.addSubview(self.notDateLable)
     }
@@ -65,12 +76,16 @@ class LYResultController: LYBaseController,UITableViewDelegate,UITableViewDataSo
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 80
+       if ISHAVEBUYMEMBER()=="no"{
+            return 80
+        }else{
+            return 10
+        }
     }
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let footView = UIView()
+        if ISHAVEBUYMEMBER()=="no"{
         /** 广告位 */
-        let adboadView = GADBannerView()
         adboadView.layer.masksToBounds = true
         adboadView.isUserInteractionEnabled = true
         adboadView.layer.cornerRadius = 5
@@ -79,7 +94,7 @@ class LYResultController: LYBaseController,UITableViewDelegate,UITableViewDataSo
         adboadView.load(GADRequest())
         adboadView.frame = CGRect(x: 0, y: 0, width: Main_Screen_Width-30, height: 70)
         footView .addSubview(adboadView)
-        
+        }
         return footView
     }
     

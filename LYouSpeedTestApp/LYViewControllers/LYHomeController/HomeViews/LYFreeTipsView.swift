@@ -9,6 +9,7 @@
 import UIKit
 
 class LYFreeTipsView: UIView {
+    let freelabel = UILabel()
 
     var closeBlock:(()->Void)?
     var selUpdateBlock:(()->Void)?
@@ -120,7 +121,6 @@ class LYFreeTipsView: UIView {
         }
         updateButton.addTarget(self, action: #selector(updateButtonClick), for: .touchUpInside)
         /** 剩余免费次数 */
-        let freelabel = UILabel()
         freelabel.text = "今日剩余免费次数: 5"
         freelabel.font = YC_FONT_PFSC_Medium(11)
         freelabel.textColor = YCColorTitleLight

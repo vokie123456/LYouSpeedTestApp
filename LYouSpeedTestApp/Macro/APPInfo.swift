@@ -80,3 +80,14 @@ func ISSELKBPS() -> String {
         return "no"
     }
 }
+
+//非会员m免费试用次数
+func FREEUSERCOUNT() -> NSInteger {
+    let freeUserCount = UserDefaults.standard.integer(forKey: "freeUserCount")
+    //判断UserDefaults中是否已经存在
+    if freeUserCount != 0 {
+        return freeUserCount
+    }else{
+        return 0
+    }
+}

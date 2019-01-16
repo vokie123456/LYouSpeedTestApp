@@ -106,6 +106,7 @@ class LYResultDetailController: LYBaseController {
             EasyShowTextView.showText("反馈成功")
         }
        /** 广告位 */
+        if ISHAVEBUYMEMBER()=="no"{
         self.view.addSubview(self.adboadView)
         self.adboadView.snp.makeConstraints { (make) in
             make.left.equalTo(0);
@@ -116,6 +117,7 @@ class LYResultDetailController: LYBaseController {
         self.adboadView.adUnitID = LYDetailADId;
         self.adboadView.rootViewController = self;
         self.adboadView.load(GADRequest())
+        }
     }
 
     //分享按钮点击响应

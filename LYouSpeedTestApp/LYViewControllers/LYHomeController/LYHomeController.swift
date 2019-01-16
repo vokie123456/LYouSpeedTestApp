@@ -64,6 +64,11 @@ class LYHomeController: LYBaseController {
                 self.upLoadDanwLable.text = "\(speedUpStr[1])/s"
             }
         }
+        if ISHAVEBUYMEMBER()=="no"{
+            self.updateView.isHidden=false
+        }else{
+            self.updateView.isHidden=true
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -108,35 +113,36 @@ class LYHomeController: LYBaseController {
         testSpeedView.isHidden = true
         testSpeedView.frame = CGRect(x: 0, y: progressView.frame.origin.y+Main_Screen_Width/3*2+20, width: Main_Screen_Width, height: 50)
         /** 升级到高级版 */
-        self.view.addSubview(self.updateView)
-        self.updateView.updateBlock = {() in
-            /** 升级到高级版 */
-            let tipsView = LYFreeTipsView()
-            tipsView.frame = CGRect(x: 0, y: 0, width: Main_Screen_Width, height: Main_Screen_Height)
-            let window: UIWindow? = UIApplication.shared.keyWindow
-            window!.addSubview(tipsView)
-            tipsView.closeBlock = {() in
-                tipsView.removeFromSuperview()
-            }
-            tipsView.selUpdateBlock = {() in
-                tipsView.removeFromSuperview()
+        if ISHAVEBUYMEMBER()=="no" {
+            self.view.addSubview(self.updateView)
+            self.updateView.isHidden = true
+            self.updateView.updateBlock = {() in
                 let buyMemVC = LYBuyMemController()
                 buyMemVC.hidesBottomBarWhenPushed = true
                 self.navigationController?.pushViewController(buyMemVC, animated: true)
             }
-//            let buyMemVC = LYBuyMemController()
-//            buyMemVC.hidesBottomBarWhenPushed = true
-//            self.navigationController?.pushViewController(buyMemVC, animated: true)
         }
         /** 监听网络变化 */
         currentNetReachability(view:progressView)
         /** 监听上传下载速度变化 */
         listenNetworkSpeed()
+        /** 免费试用弹窗 */
+        if ISHAVEBUYMEMBER()=="no" {
+           openFreeUserWindows()
+        }
     }
     
     @objc private func startButtonClick()  {
         if IPADRESS().count==0 {
             return
+        }
+        if ISHAVEBUYMEMBER()=="no" {
+            let count = FREEUSERCOUNT()
+            if count==5{
+                /** 免费试用弹窗 */
+                openFreeUserWindows()
+                return
+            }
         }
     /** 测试延时 */
     self.currenProgressView.progress = 0.0
@@ -325,6 +331,13 @@ class LYHomeController: LYBaseController {
             self.testSpeedView.isHidden = true
             /** 保存测速数据 */
             self.saveSpeedInfoToLocal(model: self.speedModel)
+            /** 非会员记录测试次数 */
+            if ISHAVEBUYMEMBER()=="no"{
+                var count = FREEUSERCOUNT()
+                count += 1
+                UserDefaults.standard.set(count, forKey: "freeUserCount")
+            }
+            
             /** 测速完成跳转到详情页 */
             let detailVC = LYResultDetailController()
             detailVC.model = self.speedModel
@@ -396,6 +409,29 @@ class LYHomeController: LYBaseController {
         model.currenDate = LYTimeManager.shared.gaintCurrenDate()
         LYSpeedInfoManager.shared.addSpeedInfo(toLocalData: model)
     }
+    
+    //MARK:=======是否提示弹出免费试用次数小窗口
+    func openFreeUserWindows(){
+        let freeCount = FREEUSERCOUNT()
+        if freeCount==1 || freeCount==3 || freeCount==5{
+            /** 升级到高级版 */
+            let tipsView = LYFreeTipsView()
+            tipsView.freelabel.text = "今日剩余免费次数: \(5-freeCount)"
+            tipsView.frame = CGRect(x: 0, y: 0, width: Main_Screen_Width, height: Main_Screen_Height)
+            let window: UIWindow? = UIApplication.shared.keyWindow
+            window!.addSubview(tipsView)
+            tipsView.closeBlock = {() in
+                tipsView.removeFromSuperview()
+            }
+            tipsView.selUpdateBlock = {() in
+                tipsView.removeFromSuperview()
+                let buyMemVC = LYBuyMemController()
+                buyMemVC.hidesBottomBarWhenPushed = true
+                self.navigationController?.pushViewController(buyMemVC, animated: true)
+            }
+        }
+    }
+    
     lazy var updateView:LYUpgradeView = {
         let  updateView = LYUpgradeView(frame: CGRect(x: 0, y: Main_Screen_Height-40-kTabBarHeight-NaviBarHeight, width: Main_Screen_Width, height: 40))
         return updateView

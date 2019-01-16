@@ -14,6 +14,7 @@ class LYBuyInfoView: UIView {
     var selYsXyMemBlock:(()->Void)?
     var selServerMemBlock:(()->Void)?
     var selYinsMemBlock:(()->Void)?
+    let freeButton = UIButton()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -78,7 +79,6 @@ class LYBuyInfoView: UIView {
         tapGesture.numberOfTapsRequired = 1
         recoveryBuy.addGestureRecognizer(tapGesture)
         /** 免费试用 */
-        let freeButton = UIButton()
         freeButton.layer.cornerRadius = 5
         freeButton.backgroundColor = YCColorStanBlue
         freeButton.setTitle("免费试用", for: .normal)
@@ -86,8 +86,8 @@ class LYBuyInfoView: UIView {
         freeButton.setTitleColor(YCColorWhite, for: .normal)
         self.addSubview(freeButton)
         freeButton.snp.makeConstraints { (make) in
-            make.left.equalTo(20)
-            make.top.equalTo(recoveryBuy.snp.bottom).offset(20)
+            make.left.equalTo(30)
+            make.top.equalTo(recoveryBuy.snp.bottom).offset(30)
             make.right.equalTo(-20)
             make.height.equalTo(45)
         }

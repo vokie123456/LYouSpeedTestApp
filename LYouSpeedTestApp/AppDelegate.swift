@@ -39,11 +39,35 @@ class AppDelegate: UIResponder,UIApplicationDelegate,UITabBarControllerDelegate 
         //! 统计不同版本
         let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
         MobClick.setAppVersion(version)
-        gaintTestPoint()
-
+        IsHaveBuyMenBer()
         return true
     }
-    
+    //MARK=========校验是否购买会员
+    func IsHaveBuyMenBer() {
+        if ISHAVEBUYMEMBER()=="no" {
+            LYouLoadingView.hide()
+            self.gaintTestPoint()
+            return
+        }
+        /** 本地服务器校验 */
+        let receiptURL: URL? = Bundle.main.appStoreReceiptURL
+        let receiptData = try! Data(contentsOf:receiptURL!)
+        var encodeStr = receiptData.base64EncodedString(options: [])
+        if (encodeStr.count) == 0 {
+            encodeStr = ""
+        }
+        let paramsDic = ["receipt-data":encodeStr,"password":SHAREKEY]
+        NetworkRequest.sharedInstance.postRequest(urlString: LYIosCheck, params: paramsDic, success: { (json) in
+            let jsonDic = JSON(json)
+            let states = "\(jsonDic["status"])"
+            UserDefaults.standard.set(states, forKey:"isHaveBuyMemBer")
+            print("是否购买会员=========\(ISHAVEBUYMEMBER())")
+            self.gaintTestPoint()
+        }) { (error) in
+            LYouLoadingView.hide()
+            EasyShowTextView.showText("服务器校验失败!")
+        }
+    }
     //MARK=========获取服务器下载上传地址
     func gaintTestPoint() {
         LYouLoadingView.show()
@@ -72,36 +96,10 @@ class AppDelegate: UIResponder,UIApplicationDelegate,UITabBarControllerDelegate 
             let isCheckIos = "\(jsonDic["status"])"
              UserDefaults.standard.set(isCheckIos, forKey:"isCheckIos")
             print("审核状态=========\(ISCHECKIOS())")
-            self.IsHaveBuyMenBer()
+            LYouLoadingView.hide()
         }) { (error) in
             LYouLoadingView.hide()
             EasyShowTextView .showText("服务器异常!")
-        }
-    }
-    
-    //MARK=========校验是否购买会员
-    func IsHaveBuyMenBer() {
-        if ISHAVEBUYMEMBER()=="no" {
-            LYouLoadingView.hide()
-            return
-        }
-        /** 本地服务器校验 */
-        let receiptURL: URL? = Bundle.main.appStoreReceiptURL
-        let receiptData = try! Data(contentsOf:receiptURL!)
-        var encodeStr = receiptData.base64EncodedString(options: [])
-        if (encodeStr.count) == 0 {
-            encodeStr = ""
-        }
-        let paramsDic = ["receipt-data":encodeStr,"password":SHAREKEY]
-        NetworkRequest.sharedInstance.postRequest(urlString: LYIosCheck, params: paramsDic, success: { (json) in
-            let jsonDic = JSON(json)
-            let states = "\(jsonDic["status"])"
-            UserDefaults.standard.set(states, forKey:"isHaveBuyMemBer")
-            print("是否购买会员=========\(ISHAVEBUYMEMBER())")
-            LYouLoadingView.hide()
-        }) { (error) in
-            LYouLoadingView.hide()
-            EasyShowTextView.showText("服务器校验失败!")
         }
     }
     
