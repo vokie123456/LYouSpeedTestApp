@@ -13,6 +13,7 @@ class LYBuyInfoView: UIView {
     var recoverBuyMemBlock:(()->Void)?
     var selYsXyMemBlock:(()->Void)?
     var selServerMemBlock:(()->Void)?
+    var selYinsMemBlock:(()->Void)?
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -131,23 +132,27 @@ class LYBuyInfoView: UIView {
         let buyDislable = WPHotspotLabel()
         buyDislable.font = YC_FONT_PFSC_Medium(12)
         buyDislable.numberOfLines = 0
-        buyDislable.lineBreakMode = NSLineBreakMode.byCharWrapping
+//        buyDislable.lineBreakMode = NSLineBreakMode.byCharWrapping
         buyDislable.textColor = gof_ColorWithHex(0x444444)
         buyDislable.textAlignment = NSTextAlignment.left
         mainScrollView.addSubview(buyDislable)
         buyDislable.snp.makeConstraints { (make) in
             make.left.equalTo(30)
-            make.width.equalTo(Main_Screen_Width-60)
-            make.top.equalTo(freeButton.snp.bottom).offset(50)
+            make.width.equalTo(Main_Screen_Width-50)
+            make.top.equalTo(freeButton.snp.bottom).offset(30)
+            make.height.equalTo(200)
         }
         let recoverStyle = ["body":YC_FONT_PFSC_Medium(12),"pro1":WPAttributedStyleAction.styledAction(action: {
-            print("=====选择协议")
+            print("=====Terms of use")
             self.selYsXyMemBlock!()
         }),"pro2":WPAttributedStyleAction.styledAction(action: {
-            print("=====选择条款")
+            print("=====Privacy Policy")
             self.selServerMemBlock!()
+        }),"pro3":WPAttributedStyleAction.styledAction(action: {
+            print("=====Subscription Policy")
+            self.selYinsMemBlock!()
         }),"u":[gof_ColorWithHex(0x444444), [NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue]],"link":gof_ColorWithHex(0x444444)] as [String : Any]
-        buyDislable.attributedText = "This enadles a 7 day free trial,followed by a subscription to TX Speed Premium for £30.99/yearly.By joining, you accept our <pro1><u>Terms of use</u></pro1> and <pro2><u>Privacy Policy</u></pro2>.This subscription auto-renews at the and of each year term at £30.99,unless cancalled 24-hours in advance.The subscription fee is charged to your iTunes account at confirmation of purchase.You may manage your subscription and turn off auto-renewal by going to your Settings.No cancellation of the current subscription is allowed during active period.".attributedString(withStyleBook: recoverStyle)
+        buyDislable.attributedText = "This enadles a 7 day free trial,followed by a subscription to TX Speed Premium for £30.99/yearly.By joining, you accept our <pro1><u>Terms of use</u></pro1>,<pro2><u>Privacy Policy</u></pro2> and <pro3><u>Subscription Policy</u></pro3>.This subscription auto-renews at the and of each year term at £30.99,unless cancalled 24-hours in advance.The subscription fee is charged to your iTunes account at confirmation of purchase.You may manage your subscription and turn off auto-renewal by going to your Settings.No cancellation of the current subscription is allowed during active period.".attributedString(withStyleBook: recoverStyle)
     }
     
     @objc func freeButton(_ button:UIButton) {

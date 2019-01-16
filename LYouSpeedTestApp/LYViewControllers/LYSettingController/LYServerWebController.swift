@@ -13,9 +13,11 @@ class LYServerWebController: LYBaseH5Controller {
     override func viewDidLoad() {
         super.viewDidLoad()
         if (titleStr=="1") {
-            self.startLoadWithTitle(title: "隐私协议", url: "http://www.sina.com")
+            self.startLoadWithTitle(title: "Terms of use", url: "http://bz.pk2game.com/LYspeed_term")
+        }else if (titleStr=="2") {
+            self.startLoadWithTitle(title: "Privacy Policy", url: "http://bz.pk2game.com/LYspeed_privacy_policy")
         }else{
-            self.startLoadWithTitle(title: "服务条款", url: "https://www.baidu.com")
+            self.startLoadWithTitle(title: "Subscription Policy", url: "http://bz.pk2game.com/LYspeed_support")
         }
     }
     

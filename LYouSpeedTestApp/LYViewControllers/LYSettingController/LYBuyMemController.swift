@@ -64,6 +64,12 @@ class LYBuyMemController: LYBaseController,YQInAppPurchaseToolDelegate {
             serverVC.titleStr = "2"
             self.navigationController?.pushViewController(serverVC, animated: true)
         }
+        infoView.selYinsMemBlock = {() in
+            /** 服务条款 */
+            let serverVC = LYServerWebController()
+            serverVC.titleStr = "3"
+            self.navigationController?.pushViewController(serverVC, animated: true)
+        }
     }
     //MARK:==========YQInAppPurchaseToolDelegate=========
     func iapToolGotProducts(_ products: NSMutableArray!) {
