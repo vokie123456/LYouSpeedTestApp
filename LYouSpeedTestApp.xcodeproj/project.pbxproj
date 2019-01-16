@@ -77,6 +77,7 @@
 		218F790221ED7AFF00207D83 /* LYSpeedProgresView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218F790121ED7AFF00207D83 /* LYSpeedProgresView.swift */; };
 		218F791421EDF2C200207D83 /* LYSpeedInfo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218F791221EDF2C200207D83 /* LYSpeedInfo+CoreDataClass.swift */; };
 		218F791521EDF2C200207D83 /* LYSpeedInfo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218F791321EDF2C200207D83 /* LYSpeedInfo+CoreDataProperties.swift */; };
+		218F791921EEDF0D00207D83 /* Simple.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 218F791821EEDF0D00207D83 /* Simple.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -184,6 +185,7 @@
 		218F790121ED7AFF00207D83 /* LYSpeedProgresView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYSpeedProgresView.swift; sourceTree = "<group>"; };
 		218F791221EDF2C200207D83 /* LYSpeedInfo+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LYSpeedInfo+CoreDataClass.swift"; sourceTree = "<group>"; };
 		218F791321EDF2C200207D83 /* LYSpeedInfo+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LYSpeedInfo+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		218F791821EEDF0D00207D83 /* Simple.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Simple.ttf; sourceTree = "<group>"; };
 		4D63708E398CEDE856A7FA13 /* Pods-LYouSpeedTestApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LYouSpeedTestApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LYouSpeedTestApp/Pods-LYouSpeedTestApp.debug.xcconfig"; sourceTree = "<group>"; };
 		6B53FAC59A1B802E1185810D /* libPods-LYouSpeedTestApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LYouSpeedTestApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5E27FF72D1A07C6134E1B6D /* Pods-LYouSpeedTestApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LYouSpeedTestApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-LYouSpeedTestApp/Pods-LYouSpeedTestApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -515,6 +517,7 @@
 		218CEF6F21D39B8600007B41 /* LYouSpeedTestApp */ = {
 			isa = PBXGroup;
 			children = (
+				218F791821EEDF0D00207D83 /* Simple.ttf */,
 				212E27F021E84A9A00E1BDD4 /* upLoadFile.mp4 */,
 				2174F7B721DF649C00BB804A /* LYouSpeedTestApp.entitlements */,
 				212E27C421E4984900E1BDD4 /* LYCoreData */,
@@ -623,6 +626,7 @@
 			files = (
 				212E27F121E84A9A00E1BDD4 /* upLoadFile.mp4 in Resources */,
 				218CEF7B21D39B8800007B41 /* LaunchScreen.storyboard in Resources */,
+				218F791921EEDF0D00207D83 /* Simple.ttf in Resources */,
 				216A351921D4A3CE007D73B5 /* InfoPlist.strings in Resources */,
 				218CEF7821D39B8800007B41 /* Assets.xcassets in Resources */,
 				218CEF7621D39B8600007B41 /* Main.storyboard in Resources */,

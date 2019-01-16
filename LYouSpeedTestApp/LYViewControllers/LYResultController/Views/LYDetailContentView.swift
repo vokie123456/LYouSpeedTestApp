@@ -45,13 +45,13 @@ class LYDetailContentView: UIView {
         }
         titleLable.text = "我是网速季军"
         titleLable.textColor = YCColorWhite
+        titleLable.font = UIFont(name: "xiaodanchunti", size: 30)
         titleLable.textAlignment = NSTextAlignment.center
-        titleLable.font = YC_FONT_PFSC_Medium(50/2)
         rankingImage.addSubview(titleLable)
         titleLable.snp.makeConstraints { (make) in
             make.left.equalTo(0)
             make.right.equalTo(0)
-            make.top.equalTo(10)
+            make.top.equalTo(6)
         }
         /** 晒网速 */
         let speedButton = UIButton()

@@ -40,6 +40,7 @@ class AppDelegate: UIResponder,UIApplicationDelegate,UITabBarControllerDelegate 
         let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
         MobClick.setAppVersion(version)
         gaintTestPoint()
+
         return true
     }
     
