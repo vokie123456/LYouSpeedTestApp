@@ -37,7 +37,7 @@ class LYBuyButton: UIView {
         }
         /** 订阅时间 */
         dayLable.text = "极速：最好用的手机网络助手、非凡软件大师。"
-        dayLable.font = YC_FONT_PFSC_Medium(13)
+        dayLable.font = YC_FONT_PFSC_Regular(13)
         dayLable.numberOfLines = 0
         dayLable.textColor = gof_ColorWithHex(0x444444)
         self.addSubview(dayLable)

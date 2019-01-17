@@ -217,6 +217,9 @@ static YQInAppPurchaseTool *storeTool;
      BASE64 常用的编码方案，通常用于数据传输，以及加密算法的基础算法，传输过程中能够保证数据传输的稳定性
      BASE64是可以编码和解码的
      */
+    if (receiptData.length==0) {
+        receiptData = @"";
+    }
     NSString *encodeStr = [receiptData base64EncodedStringWithOptions:NSDataBase64EncodingEndLineWithLineFeed];
     
     NSString *payload = [NSString stringWithFormat:@"{\"receipt-data\" : \"%@\",\"password\" : \"%@\"}", encodeStr,"7eeb7be9cab649c7b3cfc7f20b0be0d3"];

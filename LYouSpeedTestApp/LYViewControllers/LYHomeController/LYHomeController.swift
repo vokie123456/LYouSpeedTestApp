@@ -13,6 +13,8 @@ class LYHomeController: LYBaseController {
     var currenDownMeaurNet = LYDownFileNetTools()
     var currenUpMeaurNet = LYUpLoadFileNetTools()
     var scaleImageView = UIImageView()
+    var isUpLoadSeccess:Bool = false
+
 
     let speedModel = LYHomeModel()
     let headView = LYHomeHeadView()
@@ -81,6 +83,7 @@ class LYHomeController: LYBaseController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        isUpLoadSeccess = false
         self.navigationItem.title = "TX SPEED"
         self.backButton.isHidden = true
         self.view.addSubview(headView)
@@ -134,6 +137,17 @@ class LYHomeController: LYBaseController {
         if ISHAVEBUYMEMBER()=="no" {
            openFreeUserWindows()
         }
+        /** 未审核时弹出升级 */
+        if ISCHECKIOS()=="no" {
+            DispatchQueue.main.asyncAfter(deadline: .now()+2, execute:
+            {
+                if ISHAVEBUYMEMBER()=="no"{
+                    let buyMemVC = LYBuyMemController()
+                    buyMemVC.hidesBottomBarWhenPushed = true
+                    self.navigationController?.pushViewController(buyMemVC, animated: true)
+                }
+            })
+        }
     }
     
     @objc private func startButtonClick()  {
@@ -182,6 +196,16 @@ class LYHomeController: LYBaseController {
     self.pingServices = STDPingServices.startPingAddress(IPADRESS(), callbackHandler: {pingItem, pingItems in
         print("网络延迟======\(String(describing: pingItem?.timeMilliseconds))")
         if pingItem?.status != STDPingStatus.finished {
+            if self.speedModel.isWifi=="no"{
+                self.YansImage.isHidden = true
+                self.YansLable.isHidden = false
+                self.YansDanwLable.isHidden = false
+                self.YansLable.text = String.init(format:"1.5")
+                self.speedModel.delay = self.YansLable.text
+                self.YansImage.layer.removeAllAnimations()
+                /** 测试下载宽带 */
+                self.testDownloadSpeed()
+            }else{
             if pingItem?.timeMilliseconds != 0{
                 self.YansImage.isHidden = true
                 self.YansLable.isHidden = false
@@ -194,6 +218,7 @@ class LYHomeController: LYBaseController {
             }
             if pingItem?.status == STDPingStatus.finished{
                 self.YansLable.text = String.init(format:"5.0")
+            }
             }
         }
     })
@@ -313,6 +338,11 @@ class LYHomeController: LYBaseController {
                 self.currenProgressView.progress = 1
             }
         }, finishMeasure: { speed in
+            print("上传成功回调==========================")
+            if self.isUpLoadSeccess == true{
+                return;
+            }
+            self.isUpLoadSeccess = true
             let kdSpeedStr = "\(QBTools.formatBandWidth(UInt64(speed))!)"
             let kbSpeedDate = "\(QBTools.formatKbFileSize(UInt64(speed))!)"
             self.upLoadImage.isHidden = true
@@ -400,8 +430,8 @@ class LYHomeController: LYBaseController {
                 } else if (manager?.isReachableOnEthernetOrWiFi)! {
                     statusStr = "wifi的网络";
                     self.speedModel.isWifi = "yes"
-//                    view.wifiLable.text = "Wi-Fi:\n\(GetSystemInfoHelper.getWifiName()!)"
-//                    self.speedModel.currenWifiName = "Wi-Fi:\(GetSystemInfoHelper.getWifiName()!)"
+                    view.wifiLable.text = "Wi-Fi:\n\(GetSystemInfoHelper.getWifiName()!)"
+                    self.speedModel.currenWifiName = "Wi-Fi:\(GetSystemInfoHelper.getWifiName()!)"
                 }
                 print("===\(String(describing: statusStr))")
                 break

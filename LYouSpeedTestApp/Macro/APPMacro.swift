@@ -67,7 +67,7 @@ var gof_ColorWithHex: (NSInteger) -> UIColor = {hex in
 // MARK: ---- 三大色调
 let YCColorMainGray = gof_ColorWithHex(0x777777);   // 主色调，浅灰色
 let YCColorStanBlue = gof_ColorWithHex(0x1485FF);   //全局标准蓝色
-let YCColorGray = gof_ColorWithHex(0xF2F2F2);   // 主色调，灰色
+let YCColorGray = gof_ColorWithHex(0xf2f2f2);   // 主色调，灰色
 let YCColorTitleLight = gof_ColorWithHex(0x909090);   //全局灰色
 let YCColorLightBlue = gof_ColorWithHex(0x00D3FC);   //全局标准蓝色
 
@@ -128,7 +128,7 @@ var YC_FONT_PFSC_Medium: (CGFloat) -> UIFont = {size in
         sizes =  kWidth(R: size)
     }
     
-    return UIFont(name: "PingFangSC-Medium", size: sizes) ?? UIFont.systemFont(ofSize: sizes)
+    return UIFont(name: "PingFang-SC-Medium", size: sizes) ?? UIFont.systemFont(ofSize: sizes)
 }
 var YC_FONT_PFSC_Regular: (CGFloat) -> UIFont = {size in
     var sizes:CGFloat = size

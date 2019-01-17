@@ -906,12 +906,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4D63708E398CEDE856A7FA13 /* Pods-LYouSpeedTestApp.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = LYouSpeedTestApp/LYouSpeedTestApp.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Z6V8555LML;
+				DEVELOPMENT_TEAM = X2USAD9AJV;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = LYouSpeedTestApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -919,7 +920,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.vpic.app;
+				PRODUCT_BUNDLE_IDENTIFIER = com.txspeed.ly;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/LYouSpeedTestApp/LYouSpeedTestApp-Bridging-Header.h";
@@ -932,12 +933,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D5E27FF72D1A07C6134E1B6D /* Pods-LYouSpeedTestApp.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = LYouSpeedTestApp/LYouSpeedTestApp.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Z6V8555LML;
+				DEVELOPMENT_TEAM = X2USAD9AJV;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = LYouSpeedTestApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -945,7 +947,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.vpic.app;
+				PRODUCT_BUNDLE_IDENTIFIER = com.txspeed.ly;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/LYouSpeedTestApp/LYouSpeedTestApp-Bridging-Header.h";

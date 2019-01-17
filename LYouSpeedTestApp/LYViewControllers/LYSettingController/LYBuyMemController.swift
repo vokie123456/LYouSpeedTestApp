@@ -48,7 +48,7 @@ class LYBuyMemController: LYBaseController,YQInAppPurchaseToolDelegate {
             infoView.freeButton.setTitleColor(YCColorWhite, for: .normal)
         }else{
             infoView.freeButton.isEnabled = false
-            infoView.freeButton.backgroundColor = YCColorDarkLight
+            infoView.freeButton.backgroundColor = YCColorWhite
             infoView.freeButton.setTitle("已订阅", for: .normal)
             infoView.freeButton.setTitleColor(YCColorStanBlue, for: .normal)
         }
@@ -63,6 +63,7 @@ class LYBuyMemController: LYBaseController,YQInAppPurchaseToolDelegate {
         infoView.recoverBuyMemBlock = {() in
             print("恢复购买商品===")
             if ISHAVEBUYMEMBER()=="no" {
+                LYouLoadingView.show()
                 self.IAPTool.restorePurchase()
             }else{
                 EasyShowTextView.showText("服务已订阅!")
@@ -86,6 +87,7 @@ class LYBuyMemController: LYBaseController,YQInAppPurchaseToolDelegate {
         //IAP工具已获得可购买的商品
         print("list=====\(String(describing: products))")
         if products.count==0 {
+            LYouLoadingView.hide()
             EasyShowTextView.showText("无法获取商品信息")
             return
         }
@@ -93,6 +95,7 @@ class LYBuyMemController: LYBaseController,YQInAppPurchaseToolDelegate {
     }
     func iapToolCanceld(withProductID productID: String!) {
         //支付失败/取消
+        LYouLoadingView.hide()
         print("canceld======\(String(describing: productID))")
     }
     func iapToolBeginCheckingd(withProductID productID: String!) {
@@ -101,44 +104,39 @@ class LYBuyMemController: LYBaseController,YQInAppPurchaseToolDelegate {
     }
     func iapToolCheckRedundant(withProductID productID: String!) {
         //商品被重复验证了
+        LYouLoadingView.hide()
         EasyShowTextView.showText("重复验证了")
     }
     func iapToolBoughtProductSuccessed(withProductID productID: String!, andInfo infoDic: [AnyHashable : Any]!) {
         //商品完全购买成功且验证成功了。（若CheckAfterPay为NO，则会在购买成功后直接触发此方法）
-        /** 本地服务器校验 */
-        let receiptURL: URL? = Bundle.main.appStoreReceiptURL
-        let receiptData = try! Data(contentsOf:receiptURL!)
-        var encodeStr = receiptData.base64EncodedString(options: [])
-        if (encodeStr.count) == 0 {
-            encodeStr = ""
-        }
-        let paramsDic = ["receipt-data":encodeStr,"password":SHAREKEY]
-        NetworkRequest.sharedInstance.postRequest(urlString: LYIosCheck, params: paramsDic, success: { (json) in
-//            let jsonDic = JSON(json)
-//            let states = "\(jsonDic["status"])"
-            UserDefaults.standard.set("yes", forKey:"isHaveBuyMemBer")
-            print("是否购买会员=========\(ISHAVEBUYMEMBER())")
-            self.infoView.freeButton.isEnabled = false
-            self.infoView.freeButton.backgroundColor = YCColorDarkLight
-            self.infoView.freeButton.setTitle("已订阅", for: .normal)
-            self.infoView.freeButton.setTitleColor(YCColorStanBlue, for: .normal)
-        }) { (error) in
-            EasyShowTextView.showText("服务器校验失败!")
-        }
+        print("是否购买会员=========\(ISHAVEBUYMEMBER())")
+        self.infoView.freeButton.isEnabled = false
+        self.infoView.freeButton.backgroundColor = YCColorWhite
+        self.infoView.freeButton.setTitle("已订阅", for: .normal)
+        self.infoView.freeButton.setTitleColor(YCColorStanBlue, for: .normal)
+        UserDefaults.standard.set("yes", forKey:"isHaveBuyMemBer")
+        LYouLoadingView.hide()
     }
     func iapToolCheckFailed(withProductID productID: String!, andInfo infoData: Data!) {
         //商品购买成功了，但向苹果服务器验证失败了
         //2种可能：
         //1，设备越狱了，使用了插件，在虚假购买。
         //2，验证的时候网络突然中断了。（一般极少出现，因为购买的时候是需要网络的）
+        LYouLoadingView.hide()
         EasyShowTextView.showText("验证失败了")
     }
     func iapToolRestoredProductID(_ productID: String!) {
         //恢复了已购买的商品（仅限永久有效商品）
-        
+        infoView.freeButton.isEnabled = false
+        infoView.freeButton.backgroundColor = YCColorWhite
+        infoView.freeButton.setTitle("已订阅", for: .normal)
+        infoView.freeButton.setTitleColor(YCColorStanBlue, for: .normal)
+        UserDefaults.standard.set("yes", forKey:"isHaveBuyMemBer")
+        LYouLoadingView.hide()
     }
     func iapToolSysWrong() {
         //内购系统错误了
+        LYouLoadingView.hide()
         EasyShowTextView.showText("内购系统出错")
     }
 }
